@@ -1,0 +1,676 @@
+//main: ./styles.scss
+
+  /* keyFrames */ 
+  
+  @keyframes rotation {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+  }
+  @keyframes rotationBack {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(-360deg) }
+  }
+  @keyframes rotationBreak {
+    0% { transform: rotate(0) }
+    25% { transform: rotate(90deg)}
+    50% { transform: rotate(180deg) }
+    75% { transform: rotate(270deg)}
+    100% { transform: rotate(360deg) }
+  }
+  
+  @keyframes zeroRotation {
+    0% { transform: scale(1) rotate(0deg) }
+    100% { transform: scale(0) rotate(360deg)}
+  }
+  
+  @keyframes shadowExpandX {
+    0% { 
+      box-shadow: 0 0, 0 0;  
+      color: rgba($lite, 0.2)
+    }
+    100% { 
+      box-shadow: -$size/2 0, $size/2 0; 
+      color: rgba($lite, .8) 
+    }
+  }
+  
+  @keyframes shadowPulse {
+    33% {   
+      background: $lite;
+      box-shadow:  -$size/2 0 $brand, $size/2 0 $lite;
+    } 
+    
+    66% {   
+      background: $brand;
+      box-shadow:  -$size/2 0 $lite, $size/2 0 $lite;
+    }  
+    100% {   
+      background: $lite;
+      box-shadow:  -$size/2 0 $lite, $size/2 0 $brand;
+    }
+    
+  }
+  
+  @keyframes shadowRolling {
+    0% {  box-shadow: 0px 0 rgba($lite, 0), 
+                      0px 0 rgba($lite, 0), 
+                      0px 0 rgba($lite, 0), 
+                      0px 0 rgba($lite, 0); 
+    }
+    12% {  box-shadow: 100px 0 rgba($lite, 1),
+                        0px 0 rgba($lite, 0),
+                        0px 0 rgba($lite, 0), 
+                        0px 0 rgba($lite, 0); 
+    }
+    25% {  box-shadow: 110px 0 rgba($lite, 1), 
+                        100px 0 rgba($lite, 1), 
+                        0px 0 rgba($lite, 0), 
+                        0px 0 rgba($lite, 0); 
+    }
+    36% {  box-shadow: 120px 0 rgba($lite, 1), 
+                        110px 0 rgba($lite, 1), 
+                        100px 0 rgba($lite, 1), 
+                        0px 0 rgba($lite, 0); 
+    }
+    50% {  box-shadow: 130px 0 rgba($lite, 1), 
+                        120px 0 rgba($lite, 1), 
+                        110px 0 rgba($lite, 1), 
+                        100px 0 rgba($lite, 1); 
+    }
+    62% {  box-shadow: 200px 0 rgba($lite, 0), 
+                        130px 0 rgba($lite, 1), 
+                        120px 0 rgba($lite, 1), 
+                        110px 0 rgba($lite, 1); 
+    }
+    75% {  box-shadow: 200px 0 rgba($lite, 0), 
+                        200px 0 rgba($lite, 0), 
+                        130px 0 rgba($lite, 1), 
+                        120px 0 rgba($lite, 1); 
+    }
+    87% {  box-shadow: 200px 0 rgba($lite, 0),
+                        200px 0 rgba($lite, 0), 
+                        200px 0 rgba($lite, 0), 
+                        130px 0 rgba($lite, 1); 
+    }
+    100% {  box-shadow: 200px 0 rgba($lite, 0), 
+                        200px 0 rgba($lite, 0), 
+                        200px 0 rgba($lite, 0), 
+                        200px 0 rgba($lite, 0); 
+    }
+    
+  }
+
+  @keyframes animloader14 {
+    0% { transform: scale(0); opacity: 1;}
+    100% { transform: scale(1); opacity: 0;}
+  }
+  
+
+  
+
+
+  
+  @keyframes scale50 {
+    0%, 100% { transform: scale(0)}
+    50% { transform: scale(1)}
+  }
+
+  @keyframes scaleOut {
+    0% { transform: scale(0);}
+    100% { transform: scale(1)}
+  }
+  
+  @keyframes animloader27 {
+    0% , 100%{ transform: scale(0); opacity: 1;}
+    50% { transform: scale(1); opacity: 0;}
+  }
+  @keyframes animloader28 {
+    0% { box-shadow: -($size*1.5) 0 $lite inset;}
+    100% { box-shadow: $size 0 $lite inset;}
+  }
+
+  @keyframes animloader38 {
+    50% { transform: scale(1) translate(-50% , -50%)}
+  }
+
+  @keyframes animloader42 { 
+    0% { box-shadow:-38px -6px, -14px 6px,  14px -6px}   
+    33% { box-shadow: -38px 6px, -14px -6px,  14px 6px}   
+    66% {box-shadow: -38px -6px, -14px 6px, 14px -6px} 
+    100% { box-shadow: -38px 6px, -14px -6px, 14px 6px}   
+  }
+  @keyframes animloader44 {
+    0% {  box-shadow:   14px 0 0 -2px,  38px 0 0 -2px, 
+                        -14px 0 0 -2px,  -38px 0 0 -2px
+    }   
+    
+    25% {  box-shadow:   14px 0 0 -2px,  38px 0 0 -2px, 
+                        -14px 0 0 -2px,  -38px 0 0 2px
+    }    
+    
+    50% {  box-shadow:   14px 0 0 -2px,  38px 0 0 -2px, 
+                        -14px 0 0 2px,  -38px 0 0 -2px
+    }  
+    75% {  box-shadow:   14px 0 0 2px,  38px 0 0 -2px, 
+                        -14px 0 0 -2px,  -38px 0 0 -2px
+    }  
+    100% {  box-shadow:   14px 0 0 -2px,  38px 0 0 2px, 
+                        -14px 0 0 -2px,  -38px 0 0 -2px
+    }   
+  }
+
+  @keyframes animloader45 { 
+    0% { box-shadow: -38px -12px ,  -14px 0,  14px 0, 38px 0 }   
+    33% { box-shadow: -38px 0px, -14px -12px,  14px 0, 38px 0 }   
+    66% { box-shadow: -38px 0px , -14px 0, 14px -12px, 38px 0 }   
+    100% { box-shadow: -38px 0 , -14px 0, 14px 0 , 38px -12px }   
+  }
+
+
+  @keyframes animloader46 {
+    0% { 
+      background: rgba($lite, 1);
+      box-shadow: 9px -19px 0 -1px rgba($lite, 0),
+       28px -19px 0 -2px rgba($lite, 0), 
+       39px -5px 0 -3px rgba($lite, 0), 
+       34px 10px 0 -4px rgba($lite, 0), 
+       22px 17px 0 -5px rgba($lite, 0), 
+       9px 16px 0 -6px rgba($lite, 0);
+     }
+    14% { 
+      background: rgba($lite, 0);
+      box-shadow: 9px -19px 0 -1px rgba($lite, 1),
+       28px -19px 0 -2px rgba($lite, 0), 
+       39px -5px 0 -3px rgba($lite, 0), 
+       34px 10px 0 -4px rgba($lite, 0), 
+       22px 17px 0 -5px rgba($lite, 0), 
+       9px 16px 0 -6px rgba($lite, 0);
+     }
+    28% { 
+      background: rgba($lite, 0);
+      box-shadow: 9px -19px 0 -1px rgba($lite, 0),
+       28px -19px 0 -2px rgba($lite, 1), 
+       39px -5px 0 -3px rgba($lite, 0), 
+       34px 10px 0 -4px rgba($lite, 0), 
+       22px 17px 0 -5px rgba($lite, 0), 
+       9px 16px 0 -6px rgba($lite, 0);
+     }
+    42% { 
+      background: rgba($lite, 0);
+      box-shadow: 9px -19px 0 -1px rgba($lite, 0),
+       28px -19px 0 -2px rgba($lite, 0), 
+       39px -5px 0 -3px rgba($lite, 1), 
+       34px 10px 0 -4px rgba($lite, 0), 
+       22px 17px 0 -5px rgba($lite, 0), 
+       9px 16px 0 -6px rgba($lite, 0);
+     }
+    57% { 
+      background: rgba($lite, 0);
+      box-shadow: 9px -19px 0 -1px rgba($lite, 0),
+       28px -19px 0 -2px rgba($lite, 0), 
+       39px -5px 0 -3px rgba($lite, 0), 
+       34px 10px 0 -4px rgba($lite, 1), 
+       22px 17px 0 -5px rgba($lite, 0), 
+       9px 16px 0 -6px rgba($lite, 0);
+     }
+    71% { 
+      background: rgba($lite, 0);
+      box-shadow: 9px -19px 0 -1px rgba($lite, 0),
+       28px -19px 0 -2px rgba($lite, 0), 
+       39px -5px 0 -3px rgba($lite, 0), 
+       34px 10px 0 -4px rgba($lite, 0), 
+       22px 17px 0 -5px rgba($lite, 1), 
+       9px 16px 0 -6px rgba($lite, 0);
+     }
+    85% { 
+      background: rgba($lite, 0);
+      box-shadow: 9px -19px 0 -1px rgba($lite, 0),
+       28px -19px 0 -2px rgba($lite, 0), 
+       39px -5px 0 -3px rgba($lite, 0), 
+       34px 10px 0 -4px rgba($lite, 0), 
+       22px 17px 0 -5px rgba($lite, 0), 
+       9px 16px 0 -6px rgba($lite, 1);
+     }
+    100% { 
+      background: rgba($lite, 0.5);
+      box-shadow: 9px -19px 0 -1px rgba($lite, 0),
+       28px -19px 0 -2px rgba($lite, 0), 
+       39px -5px 0 -3px rgba($lite, 0), 
+       34px 10px 0 -4px rgba($lite, 0), 
+       22px 17px 0 -5px rgba($lite, 0), 
+       9px 16px 0 -6px rgba($lite, 0);
+     }
+
+  }
+
+  @keyframes animloader34 {
+    0% { border-color: rgba($lite, 0.15)  rgba($lite, 0.25)  rgba($lite, 0.35)  rgba($lite, 0.75);}
+    33% { border-color: rgba($lite, 0.75)  rgba($lite, 0.15)  rgba($lite, 0.25)  rgba($lite, 0.35);}
+    66% { border-color: rgba($lite, 0.35)  rgba($lite, 0.75)  rgba($lite, 0.15)  rgba($lite, 0.25);}
+    100% { border-color: rgba($lite, 0.25)  rgba($lite, 0.35)  rgba($lite, 0.75)  rgba($lite, 0.15);}
+  }
+
+
+
+  
+  @keyframes animloader51 {
+    0% { border-color: rgba($lite, 1)  rgba($lite, 0)  rgba($lite, 0)  rgba($lite, 0);}
+    33% { border-color: rgba($lite, 1)  rgba($lite, 1)  rgba($lite, 0)  rgba($lite, 0);}
+    66% { border-color: rgba($lite, 1)  rgba($lite, 1)  rgba($lite, 1)  rgba($lite, 0);}
+    100% { border-color: rgba($lite, 1)  rgba($lite, 1)  rgba($lite, 1)  rgba($lite, 1);}
+  }
+
+
+  @keyframes animloader57 {
+    0% {  box-shadow: 0 0, 0 0, 0 0}
+    33% {  box-shadow: 24px 0px, 24px 0px, 24px 0px}
+    66% {  box-shadow: 24px 24px, 24px 24px, 24px 0px}
+    100% {  box-shadow: 0px 24px, 24px 24px, 24px 0px}
+  }
+  
+  @keyframes animloader58 {
+    0% , 32%  { box-shadow: 0 24px rgba($lite, 1), 24px 24px rgba($lite, 0), 24px 48px rgba($lite, 0), 0px 48px rgba($lite, 0) }
+    33% , 65%  { box-shadow: 0 24px rgba($lite, 1), 24px 24px rgba($lite, 1), 24px 48px rgba($lite, 0), 0px 48px rgba($lite, 0) }
+    66% , 99%  { box-shadow: 0 24px rgba($lite, 1), 24px 24px rgba($lite, 1), 24px 48px rgba($lite, 1), 0px 48px rgba($lite, 0) }
+    100%   { box-shadow: 0 24px rgba($lite, 1), 24px 24px rgba($lite, 1), 24px 48px rgba($lite, 1), 0px 48px rgba($lite, 1) }
+  }
+  @keyframes animloader58m{
+    0%{ transform: translate(0, 0) rotateX(0) rotateY(0)}
+    33%{ transform: translate(100%, 0) rotateX(0) rotateY(180deg)}
+    66%{ transform: translate(100%, 100%) rotateX(-180deg) rotateY(180deg)}
+    100%{ transform: translate(0, 100%) rotateX(-180deg) rotateY(360deg)}
+  }
+
+  
+  @keyframes flipX {
+    0%{ transform: perspective(200px) rotateX(0deg) rotateY(0deg); }
+    50%{ transform: perspective(200px) rotateX(-180deg) rotateY(0deg); }
+    100%{ transform: perspective(200px) rotateX(-180deg) rotateY(-180deg) }
+  }
+  @keyframes fill {
+    0%{ box-shadow: 0 0  inset }
+    100%{ box-shadow: 0 -48px inset }
+  }
+
+  @keyframes fillX {
+    0%{ box-shadow: 0 0 inset }
+    100%{ box-shadow: 48px 0 inset }
+  }
+
+  @keyframes animloader56{
+    0%{ transform: translate(0, 0) rotateX(0) rotateY(0)}
+    25%{ transform: translate(100%, 0) rotateX(0) rotateY(180deg)}
+    50%{ transform: translate(100%, 100%) rotateX(-180deg) rotateY(180deg)}
+    75%{ transform: translate(0, 100%) rotateX(-180deg) rotateY(360deg)}
+    100%{ transform:  translate(0, 0) rotateX(0) rotateY(360deg) }
+  }
+
+
+  @keyframes animloader59 {
+    0%  { box-shadow: 0 24px rgba($lite, 0), 24px 24px rgba($lite, 0), 24px 48px rgba($lite, 0), 0px 48px rgba($lite, 0) }
+    12%  { box-shadow: 0 24px rgba($lite, 1), 24px 24px rgba($lite, 0), 24px 48px rgba($lite, 0), 0px 48px rgba($lite, 0) }
+    25% { box-shadow: 0 24px rgba($lite, 1), 24px 24px rgba($lite, 1), 24px 48px rgba($lite, 0), 0px 48px rgba($lite, 0) }
+    37% { box-shadow: 0 24px rgba($lite, 1), 24px 24px rgba($lite, 1), 24px 48px rgba($lite, 1), 0px 48px rgba($lite, 0) }
+    50% { box-shadow: 0 24px rgba($lite, 1), 24px 24px rgba($lite, 1), 24px 48px rgba($lite, 1), 0px 48px rgba($lite, 1) }
+    62% { box-shadow: 0 24px rgba($lite, 0), 24px 24px rgba($lite, 1), 24px 48px rgba($lite, 1), 0px 48px rgba($lite, 1) }
+    75% { box-shadow: 0 24px rgba($lite, 0), 24px 24px rgba($lite, 0), 24px 48px rgba($lite, 1), 0px 48px rgba($lite, 1) }
+    87%{ box-shadow: 0 24px rgba($lite, 0), 24px 24px rgba($lite, 0), 24px 48px rgba($lite, 0), 0px 48px rgba($lite, 1) }
+    100%{ box-shadow: 0 24px rgba($lite, 0), 24px 24px rgba($lite, 0), 24px 48px rgba($lite, 0), 0px 48px rgba($lite, 0) }
+}
+
+@keyframes animloader60 {
+  0%   { top: 0;   color: rgba($lite, 1) }
+  50%  { top: 30px;   color: rgba($lite, 0.2) }
+  100% { top: 0;    color: rgba($lite, 1)}
+}
+
+  @keyframes animloader61 {
+    0% { height: $size;}
+    100% { height: $size / 10;}
+  }
+  @keyframes animloader61m {
+    0% { height: 40px; transform: translateY(0);}
+    100% { height: 10px; transform: translateY(30px)}
+  }
+
+  @keyframes animloader63 {
+  0% { box-shadow: 20px 0 rgba($lite, 0.25), 40px 0 rgba($lite, 1), 60px 0 rgba($lite, 1),}
+  50% { box-shadow: 20px 0 rgba($lite, 1), 40px 0 rgba($lite, 0.25), 60px 0 rgba($lite, 1),}
+  100% { box-shadow: 20px 0 rgba($lite, 1), 40px 0 rgba($lite, 1), 60px 0 rgba($lite, 0.25),}
+  }
+@keyframes animloader64 {
+  0% { box-shadow: 20px -10px, 40px 10px, 60px 0px}
+  25% { box-shadow: 20px 0px, 40px  0px, 60px 10px}
+  50% { box-shadow: 20px 10px, 40px -10px, 60px 0px}
+  75% { box-shadow: 20px 0px, 40px 0px, 60px -10px}
+  100% { box-shadow: 20px -10px, 40px 10px, 60px 0px}
+ }
+
+@keyframes animloader65 {
+  0% { box-shadow:  -10px 20px, 10px 35px , 0px 50px}
+  25% { box-shadow: 0px 20px ,  0px 35px, 10px 50px}
+  50% { box-shadow: 10px 20px, -10px 35px, 0px 50px}
+  75% { box-shadow: 0px 20px, 0px  35px, -10px 50px}
+  100% { box-shadow:-10px 20px, 10px  35px, 0px 50px}
+ }
+@keyframes animloader66 {
+  0% { width: $size/10;}
+  100% { width: $size;}
+}
+
+
+@keyframes animloader68 {
+  0% { box-shadow: 20px 0 rgba($lite, 0), 40px 0 rgba($lite, 0), 60px 0 rgba($lite, 0), 80px 0 rgba($lite, 0), 100px 0 rgba($lite, 0)}
+  20% { box-shadow: 20px 0 rgba($lite, 1), 40px 0 rgba($lite, 0), 60px 0 rgba($lite, 0), 80px 0 rgba($lite, 0), 100px 0 rgba($lite, 0)}
+  40% { box-shadow: 20px 0 rgba($lite, 1), 40px 0 rgba($lite, 1), 60px 0 rgba($lite, 0), 80px 0 rgba($lite, 0), 100px 0 rgba($lite, 0)}
+  60% { box-shadow: 20px 0 rgba($lite, 1), 40px 0 rgba($lite, 1), 60px 0 rgba($lite, 1), 80px 0 rgba($lite, 0), 100px 0 rgba($lite, 0)}
+  80% { box-shadow: 20px 0 rgba($lite, 1), 40px 0 rgba($lite, 1), 60px 0 rgba($lite, 1), 80px 0 rgba($lite, 1), 100px 0 rgba($lite, 0)}
+  100% { box-shadow: 20px 0 rgba($lite, 1), 40px 0 rgba($lite, 1), 60px 0 rgba($lite, 1), 80px 0 rgba($lite, 1), 100px 0 rgba($lite, 1)}
+}
+
+@keyframes animloader69 {
+  0% {   width: 20px; }
+  100% { width: $size;}
+ }
+
+
+ @keyframes animloader71 {
+  0% { left:0 ;  transform: translateX(-100%)}
+  100% { left:100% ;  transform: translateX(0%)}
+ }
+
+
+   @keyframes animloader89{
+    0%{ box-shadow: 11px 0 rgba($lite, 0), 22px 0 rgba($lite, 0), 33px 0 rgba($lite, 0), 44px 0 rgba($lite, 0)}
+    25%{ box-shadow: 11px 0 rgba($lite, 1), 22px 0 rgba($lite, 0), 33px 0 rgba($lite, 0), 44px 0 rgba($lite, 0)}
+    50%{ box-shadow: 11px 0 rgba($lite, 1), 22px 0 rgba($lite, 1), 33px 0 rgba($lite, 0), 44px 0 rgba($lite, 0)}
+    75%{ box-shadow: 11px 0 rgba($lite, 1), 22px 0 rgba($lite, 1), 33px 0 rgba($lite, 1), 44px 0 rgba($lite, 0)}
+    100%{ box-shadow: 11px 0 rgba($lite, 1), 22px 0 rgba($lite, 1), 33px 0 rgba($lite, 1), 44px 0 rgba($lite, 1)}
+
+  }
+  @keyframes animloader91 {
+    0%{ box-shadow: 0 0  inset }
+    100%{ box-shadow: 0 -70px inset }
+  }
+
+  @keyframes animloader92 {
+    0%{ box-shadow: 2px 0px rgba($lite, 0), 12px 0px rgba($lite , 0.3), 20px 0px rgba($lite, 0) }
+    50%{ box-shadow: 2px -5px rgba($lite, 0.5), 12px -3px rgba($lite, 0.5), 20px -2px rgba($lite, 0.6) }
+    100%{ box-shadow: 2px -8px rgba($lite, 0), 12px -5px rgba($lite, 0), 20px -5px rgba($lite, 0) }
+
+  }
+  @keyframes animloader93 {
+    0% { transform: rotate(-70deg) }
+    10% { transform: rotate(-40deg)}
+    20% , 45% , 35%  { transform: rotate(-10deg) }
+    40% , 30%{ transform: rotate(-30deg) }
+    50% , 60%{ transform: rotate(20deg); }
+    55% , 65% , 75% { transform: rotate(40deg); }
+    70% { transform: rotate(45deg); }
+    85%, 90% { transform: rotate(50deg); }
+    95% { transform: rotate(75deg); }
+    100% , 93%{ transform: rotate(70deg); }
+  }
+
+  @keyframes animloader94 {
+    0% { transform: translate(-10px , -10px) }
+    25% { transform: translate(-10px , 10px) }
+    50% { transform: translate(10px , 10px) }
+    75% { transform: translate(10px , -10px) }
+    100% { transform: translate(-10px , -10px) }
+  }
+
+
+  @keyframes animloader98 {
+    0% { background-position: 0px 80px}
+    100% { background-position: 0px 0px}
+  }
+  @keyframes animloader98s {
+    0%  { box-shadow: 4px -10px rgba($lite, 0),   6px -0px rgba($lite, 0),      8px -15px rgba($lite, 0),     12px -0px rgba($lite, 0)   }
+    20% { box-shadow: 4px -20px rgba($lite, 0),   8px -10px rgba($lite, 0),     10px -30px rgba($lite, 0.5),  15px -5px rgba($lite, 0)   }
+    40% { box-shadow: 2px -40px rgba($lite, 0.5), 8px -30px rgba($lite, 0.4),   8px -60px rgba($lite, 0.5),   12px -15px rgba($lite, 0.5)}
+    60% { box-shadow: 4px -60px rgba($lite, 0.5), 6px -50px rgba($lite, 0.4),   10px -90px rgba($lite, 0.5),  15px -25px rgba($lite, 0.5)}
+    80% { box-shadow: 2px -80px rgba($lite, 0.5), 4px -70px rgba($lite, 0.4),   8px -120px rgba($lite, 0),    12px -35px rgba($lite, 0.5)}
+    100%{ box-shadow: 4px -100px rgba($lite, 0),  8px -90px rgba($lite, 0),     10px -120px rgba($lite, 0),   15px -45px rgba($lite, 0)  }
+  }
+@keyframes animloader99{
+  0% { box-shadow:  0px 0px  inset}
+  100% { box-shadow:  0px -80px  inset}
+}
+
+@keyframes animloader100 {
+  0%  {  box-shadow: 
+          25px 0 rgba($lite, 1),
+          50px 0 rgba($lite, 1),
+          75px 0 rgba($lite, 1), 
+         100px 0 rgba($lite, 1), 
+         125px 0 rgba($lite, 1), 
+         150px 0 rgba($lite, 1),
+          25px 0 rgba($lite, 1),
+          50px 0 rgba($lite, 1),
+          75px 0 rgba($lite, 1), 
+         100px 0 rgba($lite, 1), 
+         125px 0 rgba($lite, 1), 
+         150px 0 rgba($lite, 1)
+      }
+  50%  {  box-shadow: 
+          25px 20px rgba($lite, 1),
+          50px 60px rgba($lite, 0),
+          75px 30px rgba($lite, 0), 
+         100px 70px rgba($lite, 0), 
+         125px 40px rgba($lite, 1), 
+         150px 60px rgba($lite, 0),
+          25px 20px rgba($lite, 1),
+          50px 30px rgba($lite, 1),
+          75px 10px rgba($lite, 1), 
+         100px 30px rgba($lite, 1), 
+         125px 30px rgba($lite, 0), 
+         150px 30px rgba($lite, 0)
+      }
+  100%  {  box-shadow: 
+          25px 60px rgba($lite, 0),
+          50px 60px rgba($lite, 0),
+          75px 50px rgba($lite, 0), 
+         100px 70px rgba($lite, 0), 
+         125px 70px rgba($lite, 0), 
+         150px 60px rgba($lite, 0),
+          25px 80px rgba($lite, 0),
+          50px 80px rgba($lite, 0),
+          75px 70px rgba($lite, 0), 
+         100px 60px rgba($lite, 0), 
+         125px 30px rgba($lite, 0), 
+         150px 30px rgba($lite, 0)
+      }
+  }
+
+  @keyframes animloader105 {
+    0%{ height: 64px; }
+    90%, 100% {  height: 0px; }
+  }
+
+@keyframes animloader106back {
+  0% , 30%, 70%  { transform: translateY(0px)}
+ 20%, 40%,  100% { transform: translateY(-5px)}
+}
+
+@keyframes animloader106 {
+  0% {  
+    box-shadow: 4px 4px 12px 2px rgba($brand, 0.75);
+    width: 34px;
+    height: 34px;
+    background-position: -44px -44px;
+    background-size: 100px 100px;}
+  100% { 
+    box-shadow: 2px 2px 8px 0px rgba($brand, 0.5);
+    width: 30px;
+    height: 28px;  
+    background-position: -36px -36px; 
+    background-size: 80px 80px;
+  }
+}
+
+@keyframes animloader108 {
+  0% {  box-shadow: 0 0 0 -2px , 0 0 0 -2px , 0 0 0 -5px , 0 0 0 -5px }
+  20% {  box-shadow: 40px -1px 0 -2px , 0 0 0 -2px , 40px -1px 0 -5px , 0 0 0 -5px}
+  40% {  box-shadow: 40px -1px 0 -2px , -40px -1px 0 -2px ,  40px -1px 0 -5px ,-40px -1px 0 -5px}
+  60% {  box-shadow: 40px -1px 0 -2px , -40px -1px 0 -2px ,   23px -29px 0 -5px ,-40px -1px 0 -5px}
+  80% , 95% {  box-shadow: 40px -1px 0 -2px , -40px -1px 0 -2px ,   23px -29px 0 -5px , -23px -29px 0 -5px}
+  100% {  box-shadow: 40px -1px 0 -2px rgba($lite, 0), -40px -1px 0 -2px rgba($lite, 0),   23px -29px 0 -5px rgba($lite, 0), -23px -29px 0 -5px rgba($lite, 0)}
+}
+
+@keyframes animloader108s {
+  0% {  box-shadow: 0 0 0 -2px , 0 0 0 -2px , 0 0 0 -5px , 0 0 0 -5px }
+  20% {  box-shadow: 40px 2px 0 -2px  , 0 0 0 -2px , 40px 2px 0 -5px , 0 0 0 -5px }
+  40% {  box-shadow: 40px 2px 0 -2px  , -40px 2px 0 -2px , 40px 2px 0 -5px , -40px 2px 0 -5px }
+  60% {  box-shadow: 40px 2px 0 -2px  , -40px 2px 0 -2px , 23px -23px 0 -5px , -40px 2px 0 -5px }
+  80%, 95% {  box-shadow: 40px 2px 0 -2px  , -40px 2px 0 -2px , 23px -23px 0 -5px , -23px -23px 0 -5px }
+  100% {  box-shadow: 40px 2px 0 -2px  rgba($lite, 0), -40px 2px 0 -2px rgba($lite, 0), 23px -23px 0 -5px rgba($lite, 0), -23px -23px 0 -5px rgba($lite, 0)}
+}
+
+@keyframes animloader115 {
+    0% { box-shadow: 10px 0 rgba($lite, 0), 20px 0 rgba($lite, 0);}
+    50% { box-shadow: 10px 0 rgba($lite, 1), 20px 0 rgba($lite, 0);}
+    100% { box-shadow: 10px 0 rgba($lite, 1), 20px 0 rgba($lite, 1);}
+}
+
+
+@keyframes animloader116 {
+    0%  { top: 8px; transform: rotate(0deg) scale(1);}
+    100% { top: 0px; transform: rotate(180deg) scale(1.5);}
+}
+@keyframes animloader117 {
+    0%  { box-shadow: 0 0 inset;}
+    100%  { box-shadow: 0 -28px inset;}
+}
+
+  @keyframes animMarker {
+    0% { transform: rotate(45deg) translate(5px , 5px) }
+    100% { transform: rotate(45deg) translate(-5px , -5px) }
+  }
+  @keyframes animShadow {
+    0% { transform: scale(0.5) }
+    100% { transform: scale(1) }
+  }
+
+@keyframes bump {
+    0% {  transform: translate(-50%, 5px) }
+    100% {  transform: translate(-50% , -5px ) }
+  }
+
+
+@keyframes animPend {
+    0% {  transform: rotate(22deg);}
+    50% {  transform: rotate(0deg);}
+  }
+@keyframes animPend2 {
+    0% , 55%{  transform: rotate(0deg);}
+    100% {  transform: rotate(-22deg);}
+  }
+
+
+@keyframes animloader85 {
+  0% , 100% {   transform: translateX(-150%)}
+  50% {   transform: translateX(150%)}
+ }
+
+@keyframes barStripe {
+    0% { background-position: 1em 0; }
+    100% { background-position: 0 0; }
+}
+@keyframes raceBoard {
+    0% { background-position: 0 0, 16px 16px}
+    100% { background-position: 32px 0px, 48px 16px;}
+}
+@keyframes fadePush {
+  0% {  transform: translate(-50% , -15px ); opacity: 0; }
+  50% {  transform: translate(-50% , 0px ); opacity: 1; }
+  100%{  transform: translate(-50%, 15px); opacity: 0; }
+}
+@keyframes fadePull {
+  0%{  transform: translate(-50%, 15px); opacity: 0; }
+  50% {  transform: translate(-50% , 0px ); opacity: 1; }
+  100% {  transform: translate(-50% , -15px ); opacity: 0; }
+}
+ 
+@keyframes hitZak {
+  0% { left:0 ;  transform: translateX(-1%)}
+  100% { left:100% ;  transform: translateX(-99%)}
+ }
+
+@keyframes animFw {
+  0% { width: 0}
+  100% { width:100%}
+ }
+@keyframes coli1 {
+  0% { transform: rotate(-45deg) translateX(0px); opacity: 0.7;}
+  100% { transform: rotate(-45deg) translateX(-45px); opacity: 0;}
+ }
+@keyframes coli2 {
+  0% { transform: rotate(45deg) translateX(0px); opacity: 1;}
+  100% { transform: rotate(45deg) translateX(-45px); opacity: 0.7;}
+ }
+
+
+@keyframes animloader121 {
+    0% { background-position: 0% 0, 0 0, 120px 0, 120px 40px, 120px 80px, 120px 120px;}
+    100% { background-position: 100% 0, 0 0, 120px 0, 120px 40px, 120px 80px, 120px 120px;}
+}
+@keyframes animloader123 {
+    0% { background-position: 0% 0, 120px 0, 120px 40px, 120px 80px}
+    100% { background-position: 100% 0, 120px 0, 120px 40px, 120px 80px}
+}
+@keyframes animloader124 {
+    0% { background-position: 0% 0, 0 0, 70px 5px, 70px 38px, 0px 66px}
+    100% { background-position: 150% 0, 0 0, 70px 5px, 70px 38px, 0px 66px}
+}
+@keyframes animloader126 {
+    0% { background-position:  0 0, 0 0, 0px 85px, 0px 110px}
+    100% { background-position:  150% 0, 0 0, 0px 85px, 0px 110px}
+}
+
+@keyframes floating {
+    0%  { transform: translateY(0);}
+    100%  { transform: translateY(-25px);}
+}
+
+@keyframes animloader110 {
+    0%  { height: 100% }
+    100%  { height: 0% }
+}
+
+@keyframes animloader111 {
+  0%  { width: 0% }
+  100%  { width: 100% }
+}
+@keyframes animloader113 {
+  0%  { transform: translate(0px, 0px) scaleX(1) }
+  14%  { transform: translate(-12px, -16px) scaleX(1.05) }
+  28%  { transform: translate(-27px, -28px) scaleX(1.07) }
+  42%  { transform: translate(-46px, -35px) scaleX(1.1) }
+  57%  { transform: translate(-70px, -37px) scaleX(1.1) }
+  71%  { transform: translate(-94px, -32px) scaleX(1.07) }
+  85%  { transform: translate(-111px, -22px) scaleX(1.05) }
+  100%  { transform: translate(-125px, -9px) scaleX(1) }  
+  }
+  
+  @keyframes animloader113L {
+      0%   { box-shadow: 0 -6px, -122.9px -8px}
+     25%, 75%  { box-shadow: 0 0px, -122.9px -8px}
+      100%   { box-shadow: 0 0px, -122.9px -16px}
+  }
+@keyframes animloader114 {
+  0%  { transform: translateY(8px) scaleY(1) scaleX(1.25)}
+  25%, 75% { transform: translateY(-5px) scaleY(1.2) scaleX(1)}
+  50%  { transform: translateY(-10px) scaleY(1) scaleX(1)}
+  100% { transform: translateY(8px) scaleY(0.8) scaleX(0.8)}
+  }
+  
+@keyframes animloader118 {
+    0%  { transform: scale(0.8);}
+    100%  { transform: scale(1.2);}
+}
+  
+@keyframes animloader119 {
+    0%  { filter: blur(0px); transform: skew(0deg);}
+    100%  { filter: blur(3px); transform: skew(-4deg);}
+}
