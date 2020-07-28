@@ -73,6 +73,38 @@ header {
   padding: 10px 20px;
   min-height: 50px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header nav .nav-btn {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: 110% auto;
+  background-position: center;
+  border-radius: 50%;
+}
+
+header nav .nav-btn.git {
+  background-image: url("../images/git.png");
+}
+
+header nav .nav-btn.codepen {
+  background-image: url("../images/codepen.png");
+}
+
+header nav .nav-btn + .nav-btn {
+  margin-left: 10px;
 }
 
 .brand {
