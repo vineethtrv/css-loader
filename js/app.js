@@ -29,7 +29,7 @@ function createLoader(i){
     // Create html
     let sectionEl = document.createElement('div');
     sectionEl.setAttribute('class', 'section');
-    sectionEl.setAttribute('id', loader.id);
+    sectionEl.setAttribute('data-id', loader.id);
     sectionEl.setAttribute('data-index', (i + 1));
     let shadowRoot = sectionEl.attachShadow({ mode: 'open' });
     

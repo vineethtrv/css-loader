@@ -99,7 +99,7 @@ export const PROGRESS = [
   }
 }`,
     }, {
-        id: "4e806z44erh",
+        id: "prog-crak-erh",
         html: `<span class="loader"></span>`,
         css: `.loader {
   width: 0;
@@ -367,7 +367,469 @@ export const PROGRESS = [
     background-position: 0 0;
   }
 }`,
-    }, {
+    },
+    
+    {
+      id: "prog-fill",
+      html: `<span class="loader"></span>`,
+      css: `.loader{
+        display: block;
+        position: relative;
+        height: 12px;
+        width: 80%;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .loader:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0;
+        background: #FF3D00;
+        animation: 6s prog ease-in infinite;
+      }
+      
+      @keyframes prog {
+        to  {   width: 100%;}
+      }
+      `,
+  }, 
+  {
+    id: "prog-go-line",
+    html: `<span class="loader"></span>`,
+    css: `.loader{
+      display: block;
+      position: relative;
+      height: 12px;
+      width: 80%;
+      border: 1px solid #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .loader::after {
+      content: '';
+      width: 40%;
+      height: 100%;
+      background: #FF3D00;
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      animation: animloader 2s linear infinite;
+    }
+    
+    @keyframes animloader {
+      0% {
+        left: 0;
+        transform: translateX(-100%);
+      }
+      100% {
+        left: 100%;
+        transform: translateX(0%);
+      }
+    }
+    `,
+}, 
+{
+  id: "prog-plain-fill",
+  html: `<span class="loader"></span>`,
+  css: `.loader{
+    display: block;
+    position: relative;
+    height: 25px;
+    width: 200px;
+    background: #fff;
+    overflow: hidden;
+  }
+  .loader:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: #FF3D00;
+    animation: 6s prog ease-in infinite;
+  }
+  @keyframes prog {
+    to  {   width: 100%;}
+  }
+  `,
+}, 
+{
+  id: "prog-fill-text",
+  html: `<span class="loader"></span>`,
+  css: `.loader{
+    display: block;
+    position: relative;
+    height: 32px;
+    width: 200px;
+    background: #fff;
+    border:2px solid #fff;
+    color: red;
+    overflow: hidden;
+  }
+  .loader::before{
+    content: '';
+    background: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    animation: loading 10s linear infinite;
+  }
+  .loader:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgb(0,255,255);
+    mix-blend-mode: difference;
+    animation: percentage 10s linear infinite;
+  }
+  
+  @keyframes loading {
+    0% { width: 0 }
+    100% { width: 100% }
+  }
+  @keyframes percentage {
+    0% { content: "0%"}
+    5% { content: "5%"}
+    10% { content: "10%"}
+    20% { content: "20%"}
+    30% { content: "30%"}
+    40% { content: "40%"}
+    50% { content: "50%"}
+    60% { content: "60%"}
+    70% { content: "70%"}
+    80% { content: "80%"}
+    90% { content: "90%"}
+    95% { content: "95%"}
+    96% { content: "96%"}
+    97% { content: "97%"}
+    98% { content: "98%"}
+    99% { content: "99%"}
+    100% { content: "100%"}
+  }
+  
+  `,
+},
+
+{
+  id: "pro-bx-ball-rp",
+  html: `<span class="loader"></span>`,
+  css: `.loader{
+    display: block;
+    position: relative;
+    height: 32px;
+    width: 140px;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+  .loader:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #FF3D00;
+    animation: ballbns 2s ease-in-out infinite alternate;
+  }
+  @keyframes ballbns {
+    0% {  left: 0; transform: translateX(0%); }
+    100% {  left: 100%; transform: translateX(-100%); }
+  }
+  `,
+},
+
+{
+  id: "pro-fir-ball",
+  html: `<span class="loader"></span>`,
+  css: `
+  .loader{
+    display: block;
+    position: relative;
+    height: 32px;
+    width: 150px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 2px solid #FFF;
+    border-radius: 20px;
+  }
+  .loader:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #FF3D00;
+    animation: ballbns 3s ease-in-out infinite;
+  }
+  
+  @keyframes ballbns {
+    0% {  
+        left: 0; 
+        transform: translateX(0%); 
+        box-shadow: 
+        -5px 0 0 -1px rgba(255, 61, 0, 0.9),
+        -10px 0 0 -2px rgba(255, 61, 0, 0.8),
+        -15px 0 0 -4px rgba(255, 61, 0, 0.6),
+        -20px 0 0 -6px rgba(255, 61, 0, 0.4),
+        -25px 0 0 -8px rgba(255, 61, 0, 0.2);
+    }
+    49% {  
+        left: 100%; 
+        transform: translateX(-100%); 
+        box-shadow: 
+        -5px 0 0 -1px rgba(255, 61, 0, 0.9),
+        -10px 0 0 -2px rgba(255, 61, 0, 0.8),
+        -15px 0 0 -4px rgba(255, 61, 0, 0.6),
+        -20px 0 0 -6px rgba(255, 61, 0, 0.4),
+        -25px 0 0 -8px rgba(255, 61, 0, 0.2);
+    }
+    51% {  
+        left: 100%; 
+        transform: translateX(-100%); 
+        box-shadow: 
+        5px 0 0 -1px rgba(255, 61, 0, 0.9),
+        10px 0 0 -2px rgba(255, 61, 0, 0.8),
+        15px 0 0 -4px rgba(255, 61, 0, 0.6),
+        20px 0 0 -6px rgba(255, 61, 0, 0.4),
+        25px 0 0 -8px rgba(255, 61, 0, 0.2);
+    }
+    100% {  
+        left: 0; 
+        transform: translateX(0%); 
+        box-shadow: 
+        5px 0 0 -1px rgba(255, 61, 0, 0.9),
+        10px 0 0 -2px rgba(255, 61, 0, 0.8),
+        15px 0 0 -4px rgba(255, 61, 0, 0.6),
+        20px 0 0 -6px rgba(255, 61, 0, 0.4),
+        25px 0 0 -8px rgba(255, 61, 0, 0.2);
+    }
+  }  
+  `,
+},
+
+{
+  id: "pro-ball-grb",
+  html: `<span class="loader"></span>`,
+  css: `.loader{
+    display: block;
+    position: relative;
+    height: 32px;
+    width: 140px;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    box-sizing: border-box;
+    animation: balancing 2s linear infinite alternate;
+    transform-origin: center center;
+  }
+  .loader:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 52px;
+    height: 26px;
+    border-radius: 20px;
+    background: #FF3D00;
+    animation: ballbns 2s linear infinite alternate;
+  }
+  @keyframes ballbns {
+    0% {  left: 0; transform: translateX(0%); }
+    100% {  left: 100%; transform: translateX(-100%); }
+  }
+  @keyframes balancing {
+    0% {  transform: rotate(-25deg); }
+    50% {  transform: rotate(0deg); }
+    100% {  transform: rotate(25deg); }
+  }
+  `,
+},
+{
+  id: "pro-bal-ln-rp",
+  html: `<span class="loader"></span>`,
+  css: `.loader{
+    display: block;
+    position: relative;
+    height: 32px;
+    width: 120px;
+    background: linear-gradient(#FFF 4px, transparent 0) no-repeat;
+    background-position: 0 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .loader:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #FF3D00;
+    border:6px solid #FFF;
+    box-sizing: border-box;
+    animation: ballbns 1.5s linear infinite;
+  }
+  
+  @keyframes ballbns {
+    0% {  left: 0; transform: translateX(-100%); }
+    100% {  left: 100%; transform: translateX(0%); }
+  }
+  `,
+},
+{
+  id: "pro-dmnd-tgl",
+  html: `<span class="loader"></span>`,
+  css: `.loader{
+    display: block;
+    position: relative;
+    height: 32px;
+    width: 100px;
+    background: linear-gradient(#FFF 4px, transparent 0) no-repeat;
+    background-position: 0 14px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .loader:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 24px;
+    height: 24px;
+    background: #FF3D00;
+    animation: ballbns 1s linear infinite alternate ;
+  }
+  
+  @keyframes ballbns {
+    0% {  left: 0; transform: translateX(0%) rotate(45deg); }
+    100% {  left: 100%; transform: translateX(-100%) rotate(45deg); }
+  }
+  `,
+},
+{
+  id: "pro-srl-rp",
+  html: `<span class="loader"></span>`,
+  css: `.loader{
+    display: block;
+    position: relative;
+    height: 32px;
+    border: 2px solid #fff;
+    width: 120px;
+    background: #fff;
+    box-sizing: border-box;
+  }
+  .loader:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 28px;
+    height: 28px;
+    background: #FF3D00;
+    animation: ballbns 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes ballbns {
+    0% {  left: 0; transform: translateX(0%); }
+    100% {  left: 100%; transform: translateX(-100%); }
+  }
+  `,
+},
+
+{
+  id: "pro-fil-gp-sqr",
+  html: `<span class="loader"></span>`,
+  css: `.loader{
+    display: block;
+    position: relative;
+    height: 20px;
+    width: 140px;
+    background-image: 
+    linear-gradient(#FFF 20px, transparent 0), 
+    linear-gradient(#FFF 20px, transparent 0), 
+    linear-gradient(#FFF 20px, transparent 0), 
+    linear-gradient(#FFF 20px, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    background-position: 0 0, 40px 0, 80px 0, 120px 0;
+    animation: pgfill 1s linear infinite;
+  }
+  
+  @keyframes pgfill {
+    0% {   background-image: linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0); }
+    25% {   background-image: linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0); }
+    50% {   background-image: linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0); }
+    75% {   background-image: linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0); }
+    100% {   background-image: linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0); }
+  }
+  `,
+},
+{
+  id: "pro-sqr-run",
+  html: `<span class="loader"></span>`,
+  css: `.loader{
+    display: block;
+    position: relative;
+    height: 20px;
+    width: 140px;
+    background-image: 
+    linear-gradient(#FFF 20px, transparent 0), 
+    linear-gradient(#FFF 20px, transparent 0), 
+    linear-gradient(#FFF 20px, transparent 0), 
+    linear-gradient(#FFF 20px, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    background-position: 0 0, 40px 0, 80px 0, 120px 0;
+    animation: pgfill 1s linear infinite;
+  }
+  @keyframes pgfill {
+    0% {   background-image: linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0); }
+    25% {   background-image: linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0); }
+    50% {   background-image: linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0); }
+    75% {   background-image: linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0); }
+    100% {   background-image: linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0); }
+  }
+  `,
+},
+{
+  id: "pro-bb-ln-fl",
+  html: `<span class="loader"></span>`,
+  css: `.loader{
+    width:120px;
+    height:24px;
+    -webkit-mask:
+      radial-gradient(circle closest-side,#fff 94%,#0000) 0 0/25% 100%,
+      linear-gradient(#fff 0 0) center/calc(100% - 12px) calc(100% - 12px) no-repeat;
+    mask:
+      radial-gradient(circle closest-side,#fff 94%,#0000) 0 0/25% 100%,
+      linear-gradient(#fff 0 0) center/calc(100% - 12px) calc(100% - 12px) no-repeat;
+    background: linear-gradient(#FF3D00 0 0) left/0% 100% no-repeat #fff;
+    animation:bblprg 2s infinite linear;
+  }
+  @keyframes bblprg {
+      100% {background-size:100% 100%}
+  }
+  `,
+},
+    {
         id: "6vqh50z2ump",
         html: `<span class="loader"></span>`,
         css: `.loader {
