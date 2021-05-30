@@ -545,4 +545,103 @@ export const TEXT = [
 }
 `,
     },
+    {
+      id: "text-fkeibm",
+      content: 'Loading',
+      html: `<span class="loader">Loading</span>`,
+      css: `.loader{
+        font-size: 48px;
+        color: #FFF;
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        position: relative;
+      }
+      .loader:after{
+        content: '';
+        height: 4px;
+        width:0%;
+        display: block;
+        background: #FF3D00;
+        animation: 5s lineGrow linear infinite;
+      }
+      
+      @keyframes lineGrow {to{width: 100%;}}
+`,
+  },
+    {
+      id: "text-ub-prog-im",
+      content: 'Loading',
+      html: `<span class="loader">Loading</span>`,
+      css: `.loader{
+        font-size: 48px;
+        color: #FFF;
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        position: relative;
+      }
+      .loader:after{
+        content: '';
+        height: 6px;
+        border: 1px solid;
+        border-radius: 10px;
+        display: block;
+        position: relative;
+        top: -8px;
+        z-index: -1;
+        box-shadow: 0 0 #FF3D00 inset;
+        animation: 10s lineGrow linear infinite;
+      }
+      
+      @keyframes lineGrow {to{box-shadow: 250px 0 #FF3D00 inset;}}
+`,
+  },{
+    id: "text-typ-an",
+    html: `<span class="loader"></span>`,
+    css: `.loader{
+      font-size: 48px;
+      color: #FFF;
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 400;
+      position: relative;
+    }
+    .loader:before{
+      content: '';
+      animation: 5s print linear alternate infinite;
+    }
+    .loader:after{
+      content: '';
+      position: absolute;
+      right: -4px;
+      top: 50%;
+      transform: translatey(-45%);
+      width: 2px;
+      height: 1.3em;
+      background: currentColor;
+      opacity: 0.8;
+      animation: 1s blink steps(2) infinite;
+    }
+    
+    @keyframes blink {
+      0%  { visibility: hidden;}
+      100%  { visibility: visible;}
+    }
+    @keyframes print {
+      0% { content: 'L'}
+      10% { content: 'Lo'}
+      20% { content: 'Loa'}
+      30% { content: 'Load'}
+      40% { content: 'Loadi'}
+      50% { content: 'Loadin'}
+      60% { content: 'Loading'}
+      70% { content: 'Loading.'}
+      80% { content: 'Loading..'}
+      90% , 100% { content: 'Loading...'}
+    }
+`,
+},
 ]
+
+
