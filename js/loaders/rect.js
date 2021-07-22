@@ -474,7 +474,48 @@ export const RECT = [
   }
 }
     `,
-  }, {
+  },
+  
+  {
+    id: "rot-addig",
+    html: `<span class="loader"></span>`,
+	css: `.loader {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        transform-origin:50% 125%;
+        animation: mov-y 1s infinite linear;
+      }
+      .loader:before,
+      .loader:after {
+        content:"";
+        flex:1;
+        background:#fff;
+        transform-origin: 0% 100%;
+        animation: rtr-x 1s infinite linear;
+      }
+      .loader:before {
+        transform-origin: 100% 100%;
+        animation-name: rtr-rx;
+      }
+
+      @keyframes mov-y {
+        0%,25%   {transform:translateY(0)     scaleY(1)}
+        49%   {transform:translateY(-75%)  scaleY(1)}
+        50%      {transform:translateY(-75%)  scaleY(-1)}
+        75%,100% {transform:translateY(-150%) scaleY(-1)}
+      }
+      @keyframes rtr-x {
+        25%,75% {transform: rotate(0deg)}
+        50%     {transform: rotate(90deg)}
+      }
+      @keyframes rtr-rx {
+        25%,75% {transform: rotate(0deg)}
+        50%     {transform: rotate(-90deg)}
+      }
+    `,
+  },
+  {
     id: "nyvy2vxxdig",
     html: `<span class="loader"></span>`,
 	css: `.loader {
@@ -555,7 +596,11 @@ export const RECT = [
   }
 }
     `,
-  }, {
+  },
+  
+  
+  
+  {
     id: "gsupn3q1npb",
     html: `<span class="loader"></span>`,
 	css: `.loader {
