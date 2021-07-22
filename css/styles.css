@@ -1335,17 +1335,57 @@ code {
 }
 
 #demo .loader {
-  width: 120px;
-  height: 24px;
-  -webkit-mask: radial-gradient(circle closest-side, #fff 94%, #0000) 0 0 / 25% 100%, linear-gradient(#fff 0 0) center/calc(100% - 12px) calc(100% - 12px) no-repeat;
-  mask: radial-gradient(circle closest-side, #fff 94%, #0000) 0 0 / 25% 100%, linear-gradient(#fff 0 0) center/calc(100% - 12px) calc(100% - 12px) no-repeat;
-  background: linear-gradient(#FF3D00 0 0) left/0% 100% no-repeat #fff;
-  animation: bblprg 2s infinite linear;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  transform-origin: 50% 125%;
+  animation: mov-y 1s infinite linear;
 }
 
-@keyframes bblprg {
-  100% {
-    background-size: 100% 100%;
+#demo .loader:before,
+#demo .loader:after {
+  content: "";
+  flex: 1;
+  background: #fff;
+  transform-origin: 0% 100%;
+  animation: rtr-x 1s infinite linear;
+}
+
+#demo .loader:before {
+  transform-origin: 100% 100%;
+  animation-name: rtr-rx;
+}
+
+@keyframes mov-y {
+  0%, 25% {
+    transform: translateY(0) scaleY(1);
+  }
+  49% {
+    transform: translateY(-75%) scaleY(1);
+  }
+  50% {
+    transform: translateY(-75%) scaleY(-1);
+  }
+  75%, 100% {
+    transform: translateY(-150%) scaleY(-1);
+  }
+}
+
+@keyframes rtr-x {
+  25%, 75% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes rtr-rx {
+  25%, 75% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-90deg);
   }
 }
 
