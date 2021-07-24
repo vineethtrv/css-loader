@@ -1337,55 +1337,45 @@ code {
 #demo .loader {
   width: 48px;
   height: 48px;
-  display: flex;
-  transform-origin: 50% 125%;
-  animation: mov-y 1s infinite linear;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
 }
 
-#demo .loader:before,
-#demo .loader:after {
+#demo .loader::before, #demo .loader::after {
   content: "";
-  flex: 1;
-  background: #fff;
-  transform-origin: 0% 100%;
-  animation: rtr-x 1s infinite linear;
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #FFF;
+  animation: prixClipFix 2s linear infinite;
 }
 
-#demo .loader:before {
-  transform-origin: 100% 100%;
-  animation-name: rtr-rx;
+#demo .loader::after {
+  inset: 8px;
+  transform: rotate3d(90, 90, 0, 180deg);
+  border-color: #FF3D00;
 }
 
-@keyframes mov-y {
-  0%, 25% {
-    transform: translateY(0) scaleY(1);
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
-  49% {
-    transform: translateY(-75%) scaleY(1);
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
   }
   50% {
-    transform: translateY(-75%) scaleY(-1);
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
   }
   75%, 100% {
-    transform: translateY(-150%) scaleY(-1);
-  }
-}
-
-@keyframes rtr-x {
-  25%, 75% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(90deg);
-  }
-}
-
-@keyframes rtr-rx {
-  25%, 75% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(-90deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
   }
 }
 
