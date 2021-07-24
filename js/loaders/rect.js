@@ -475,50 +475,12 @@ export const RECT = [
 }
     `,
   },
-  
-  {
-    id: "rot-addig",
-    html: `<span class="loader"></span>`,
-	css: `.loader {
-        width: 48px;
-        height: 48px;
-        display: flex;
-        transform-origin:50% 125%;
-        animation: mov-y 1s infinite linear;
-      }
-      .loader:before,
-      .loader:after {
-        content:"";
-        flex:1;
-        background:#fff;
-        transform-origin: 0% 100%;
-        animation: rtr-x 1s infinite linear;
-      }
-      .loader:before {
-        transform-origin: 100% 100%;
-        animation-name: rtr-rx;
-      }
 
-      @keyframes mov-y {
-        0%,25%   {transform:translateY(0)     scaleY(1)}
-        49%   {transform:translateY(-75%)  scaleY(1)}
-        50%      {transform:translateY(-75%)  scaleY(-1)}
-        75%,100% {transform:translateY(-150%) scaleY(-1)}
-      }
-      @keyframes rtr-x {
-        25%,75% {transform: rotate(0deg)}
-        50%     {transform: rotate(90deg)}
-      }
-      @keyframes rtr-rx {
-        25%,75% {transform: rotate(0deg)}
-        50%     {transform: rotate(-90deg)}
-      }
-    `,
-  },
+
   {
     id: "nyvy2vxxdig",
     html: `<span class="loader"></span>`,
-	css: `.loader {
+    css: `.loader {
   width: 48px;
   height: 48px;
   display: inline-block;
@@ -597,9 +559,470 @@ export const RECT = [
 }
     `,
   },
+
+
   
+  {
+    id: "rspltt-rects",
+    html: `<span class="loader"></span>`,
+	css: `.loader {
+        width: 48px;
+        height: 48px;
+      }
+      .loader:before,
+      .loader:after {
+        content:"";
+        display: block;
+        height: 24px;
+        background:#fff;
+        animation: mvx 0.3s infinite ease-in alternate;
+      }
+      .loader:before {
+        animation-name:mvrx;
+      }
+      @keyframes mvx {
+        100% {transform: translateY(50%)}
+      }
+      @keyframes mvrx {
+        100% {transform: translateY(-50%)}
+      }
+
+    `,
+  },
+
   
+  {
+    id: "rot-addig",
+    html: `<span class="loader"></span>`,
+	css: `.loader {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        transform-origin:50% 125%;
+        animation: mov-y 1s infinite linear;
+      }
+      .loader:before,
+      .loader:after {
+        content:"";
+        flex:1;
+        background:#fff;
+        transform-origin: 0% 100%;
+        animation: rtr-x 1s infinite linear;
+      }
+      .loader:before {
+        transform-origin: 100% 100%;
+        animation-name: rtr-rx;
+      }
+
+      @keyframes mov-y {
+        0%,25%   {transform:translateY(0)     scaleY(1)}
+        49%   {transform:translateY(-75%)  scaleY(1)}
+        50%      {transform:translateY(-75%)  scaleY(-1)}
+        75%,100% {transform:translateY(-150%) scaleY(-1)}
+      }
+      @keyframes rtr-x {
+        25%,75% {transform: rotate(0deg)}
+        50%     {transform: rotate(90deg)}
+      }
+      @keyframes rtr-rx {
+        25%,75% {transform: rotate(0deg)}
+        50%     {transform: rotate(-90deg)}
+      }
+    `,
+  },
   
+  {
+    id: "rtbr-clr",
+    html: `<span class="loader"></span>`,
+	css: `.loader {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      animation: rotate 1.5s infinite linear;
+    }
+    .loader:before,
+    .loader:after {
+      content:"";
+      flex:1;
+      background:#fff;
+      animation: mvx 0.5s infinite linear alternate;
+    }
+    .loader:before {
+      background: #FF3D00;
+      animation-name:mvrx;
+    }
+
+    @keyframes rotate {
+      100% {transform: rotate(360deg)}
+    }
+    @keyframes mvx {
+      0% {transform: translateX(-15px)}
+      100% {transform: translateX(15px)}
+    }
+    @keyframes mvrx {
+      0% {transform: translateX(15px)}
+      100% {transform: translateX(-15px)}
+    }
+    `,
+  },
+  
+  {
+    id: "brix-shake-clr",
+    html: `<span class="loader"></span>`,
+	css: `.loader {
+          width: 48px;
+          height: 48px;
+          display: flex;
+          animation : rotate 2s linear infinite;
+        }
+        .loader:before,
+        .loader:after {
+          content:"";
+          flex:1;
+          background:#fff;
+          animation: mvx 0.5s infinite linear alternate;
+        }
+        .loader:before {
+          background: #FF3D00;
+          animation-name:mvrx;
+        }
+
+        @keyframes rotate {
+          100% {transform: rotate(360deg)}
+        }
+        @keyframes mvx {
+          0% , 40% {transform: translateX(0px)}
+          20% , 60% {transform: translateX(8px)}
+          100% {transform: translateX(15px)}
+        }
+        @keyframes mvrx {
+          0% , 40% {transform: translateX(0px)}
+          20% , 60% {transform: translateX(-8px)}
+          100% {transform: translateX(-15px)}
+        }
+
+    `,
+  },
+
+
+
+
+  {
+    id: "prima-split-rects",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+        width: 48px;
+        height: 48px;
+        position: relative;
+      }
+      .loader:before,
+      .loader:after {
+        content:"";
+        display: block;
+        border: 24px solid transparent;
+        border-color: transparent transparent #fff  #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        animation: mvx 1s infinite ease-in;
+      }
+      .loader:before {
+        left: -1px;
+        top: 1px;
+        border-color:#fff  #fff transparent transparent;
+        animation-name:mvrx;
+      }
+      @keyframes mvx {
+        0% , 25% {transform: translate(0 , 0) rotate(0deg)}
+        50% {transform: translate(-50% , 50%) rotate(180deg)}
+        100% {transform: translate(0% , 0%) rotate(180deg)}
+      }
+      @keyframes mvrx {
+        0% , 25%  {transform: translate(0 , 0) rotate(0deg)}
+        50% {transform: translate(50% , -50%) rotate(180deg)}
+        100% {transform: translate(0% , 0%) rotate(180deg)}
+      }
+    `,
+  },
+
+
+  {
+    id: "prm-slice-rts",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+          width: 47px;
+          height: 47px;
+          position: relative;
+        }
+        .loader:before,
+        .loader:after {
+          content:"";
+          display: block;
+          border: 24px solid;
+          border-color: transparent transparent #fff  #fff;
+          position: absolute;
+          left: 0;
+          top: 0;
+          animation: mvx 1.2s infinite ease-in;
+        }
+        .loader:before {
+          border-color:#fff  #fff transparent transparent;
+          animation-name:mvrx;
+        }
+        @keyframes mvx {
+          0% , 10%  {transform: translate(0 , 0) rotate(0deg)}
+          30% {transform: translate(-50% , -50%) rotate(0deg)}
+          50% {transform: translate(-50% , -50%) rotate(180deg)}
+          75% , 100% {transform: translate(0, 0) rotate(180deg)}
+        }
+        @keyframes mvrx {
+          0% , 10%  {transform: translate(0 , 0) rotate(0deg)}
+          30% {transform: translate(50% , 50%) rotate(0deg)}
+          50% {transform: translate(50% , 50%) rotate(180deg)}
+          75% , 100% {transform: translate(0, 0) rotate(180deg)}
+        }
+    `,
+  },
+
+
+  {
+    id: "prm-pus-pop-rts",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+        position: relative;
+        border: 24px solid;
+        border-color: #fff  transparent #fff transparent;
+        animation : rotate 2s linear infinite;
+      }
+      .loader:before,
+      .loader:after {
+        content:"";
+        display: block;
+        border: 24px solid transparent;
+        border-left-color: #fff;
+        position: absolute;
+        left: -24px;
+        top: -24px;
+        animation: mvx 1s infinite linear;
+      }
+      .loader:before {
+        border-color: transparent #fff transparent transparent;
+        animation-name:mvrx;
+        animation-delay: 0.5s;
+      }
+      @keyframes rotate {
+        100% {transform: rotate(360deg)}
+      }
+      @keyframes mvx {
+        20% , 80% {transform: translateX(0)}
+        50% {transform: translateX(-50%)}
+      }
+      @keyframes mvrx {
+        20% , 80% {transform: translateX(0)}
+        50% {transform: translateX(50%)}
+      }
+    `,
+  },
+
+  {
+    id: "prm-kti-pori-rts",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+        position: relative;
+        border: 24px solid;
+        border-color: #fff  transparent #fff transparent;
+        animation : rotate 2s linear infinite;
+      }
+      .loader:before,
+      .loader:after {
+        content:"";
+        display: block;
+        border: 24px solid transparent;
+        border-left-color: #fff;
+        position: absolute;
+        left: -24px;
+        top: -24px;
+        animation: prix 1s infinite ease-in;
+        transform-origin: 0% 100%;
+      }
+      .loader:before {
+        border-color: transparent #fff transparent transparent;
+        transform-origin: 100% 0%;
+        animation-delay: 0.5s;
+      }
+      @keyframes rotate {
+        100% {transform: rotate(360deg)}
+      }
+      @keyframes prix {
+        20% , 80% {transform: rotate(0)}
+        50% {transform: rotate(-90deg)}
+      }
+    `,
+  },
+
+  {
+    id: "brik-splt-mv",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+          position: relative;
+          width: 48px;
+          height: 48px;
+        }
+        .loader:before{
+            content: "";
+            border-left: 24px solid #fff;
+            border-right: 24px solid #fff;
+            position: absolute;
+            height: 24px;
+            width: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0px;
+            animation: splitX 1s  linear infinite alternate;
+        }
+        .loader:after{
+          content: '';
+          width: 48px;
+          height: 24px;
+          background: #fff;
+          position: absolute;
+          left: 0;
+          bottom:0;
+          animation:moveY 1s linear infinite alternate;
+        }
+        @keyframes splitX {
+          0% {width: 0; transform: translate(-50% , 0)}
+          33% {width: 100%; transform: translate(-50% , 0)}
+          66% {width: 100%; transform: translate(-50% , 24px)}
+          100% {width: 0; transform: translate(-50% , 24px)}
+        }
+
+        @keyframes moveY {
+          0% , 33% {transform: translateY(0)}
+          66% , 100% {transform: translateY(-24px)}
+        }
+    `,
+  },
+
+  {
+    id: "prm-splt-clr-rots",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+            width: 48px;
+            height: 48px;
+            position: relative;
+            animation : rotate 4s linear infinite;
+          }
+          .loader:before,
+          .loader:after {
+            content:"";
+            display: block;
+            border: 24px solid;
+            border-color: transparent transparent #fff  #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: mvx 1s infinite ease-in;
+          }
+          .loader:before {
+            left: -1px;
+            top: 1px;
+            border-color:#FF3D00  #FF3D00 transparent transparent;
+            animation-name:mvrx;
+          }
+
+          @keyframes rotate {
+            100% {transform: rotate(360deg)}
+          }
+          @keyframes mvx {
+            0% , 15% {transform: translate(0 , 0) rotate(0deg)}
+            50% {transform: translate(-50% , 50%) rotate(180deg)}
+            100% {transform: translate(0% , 0%) rotate(180deg)}
+          }
+          @keyframes mvrx {
+            0% , 15%  {transform: translate(0 , 0) rotate(0deg)}
+            50% {transform: translate(50% , -50%) rotate(180deg)}
+            100% {transform: translate(0% , 0%) rotate(180deg)}
+          }
+    `,
+  },
+
+
+  {
+    id: "pir-fnd-flw",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+        border: 24px solid #fff;
+        border-color: #FF3D00 #fff  #fff #fff;
+        animation : rotate 2s steps(4) infinite;
+      }
+      @keyframes rotate {
+        100% { transform: rotate(360deg); }
+      }
+      `
+  },
+
+  {
+    id: "pir-weld-flw",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+          position: relative;
+          width: 48px;
+          height: 48px;
+        }
+        .loader:before,
+        .loader:after {
+          content:"";
+          display: block;
+          border: 32px solid transparent;
+          border-top-color: #fff;
+          position: absolute;
+          left: 0;
+          top: 0;
+          animation: weld-rotate 2s infinite ease-in;
+        }
+        .loader:before {
+          border-color: transparent  transparent transparent #FF3D00;
+          animation-delay: 0.5s;
+        }
+        @keyframes weld-rotate {
+          0% , 25% {transform: rotate(0deg)}
+          50% , 75% {transform: rotate(180deg)}
+          100% {transform: rotate(360deg)}
+        }
+      `
+  },
+  {
+    id: "pir-wottippu-flw",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+          position: relative;
+          width: 48px;
+          height: 48px;
+        }
+        .loader:before,
+        .loader:after {
+          content:"";
+          display: block;
+          border: 32px solid transparent;
+          border-top-color: #fff;
+          position: absolute;
+          left: 0;
+          top: 0;
+          animation: weld-rotate 2s infinite ease-in;
+        }
+        .loader:before {
+          border-color: transparent  transparent transparent #FF3D00;
+          animation-delay: 0.5s;
+            animation-direction: reverse;
+        }
+        @keyframes weld-rotate {
+          0% , 25% {transform: rotate(0deg)}
+          50% , 75% {transform: rotate(180deg)}
+          100% {transform: rotate(360deg)}
+        }
+      `
+  },
   {
     id: "gsupn3q1npb",
     html: `<span class="loader"></span>`,

@@ -44,7 +44,153 @@ export const CIRCLE = [
         transform: rotate(360deg);
     }
     } `,
-  },    
+  },
+  {
+  id: "orj095k34jjr",
+  html: `<span class="loader"></span>`,
+  css: `.loader {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      position: relative;
+      animation: rotate 1s linear infinite
+    }
+    .loader::before {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      inset: 0px;
+      border-radius: 50%;
+      border: 5px solid #FFF;
+      animation: prixClipFix 2s linear infinite ;
+    }
+
+    @keyframes rotate {
+      100%   {transform: rotate(360deg)}
+    }
+
+    @keyframes prixClipFix {
+        0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+        25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+        50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+        75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+        100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+    }`,
+  },
+  {
+  id: "spin-fllwBRbease4jr",
+  html: `<span class="loader"></span>`,
+  css: `.loader {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: relative;
+        animation: rotate 1s linear infinite
+      }
+      .loader::before , .loader::after {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        inset: 0px;
+        border-radius: 50%;
+        border: 5px solid #FFF;
+        animation: prixClipFix 2s linear infinite ;
+      }
+      .loader::after{
+        transform: rotate3d(90, 90, 0, 180deg );
+        border-color: #FF3D00;
+      }
+
+      @keyframes rotate {
+        0%   {transform: rotate(0deg)}
+        100%   {transform: rotate(360deg)}
+      }
+
+      @keyframes prixClipFix {
+          0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+          50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+          75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+      }
+`,
+  },
+  {
+  id: "spin-fllwBRbInstEase4jr",
+  html: `<span class="loader"></span>`,
+  css: `.loader {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: relative;
+        animation: rotate 1s linear infinite
+      }
+      .loader::before , .loader::after {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        inset: 0px;
+        border-radius: 50%;
+        border: 5px solid #FFF;
+        animation: prixClipFix 2s linear infinite ;
+      }
+      .loader::after{
+        inset: 8px;
+        transform: rotate3d(90, 90, 0, 180deg );
+        border-color: #FF3D00;
+      }
+
+      @keyframes rotate {
+        0%   {transform: rotate(0deg)}
+        100%   {transform: rotate(360deg)}
+      }
+
+      @keyframes prixClipFix {
+          0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+          50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+          75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+      }
+`,
+  },
+  {
+  id: "spin-x2-ease4jr",
+  html: `<span class="loader"></span>`,
+  css: `.loader {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: relative;
+        animation: rotate 1s linear infinite
+      }
+      .loader::before , .loader::after {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        inset: 0px;
+        border-radius: 50%;
+        border: 5px solid #FFF;
+        animation: prixClipFix 2s linear infinite ;
+      }
+      .loader::after{
+        border-color: #FF3D00;
+        animation: prixClipFix 2s linear infinite , rotate 0.5s linear infinite reverse;
+        inset: 6px;
+      }
+
+      @keyframes rotate {
+        0%   {transform: rotate(0deg)}
+        100%   {transform: rotate(360deg)}
+      }
+
+      @keyframes prixClipFix {
+          0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+          25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+          50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+          75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+          100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+      }`,
+  },
+
+
+
     {
         id: "ckf1cjlmi0m",
         html: `<span class="loader"></span>`,
@@ -775,7 +921,44 @@ export const CIRCLE = [
     border-color: white white white white;
   }
 } `,
-    }, {
+    },
+    
+  {
+    id: "donut-fillClip-st",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+      width: 48px;
+      height: 48px;
+      border:10px solid #FFF;
+      border-radius: 50%;
+      position: relative;
+      transform:rotate(45deg);
+      box-sizing: border-box;
+    }
+    .loader::before {
+      content: "";
+      position: absolute;
+      box-sizing: border-box;
+      inset:-10px;
+      border-radius: 50%;
+      border:10px solid #FF3D00;
+      animation: prixClipFix 2s infinite linear;
+    }
+
+    @keyframes prixClipFix {
+        0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+        25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+        50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+        75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+        100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+    }
+      `
+    },
+    
+    
+    
+    
+    {
         id: "aji4vwmkdk",
         html: `<span class="loader"></span>`,
         css: `.loader {
@@ -1002,6 +1185,81 @@ export const CIRCLE = [
     
     
     {
+        id: "pie-sprix-fill",
+        html: `<span class="loader"></span>`,
+        css: `.loader {
+            position: relative;
+            border:24px solid #0000;
+            border-radius:50%;
+            animation: piefill 2s linear infinite;
+          }
+
+          @keyframes piefill {
+            0% , 19%{ border-color: #0000 #0000 #0000 #0000 }
+            20% , 39%{ border-color: #fff #0000 #0000 #0000 }
+            40% , 59%{ border-color: #fff #fff #0000 #0000 }
+            60% , 79%{ border-color: #fff #fff #fff #0000 }
+            80% , 100% { border-color: #fff #fff #fff #fff }
+
+          }
+`,
+    },
+    
+    {
+        id: "pie-sprix-fill",
+        html: `<span class="loader"></span>`,
+        css: `.loader {
+          position: relative;
+          border:24px solid #FFF;
+          border-radius:50%;
+          transform: rotate(45deg);
+          animation: pieFill 3s linear infinite;
+        }
+
+        @keyframes pieFill {
+          0% , 19%{ border-color: #FFF #FFF #FFF #FFF }
+          20% , 39%{ border-color: #FF3D00 #FFF #FFF #FFF }
+          40% , 59%{ border-color: #FF3D00 #FF3D00 #FFF #FFF }
+          60% , 79%{ border-color: #FF3D00 #FF3D00 #FF3D00 #FFF }
+          80% , 100% { border-color: #FF3D00 #FF3D00 #FF3D00 #FF3D00 }
+        }
+`,
+    },
+    
+    {
+        id: "pie-sprixEase-fill",
+        html: `<span class="loader"></span>`,
+        css: `.loader {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            position: relative;
+            transform:rotate(45deg);
+            background: #fff;
+          }
+          .loader::before {
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            inset: 0px;
+            border-radius: 50%;
+            border:24px solid #FF3D00;
+            animation: prixClipFix 2s infinite linear;
+          }
+
+          @keyframes prixClipFix {
+              0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+              25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+              50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+              75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+              100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+          }
+      `,
+    },
+
+
+
+    {
         id: "kyaj4z490z",
         html: `<span class="loader"></span>`,
         css: `.loader {
@@ -1022,7 +1280,12 @@ export const CIRCLE = [
     transform: rotate(360deg);
   }
 } `,
-    }, {
+    },
+    
+    
+    
+    
+    {
         id: "3j5s0xdxrpk",
         html: `<span class="loader"></span>`,
         css: `.loader {
