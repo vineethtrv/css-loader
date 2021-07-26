@@ -760,7 +760,88 @@ export const CIRCLE = [
     transform: rotate(360deg);
   }
 } `,
-    }, {
+    },
+
+  {
+    id: "spinxLigfrechand67",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+        transform: rotateZ(45deg);
+        perspective: 1000px;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        color: #fff;
+      }
+        .loader:before,
+        .loader:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: inherit;
+          height: inherit;
+          border-radius: 50%;
+          transform: rotateX(70deg);
+          animation: 1s spin linear infinite;
+        }
+        .loader:after {
+          color: #FF3D00;
+          transform: rotateY(70deg);
+          animation-delay: .4s;
+        }
+
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, -50%) rotateZ(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotateZ(360deg);
+        }
+      }
+
+      @keyframes rotateccw {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(-360deg);
+        }
+      }
+
+      @keyframes spin {
+        0%,
+        100% {
+          box-shadow: .2em 0px 0 0px currentcolor;
+        }
+        12% {
+          box-shadow: .2em .2em 0 0 currentcolor;
+        }
+        25% {
+          box-shadow: 0 .2em 0 0px currentcolor;
+        }
+        37% {
+          box-shadow: -.2em .2em 0 0 currentcolor;
+        }
+        50% {
+          box-shadow: -.2em 0 0 0 currentcolor;
+        }
+        62% {
+          box-shadow: -.2em -.2em 0 0 currentcolor;
+        }
+        75% {
+          box-shadow: 0px -.2em 0 0 currentcolor;
+        }
+        87% {
+          box-shadow: .2em -.2em 0 0 currentcolor;
+        }
+      }
+   `,
+    },
+    
+    
+    {
         id: "2y7t3com146",
         html: `<span class="loader"></span>`,
         css: `.loader {
@@ -1124,6 +1205,65 @@ export const CIRCLE = [
   }
   `,
     },
+  {
+    id: "coin-flip-b8sp",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+        font-size:48px;
+        color: #FFF;
+        width: 1em;
+        height: 1em;
+        box-sizing: border-box;
+        background-color: currentcolor;
+        position: relative;
+        border-radius: 50%;
+        transform: rotateX(-60deg) perspective(1000px);
+      }
+      .loader:before,
+      .loader:after {
+        content: '';
+        display: block;
+        position: absolute;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        animation: flowerFlow 1s ease-out infinite;
+      }
+      .loader:after {
+        animation-delay: .4s;
+      }
+
+      @keyframes flowerFlow {
+        0% {
+          opacity: 1;
+          transform: rotate(0deg);
+          box-shadow: 0 0 0 -.5em currentcolor,
+          0 0 0 -.5em currentcolor,
+          0 0 0 -.5em currentcolor,
+          0 0 0 -.5em currentcolor,
+          0 0 0 -.5em currentcolor,
+          0 0 0 -.5em currentcolor,
+          0 0 0 -.5em currentcolor,
+          0 0 0 -.5em currentcolor;
+        }
+        100% {
+          opacity: 0;
+          transform: rotate(180deg);
+          box-shadow: -1em -1em 0 -.35em currentcolor,
+          0 -1.5em 0 -.35em currentcolor,
+          1em -1em 0 -.35em currentcolor,
+          -1.5em 0 0 -.35em currentcolor,
+          1.5em -0 0 -.35em currentcolor,
+          -1em 1em 0 -.35em currentcolor,
+          0 1.5em 0 -.35em currentcolor,
+          1em 1em 0 -.35em currentcolor;
+        }
+      }
+      `,
+    },
     
     {
         id: "coin-flip-b8sp",
@@ -1160,6 +1300,8 @@ export const CIRCLE = [
       }
     `,
     }, 
+
+    
     {
         id: "b8sr9u8olsp",
         html: `<span class="loader"></span>`,
@@ -1319,7 +1461,40 @@ export const CIRCLE = [
     transform: rotate(360deg);
   }
 } `,
-    }, {
+    },
+    
+    
+
+  {
+    id: "skXsenRx78",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+          border: 24px solid #FFF;
+          border-color: #FF3D00 #FF3D00 #fff #fff;
+          border-radius: 50%;
+          position: relative;
+          animation: rotate 1s linear infinite
+        }
+
+        .loader:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translate(-50% , -125%);
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+          }
+        @keyframes rotate {
+          100%   { transform: rotate(360deg)}
+        }
+`,
+  },
+    
+    
+    {
         id: "s38s0s6yor",
         html: `<span class="loader"></span>`,
         css: `.loader {

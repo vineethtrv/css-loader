@@ -560,6 +560,104 @@ export const RECT = [
     `,
   },
 
+  {
+    id: "sqrFlwupShdw67",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+        height: 5px;
+        width: 5px;
+        color: #fff;
+        box-shadow: -10px -10px 0 5px,
+                    -10px -10px 0 5px,
+                    -10px -10px 0 5px,
+                    -10px -10px 0 5px;
+        animation: loader-38 6s infinite;
+      }
+
+      @keyframes loader-38 {
+        0% {
+          box-shadow: -10px -10px 0 5px,
+                      -10px -10px 0 5px,
+                      -10px -10px 0 5px,
+                      -10px -10px 0 5px;
+        }
+        8.33% {
+          box-shadow: -10px -10px 0 5px,
+                      10px -10px 0 5px,
+                      10px -10px 0 5px,
+                      10px -10px 0 5px;
+        }
+        16.66% {
+          box-shadow: -10px -10px 0 5px,
+                      10px -10px 0 5px,
+                      10px 10px 0 5px,
+                      10px 10px 0 5px;
+        }
+        24.99% {
+          box-shadow: -10px -10px 0 5px,
+                      10px -10px 0 5px,
+                      10px 10px 0 5px,
+                      -10px 10px 0 5px;
+        }
+        33.32% {
+          box-shadow: -10px -10px 0 5px,
+                      10px -10px 0 5px,
+                      10px 10px 0 5px,
+                      -10px -10px 0 5px;
+        }
+        41.65% {
+          box-shadow: 10px -10px 0 5px,
+                      10px -10px 0 5px,
+                      10px 10px 0 5px,
+                      10px -10px 0 5px;
+        }
+        49.98% {
+          box-shadow: 10px 10px 0 5px,
+                    10px 10px 0 5px,
+                    10px 10px 0 5px,
+                    10px 10px 0 5px;
+        }
+        58.31% {
+          box-shadow: -10px 10px 0 5px,
+                      -10px 10px 0 5px,
+                      10px 10px 0 5px,
+                      -10px 10px 0 5px;
+        }
+        66.64% {
+          box-shadow: -10px -10px 0 5px,
+                      -10px -10px 0 5px,
+                      10px 10px 0 5px,
+                      -10px 10px 0 5px;
+        }
+        74.97% {
+          box-shadow: -10px -10px 0 5px,
+                      10px -10px 0 5px,
+                      10px 10px 0 5px,
+                      -10px 10px 0 5px;
+        }
+        83.3% {
+          box-shadow: -10px -10px 0 5px,
+                      10px 10px 0 5px,
+                      10px 10px 0 5px,
+                      -10px 10px 0 5px;
+        }
+        91.63% {
+          box-shadow: -10px -10px 0 5px,
+                      -10px 10px 0 5px,
+                      -10px 10px 0 5px,
+                      -10px 10px 0 5px;
+        }
+        100% {
+          box-shadow: -10px -10px 0 5px,
+                      -10px -10px 0 5px,
+                      -10px -10px 0 5px,
+                      -10px -10px 0 5px;
+        }
+      }
+
+    `,
+  },
+
 
   
   {
@@ -905,6 +1003,83 @@ export const RECT = [
   },
 
   {
+    id: "spinFloatSqr",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+          width: 48px;
+          height: 48px;
+          margin: auto;
+          position: relative;
+        }
+        .loader:before {
+            content: '';
+            width: 48px;
+            height: 5px;
+            background: #000;
+            opacity: 0.25;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            border-radius: 50%;
+            animation: shadow 0.5s linear infinite;
+          }
+          .loader:after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            animation: bxSpin 0.5s linear infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 4px;
+          }
+        @keyframes bxSpin {
+          17% {
+            border-bottom-right-radius: 3px;
+          }
+          25% {
+            transform: translateY(9px) rotate(22.5deg);
+          }
+          50% {
+            transform: translateY(18px) scale(1, .9) rotate(45deg);
+            border-bottom-right-radius: 40px;
+          }
+          75% {
+            transform: translateY(9px) rotate(67.5deg);
+          }
+          100% {
+            transform: translateY(0) rotate(90deg);
+          }
+        }
+
+        @keyframes shadow {
+          0%, 100% {
+            transform: scale(1, 1);
+          }
+          50% {
+            transform: scale(1.2, 1);
+          }
+        }
+      `
+  },
+
+
+  {
+    id: "pir-fnd-flw",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+        border: 24px solid #fff;
+        border-color: #FF3D00 #fff  #fff #fff;
+        animation : rotate 2s steps(4) infinite;
+      }
+      @keyframes rotate {
+        100% { transform: rotate(360deg); }
+      }
+      `
+  },
+
+  {
     id: "prm-splt-clr-rots",
     html: `<span class="loader"></span>`,
     css: `.loader {
@@ -947,20 +1122,6 @@ export const RECT = [
     `,
   },
 
-
-  {
-    id: "pir-fnd-flw",
-    html: `<span class="loader"></span>`,
-    css: `.loader {
-        border: 24px solid #fff;
-        border-color: #FF3D00 #fff  #fff #fff;
-        animation : rotate 2s steps(4) infinite;
-      }
-      @keyframes rotate {
-        100% { transform: rotate(360deg); }
-      }
-      `
-  },
 
   {
     id: "pir-weld-flw",
