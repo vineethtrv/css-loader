@@ -133,7 +133,47 @@ export const BUBBLE = [
 }
 }
     `,
-    }, {
+    },
+    
+  {
+    id: "prePresLding34",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+        position: relative;
+      }
+      .loader:before ,  .loader:after {
+          content: '';
+          width: 15px;
+          height: 15px;
+          display: block;
+          position: relative;
+          margin: 10px auto ;
+          border-radius: 50%;
+          background: #fff;
+          animation: left 1s infinite ease-in-out;
+        }
+        .loader:after {
+          background: #FF3D00;
+          animation: right 1s infinite ease-in-out;
+        }
+
+
+      @keyframes right {
+        0% , 100%{transform: translate(-15px) }
+        50% { transform: translate(15px) }
+      }
+
+      @keyframes left {
+        0% , 100%{ transform: translate(15px) }
+        50% { transform: translate(-15px) }
+      }
+      `
+    },
+    
+    
+    
+    
+    {
         id: "qt4al5cwmmg",
         html: `<span class="loader"></span>`,
         css: `.loader {
@@ -320,7 +360,9 @@ export const BUBBLE = [
     box-shadow: 14px 0 0 -2px,  38px 0 0 2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
   }
 }`,
-    }, {
+    },
+    
+    {
         id: "mdqx53v2ufl",
         html: `<span class="loader"></span>`,
         css: `.loader {
@@ -349,7 +391,86 @@ export const BUBBLE = [
     box-shadow: -38px 0 , -14px 0, 14px 0 , 38px -12px;
   }
 }`,
-    }, {
+    },
+    {
+        id: "bbleHrSpinShdw34f",
+        html: `<span class="loader"></span>`,
+        css: `.loader {
+          position: relative;
+          display: flex;
+        }
+        .loader:before , .loader:after {
+            content: '';
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            position: relative;
+            margin: 0  5px  ;
+            border-radius: 50%;
+            color: #FFF;
+            background: currentColor;
+            box-shadow: 50px 0 ,  -50px 0;
+            animation: left 1s infinite ease-in-out;
+          }
+          .loader:after {
+            color: #FF3D00;
+            animation: right 1.1s infinite ease-in-out;
+          }
+
+
+        @keyframes right {
+          0% , 100%{transform: translateY(-10px) }
+          50% { transform: translateY(10px) }
+        }
+
+        @keyframes left {
+          0% , 100%{ transform: translateY(10px) }
+          50% { transform: translateY(-10px) }
+        }
+`,
+    },
+    {
+        id: "bbleVrncgShdw34f",
+        html: `<span class="loader"></span>`,
+        css: `.loader {
+            height: 150px;
+            position: relative;
+          }
+          .loader:before , .loader:after {
+              content: '';
+              width: 15px;
+              height: 15px;
+              display: block;
+              position: relative;
+              margin: 10px auto ;
+              border-radius: 50%;
+              color: #FFF;
+              background: currentColor;
+              box-shadow: 0 50px , 0 100px;
+              animation: left 1s infinite ease-in-out;
+            }
+            .loader:after {
+              animation: right 1.1s infinite ease-in-out;
+            }
+
+
+          @keyframes right {
+            0% , 100%{transform: translate(-15px) }
+            50% { transform: translate(15px) }
+          }
+
+          @keyframes left {
+            0% , 100%{ transform: translate(15px) }
+            50% { transform: translate(-15px) }
+          }
+        `,
+    },
+    
+    
+    
+    
+    
+    {
         id: "2y45kuxbrr",
         html: `<span class="loader"></span>`,
         css: `.loader {

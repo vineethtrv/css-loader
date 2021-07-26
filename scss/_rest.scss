@@ -136,9 +136,13 @@ footer {
   a {
     font-size: 16px;
     color: #fff;
+    transition: 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
     &:hover , &:active {
       color: #fff;
-      text-decoration: underline;
+      transform: scale(1.15);
     }
   }
 }

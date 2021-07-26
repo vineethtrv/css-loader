@@ -1,6 +1,143 @@
 export const GRAPH = [
 
     {
+        id: "starLord-andro6e",
+        html: `<span class="loader"></span>`,
+        css: `.loader {
+            position: relative;
+            animation: flix 3s ease-in infinite alternate;
+          }
+          .loader:before {
+            content: '';
+            display: block;
+            font-size: 0;
+            width: 48px;
+            height: 48px;
+            background-color: #fff ;
+            background-image:
+              radial-gradient(circle 12px at 22px 22px, #FF3D00 100%, transparent 0),
+              radial-gradient(circle 10px at 6px 40px, #FF3D00 100%, transparent 0),
+              radial-gradient(circle 14px at 31px -6px, #FF3D00 100%, transparent 0),
+              radial-gradient(circle 5px at 40px 30px, #FF3D00 100%, transparent 0);
+            border-radius: 50%;
+            animation: rotate 1s linear infinite;
+          }
+          .loader:after {
+              content: '';
+              position: absolute;
+              top: 0%;
+              transform: translate(-50% , -100%);
+              left: 50%;
+              width: 24px;
+              height: 12px;
+              background: #fff;
+              border-radius: 50px 50px 0 0;
+            }
+
+          @keyframes flix {
+            0%  , 60% { transform: rotate(-10deg)}
+            100%  , 30% , 80% { transform: rotate(5deg)}
+          }
+          @keyframes rotate {
+            100%   { transform: rotate(360deg)}
+          }
+`,
+    },
+    {
+        id: "eyeBallMoveSinleo6e",
+        html: `<span class="loader"></span>`,
+        css: `.loader {
+          position: relative;
+          width: 78px;
+          height: 78px;
+          border-radius: 50%;
+          box-sizing: border-box;
+          background: #fff;
+          border: 8px solid #131a1d;
+          overflow: hidden;
+          box-sizing: border-box;
+        }
+        .loader::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: -50%;
+          width: 100%;
+          height: 100%;
+          background: #263238 ;
+          z-index: 5;
+          border-bottom: 8px solid #131a1d;
+          box-sizing: border-box;
+          animation: eyeShade 3s infinite;
+        }
+        .loader::before {
+          content: '';
+          position: absolute;
+          left: 20px;
+          bottom: 15px;
+          width: 32px;
+          z-index: 2;
+          height: 32px;
+          background: #111;
+          border-radius: 50%;
+          animation: eyeMove 3s infinite;
+        }
+        @keyframes eyeShade {
+          0%   { transform: translateY(0)}
+          20%   { transform: translateY(5px)}
+          40% , 50%   { transform: translateY(-5px)}
+          60%   { transform: translateY( -8px)}
+          75%   { transform: translateY( 5px)}
+          100%   { transform: translateY(10px)}
+        }
+        @keyframes eyeMove {
+          0%   { transform: translate(0 , 0)}
+          20%   { transform: translate(0px , 5px)}
+          40% , 50%   { transform: translate(0px , -5px)}
+          60%   { transform: translate(-10px , -5px)}
+          75%   { transform: translate(-20px , 5px)}
+          100%   { transform: translate(0 , 10px)}
+        }
+`,
+    },
+    {
+        id: "lookingEyesmove",
+        html: `<span class="loader"></span>`,
+        css: `.loader {
+            position: relative;
+            width: 108px;
+            display: flex;
+            justify-content: space-between;
+          }
+          .loader::after , .loader::before  {
+            content: '';
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            background-color: #FFF;
+            background-image:  radial-gradient(circle 14px, #0d161b 100%, transparent 0);
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            animation: eyeMove 10s infinite , blink 10s infinite;
+          }
+          @keyframes eyeMove {
+            0%  , 10% {     background-position: 0px 0px}
+            13%  , 40% {     background-position: -15px 0px}
+            43%  , 70% {     background-position: 15px 0px}
+            73%  , 90% {     background-position: 0px 15px}
+            93%  , 100% {     background-position: 0px 0px}
+          }
+          @keyframes blink {
+            0%  , 10% , 12% , 20%, 22%, 40%, 42% , 60%, 62%,  70%, 72% , 90%, 92%, 98% , 100%
+            { height: 48px}
+            11% , 21% ,41% , 61% , 71% , 91% , 99%
+            { height: 18px}
+          }
+`,
+    },
+ 
+
+    {
         id: "h7vm0fttsne",
         html: `<span class="loader"></span>`,
         css: `.loader {
@@ -39,7 +176,9 @@ export const GRAPH = [
   100%  { transform: rotate(360deg)}
 } 
 `,
-    }, {
+    },
+  
+    {
         id: "52ma1rva0kd",
         note: 'Set background',
         html: `<span class="loader"></span>`,
@@ -275,7 +414,12 @@ export const GRAPH = [
   }
 }
     `,
-    }, {
+    },
+    
+    
+    
+    
+    {
         id: "n4oiol4um1g",
         html: `<span class="loader"></span>`,
         css: `.loader {
@@ -554,7 +698,75 @@ export const GRAPH = [
   }
 }
 `,
-    }, {
+    }, 
+    
+    
+  {
+    id: "bookPagging",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+          width: 200px;
+          height: 140px;
+          background: #979794;
+          box-sizing: border-box;
+          position: relative;
+          border-radius:8px;
+          perspective: 1000px;
+        }
+
+        .loader:before{
+          content: '';
+          position: absolute;
+          left: 10px;
+          right: 10px;
+          top: 10px;
+          bottom: 10px;
+          border-radius:8px;
+          background: #f5f5f5  no-repeat;
+          background-size: 60px 10px;
+          background-image: 	linear-gradient(#ddd 100px, transparent 0) ,
+                    linear-gradient(#ddd 100px, transparent 0), 
+                    linear-gradient(#ddd 100px, transparent 0), 
+                    linear-gradient(#ddd 100px, transparent 0), 
+                    linear-gradient(#ddd 100px, transparent 0), 
+                    linear-gradient(#ddd 100px, transparent 0);
+          
+          background-position: 15px 30px , 15px 60px , 15px 90px, 
+                    105px 30px , 105px 60px , 105px 90px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.25);
+        }
+        .loader:after {
+          content: '';
+            position: absolute;
+            width: calc(50% - 10px);
+            right: 10px;
+            top: 10px;
+            bottom: 10px;
+            border-radius: 8px;
+            background: #fff no-repeat;
+            background-size: 60px 10px;
+            background-image: linear-gradient(#ddd 100px, transparent 0), 
+                    linear-gradient(#ddd 100px, transparent 0), 
+                    linear-gradient(#ddd 100px, transparent 0);
+            background-position: 50% 30px ,50% 60px , 50%  90px;
+            transform: rotateY(0deg );
+            transform-origin: left center;
+          animation: paging 1s linear infinite;
+        }
+
+
+        @keyframes paging {
+          to {
+            transform: rotateY( -180deg );
+          }
+        }
+`,
+  },
+    
+    
+    
+    
+    {
         id: "sbxrg21wokq",
         html: `<span class="loader"></span>`,
         css: `.loader {
