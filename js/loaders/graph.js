@@ -1,5 +1,114 @@
 export const GRAPH = [
+  {
+    id: "kolIcereamClrShift",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+      	height: 150px;
+	width: 100px;
+	border-radius: 55px 55px 10px 10px;
+	position: relative;
+  background: #FF3D00;
 
+background-image: linear-gradient(0deg,
+    #f63a99 25%,
+    #30dcf6 25%,
+    #30dcf6 25%,
+    #30dcf6 50%,
+    #f2d200 50%,
+    #f2d200 50%,
+    #f2d200 75%,
+    #70ca5c 75%);
+	background-position: 0px 0px;
+  background-size: auto 175px;
+	background-repeat: repeat-y;
+  animation: colorShift 6s linear infinite;
+
+}
+.loader:before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    bottom: 15px;
+    width: 15px;
+    height: 100px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.5);
+
+  }
+
+.loader:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50% , 0);
+  box-shadow: 0 15px 2px rgba(0, 0, 0, 0.25) inset;
+	width: 32px;
+  height: 45px;
+  background: #E09C5F;
+  border-radius: 0 0 12px 12px;
+}
+
+@keyframes colorShift {
+  to {    background-position: 0 175px}
+}
+
+  `,
+  },
+  {
+    id: "stepLoaderBallStepping",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+          position: relative;
+          width: 120px;
+          height: 90px;
+          margin: 0 auto;
+        }
+        .loader:before {
+          content: "";
+          position: absolute;
+          bottom: 30px;
+          left: 50px;
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+          background: #FF3D00;
+          animation: loading-bounce 0.5s ease-in-out infinite alternate;
+        }
+        .loader:after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 7px;
+          width: 45px;
+          border-radius: 4px;
+          box-shadow: 0 5px 0 #fff, -35px 50px 0 #fff, -70px 95px 0 #fff;
+          animation: loading-step 1s ease-in-out infinite;
+        }
+
+        @keyframes loading-bounce {
+          0% { transform: scale(1, 0.7)}
+          40% { transform: scale(0.8, 1.2)}
+          60% { transform: scale(1, 1)}
+          100% { bottom: 140px }
+        }
+        @keyframes loading-step {
+          0% {
+            box-shadow: 0 10px 0 rgba(0,0,0,0),
+                        0 10px 0 #fff,
+                      -35px 50px 0 #fff,
+                      -70px 90px 0 #fff;
+          }
+          100% {
+            box-shadow: 0 10px 0 #fff,
+                      -35px 50px 0 #fff,
+                      -70px 90px 0 #fff,
+                      -70px 90px 0 rgba(0,0,0,0);
+          }
+        }
+  `,
+  },
     {
         id: "starLord-andro6e",
         html: `<span class="loader"></span>`,
@@ -553,7 +662,9 @@ export const GRAPH = [
     box-shadow: 0 -48px inset;
   }
 } `,
-    }, {
+    },
+
+ {
         id: "4iqbx9mqg3e",
         html: `<span class="loader"></span>`,
         css: `.loader {
@@ -579,7 +690,55 @@ export const GRAPH = [
   }
 }
 `,
-    }, {
+    },
+
+ {
+        id: "bottleOfwineFill",
+        html: `<span class="loader"></span>`,
+        css: `.loader {
+          width: 40px;
+          height: 98px;
+          display: inline-block;
+          position: relative;
+          border: 2px solid #FFF;
+          box-sizing: border-box;
+          color: rgba(255, 61, 0, 0.9);
+          border-radius: 20px 20px 4px 4px;
+          background: #fff;
+          animation: fill 2s linear infinite alternate;
+        }
+        .loader::after {
+          content: '';
+          box-sizing: border-box;
+          position: absolute;
+          left: 50%;
+          top: 0%;
+          transform: translate(-50% , -95%);
+          border: 2px solid #FFF;
+          border-bottom: none;
+          background: #fff;
+          width: 15px;
+          height: 35px;
+          animation: fillNeck 2s linear infinite alternate;
+        }
+
+        @keyframes fill {
+          0% { box-shadow: 0 0  inset }
+          50% , 100% { box-shadow: 0 -98px inset }
+        }
+
+
+        @keyframes fillNeck {
+          0% , 50%{ box-shadow: 0 0  inset }
+          100% { box-shadow: 0 -20px inset }
+        }
+    `,
+  },
+    
+    
+    
+    
+    {
         id: "ofqzm8c3y98",
         html: `<span class="loader"></span>`,
         css: `.loader {
@@ -1042,8 +1201,114 @@ export const GRAPH = [
     box-shadow: 4px -100px rgba(255, 255, 255, 0), 8px -90px rgba(255, 255, 255, 0), 10px -120px rgba(255, 255, 255, 0), 15px -45px rgba(255, 255, 255, 0);
   }
 }
+
 `,
-    }, {
+    },
+
+        
+    {
+        id: "bakenLoading89frbbl",
+        html: `<span class="loader"></span>`,
+        css: `.loader {
+              width: 64px;
+              height: 64px;
+              display: block;
+              border: 1px solid #FFF;
+              border-radius: 50px ;
+              position: relative;
+              box-shadow: 0px 0px #FF3D00 inset;
+              background-color: #fff;
+              background-image: linear-gradient(#FF3D00 100px, transparent 0);
+              background-position: 0  20px;
+              background-size: 100% auto;
+              background-repeat: no-repeat;
+              box-sizing: border-box;
+            }
+            .loader::after {
+              content: '';
+              box-sizing: border-box;
+              position: absolute;
+              left: 50%;
+              top: 0%;
+              transform: translate(-50% , -95%);
+              border: 2px solid #FFF;
+              border-bottom: none;
+              background: #fff;
+              width: 15px;
+              height: 35px;
+            }
+            .loader::before {
+              content: '';
+              box-sizing: border-box;
+              left: 50%;
+              transform: translateX(-125%);
+              bottom: -4px;
+              border-radius: 50%;
+              position: absolute;
+              width: 6px;
+              height: 6px;
+              z-index: 10;
+              animation: bubbles 6s linear infinite;
+            }
+            @keyframes bubbles {
+              0% {
+                box-shadow: 4px -10px rgba(255, 0, 0, 0), 6px 0px rgba(255, 0, 0, 0), 8px -15px rgba(255, 0, 0, 0), 12px 0px rgba(255, 0, 0, 0);
+              }
+              20% {
+                box-shadow: 4px -20px rgba(255, 0, 0, 0), 8px -10px rgba(255, 0, 0, 0), 10px -30px rgba(255, 255, 255, 0.5), 15px -5px rgba(255, 0, 0, 0);
+              }
+              40% {
+                box-shadow: 2px -40px rgba(255, 255, 255, 0.5), 8px -30px rgba(255, 0, 0, 0.4), 8px -60px rgba(255, 255, 255, 0.5), 12px -15px rgba(255, 255, 255, 0.5);
+              }
+              60% {
+                box-shadow: 4px -60px rgba(255, 255, 255, 0.5), 6px -50px rgba(255, 0, 0, 0.4), 10px -90px rgba(255, 255, 255, 0.5), 15px -25px rgba(255, 255, 255, 0.5);
+              }
+              80% {
+                box-shadow: 2px -80px rgba(255, 0, 0, 0.5), 4px -70px rgba(255, 0, 0, 0.4), 8px -120px rgba(255, 0, 0, 0), 12px -35px rgba(255, 0, 0, 0.5);
+              }
+              100% {
+                box-shadow: 4px -100px rgba(255, 0, 0, 0), 8px -90px rgba(255, 0, 0, 0), 10px -120px rgba(255, 0, 0, 0), 15px -45px rgba(255, 0, 0, 0);
+              }
+            }
+    `,
+    },
+
+
+  {
+    id: "spearGlassFillre",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.5),
+                inset 0 -40px 40px -20px rgba(255, 255, 255, 0.5);
+        background: linear-gradient(#FF3D00 120px, transparent 0) no-repeat;
+        background-position: 0px 120px;
+        animation: fillLq 10s linear infinite alternate;
+      }
+      .loader:before {
+        position: absolute;
+        content: '';
+        width: 40%;
+        height: 25%;
+        top: 20px;
+        left: 10px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        transform: rotate(-45deg);
+      }
+
+      @keyframes fillLq {
+        0% , 10% { background-position: 0 120px}
+        90% , 100% { background-position: 0 0}
+      }
+    `,
+    },
+
+    
+    {
         id: "c0g9cavcnfd",
         html: `<span class="loader"></span>`,
         css: `.loader {
