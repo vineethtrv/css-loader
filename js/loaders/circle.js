@@ -727,7 +727,71 @@ export const CIRCLE = [
     transform: rotate(360deg);
   }
 } `,
-    }, {
+    }, 
+    
+  {
+    id: "2y45kuxbrr",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+  .loader::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    transform: translate(-50%, 100%);
+    box-sizing: border-box;
+    animation: animloader 1s linear infinite;
+    top: 0;
+  }
+
+@keyframes animloader {
+    0% {
+  background: white;
+  box-shadow: 9px -19px 0 -1px rgba(255, 255, 255, 0), 28px -19px 0 -2px rgba(255, 255, 255, 0), 39px -5px 0 -3px rgba(255, 255, 255, 0), 34px 10px 0 -4px rgba(255, 255, 255, 0), 22px 17px 0 -5px rgba(255, 255, 255, 0), 9px 16px 0 -6px rgba(255, 255, 255, 0);
+}
+    14% {
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 9px -19px 0 -1px white, 28px -19px 0 -2px rgba(255, 255, 255, 0), 39px -5px 0 -3px rgba(255, 255, 255, 0), 34px 10px 0 -4px rgba(255, 255, 255, 0), 22px 17px 0 -5px rgba(255, 255, 255, 0), 9px 16px 0 -6px rgba(255, 255, 255, 0);
+}
+    28% {
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 9px -19px 0 -1px rgba(255, 255, 255, 0), 28px -19px 0 -2px white, 39px -5px 0 -3px rgba(255, 255, 255, 0), 34px 10px 0 -4px rgba(255, 255, 255, 0), 22px 17px 0 -5px rgba(255, 255, 255, 0), 9px 16px 0 -6px rgba(255, 255, 255, 0);
+}
+    42% {
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 9px -19px 0 -1px rgba(255, 255, 255, 0), 28px -19px 0 -2px rgba(255, 255, 255, 0), 39px -5px 0 -3px white, 34px 10px 0 -4px rgba(255, 255, 255, 0), 22px 17px 0 -5px rgba(255, 255, 255, 0), 9px 16px 0 -6px rgba(255, 255, 255, 0);
+}
+    57% {
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 9px -19px 0 -1px rgba(255, 255, 255, 0), 28px -19px 0 -2px rgba(255, 255, 255, 0), 39px -5px 0 -3px rgba(255, 255, 255, 0), 34px 10px 0 -4px white, 22px 17px 0 -5px rgba(255, 255, 255, 0), 9px 16px 0 -6px rgba(255, 255, 255, 0);
+}
+    71% {
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 9px -19px 0 -1px rgba(255, 255, 255, 0), 28px -19px 0 -2px rgba(255, 255, 255, 0), 39px -5px 0 -3px rgba(255, 255, 255, 0), 34px 10px 0 -4px rgba(255, 255, 255, 0), 22px 17px 0 -5px white, 9px 16px 0 -6px rgba(255, 255, 255, 0);
+}
+    85% {
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 9px -19px 0 -1px rgba(255, 255, 255, 0), 28px -19px 0 -2px rgba(255, 255, 255, 0), 39px -5px 0 -3px rgba(255, 255, 255, 0), 34px 10px 0 -4px rgba(255, 255, 255, 0), 22px 17px 0 -5px rgba(255, 255, 255, 0), 9px 16px 0 -6px white;
+}
+    100% {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 9px -19px 0 -1px rgba(255, 255, 255, 0), 28px -19px 0 -2px rgba(255, 255, 255, 0), 39px -5px 0 -3px rgba(255, 255, 255, 0), 34px 10px 0 -4px rgba(255, 255, 255, 0), 22px 17px 0 -5px rgba(255, 255, 255, 0), 9px 16px 0 -6px rgba(255, 255, 255, 0);
+}
+  }
+  `,
+  },
+
+    
+    
+    {
         id: "7en5eji78kt",
         html: `<span class="loader"></span>`,
         css: `.loader {
@@ -1623,8 +1687,165 @@ export const CIRCLE = [
     100% {
       border-color: rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.75) rgba(255, 255, 255, 0.15);
 }
-  }`,
-    }, {
+  }
+  
+  `,
+    }, 
+
+
+
+
+  {
+    id: "clircleSpderX3",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      position: relative;
+      background: rgba(255, 255, 255, 0.8);
+    }
+    .loader:before , .loader:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #FFF;
+      animation: slide 1s infinite linear alternate;
+      opacity: 0.5;
+    }
+    .loader:after {
+      animation: slide2 1s infinite linear alternate;
+      opacity: 1;
+
+    }
+    @keyframes slide {
+      0% , 20% {  transform: translate(0, 0)  }
+      80% , 100% { transform: translate(15px, 15px) }
+    }
+    @keyframes slide2 {
+      0% , 20% {  transform: translate(0, 0) }
+      80% , 100% { transform: translate(-15px, -15px) }
+    }
+  `,
+  },
+
+
+  {
+    id: "bbule2pUshpPlusering",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+      width: 84px;
+      height: 84px;
+      position: relative;
+    }
+    .loader:before , .loader:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width:64px;
+      height: 64px;
+      border-radius: 50%;
+      background:#FFF;
+      transform: translate(-50% , -100%)  scale(0);
+      animation: push 2s infinite linear;
+    }
+    .loader:after {
+      animation-delay: 1s;
+    }
+    @keyframes push {
+        0% , 50%{ transform: translate(-50% , 0%)  scale(1) }
+      100% { transform: translate(-50%, -100%) scale(0) }
+    }
+  `,
+    }, 
+
+  {
+    id: "bubblePushBack2ls",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+        width: 84px;
+        height: 84px;
+        position: relative;
+      }
+      .loader:before , .loader:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width:84px;
+        height: 84px;
+        border-radius: 50%;
+        background:#FF3D00;
+        animation: push 1s infinite linear alternate;
+      }
+      .loader:after {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        background: #fff;
+        animation-direction: alternate-reverse;
+      }
+      @keyframes push {
+          0% {
+            width:14px;
+            height: 14px;
+          }
+          100% {
+            width:84px;
+            height: 84px;
+          }
+      }
+  `,
+    }, 
+  {
+    id: "userPushBackCrl",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+        width: 84px;
+        height: 84px;
+        position: relative;
+        overflow: hidden;
+      }
+      .loader:before , .loader:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width:64px;
+        height: 64px;
+        border-radius: 50%;
+        background:#FFF;
+        transform: translate(-50% , 100%)  scale(0);
+        animation: push 2s infinite ease-in;
+      }
+      .loader:after {
+      animation-delay: 1s;
+      }
+      @keyframes push {
+          0% {
+            transform: translate(-50% , 100%)  scale(1);
+          }
+          15% , 25%{
+            transform: translate(-50% , 50%)  scale(1);
+          }
+        50% , 75% {
+            transform: translate(-50%, -30%) scale(0.5);
+          }
+        80%,  100% {
+            transform: translate(-50%, -50%) scale(0);
+          }
+      }
+  `,
+    }, 
+    
+  
+    
+    {
         id: "im0eqyxwqhs",
         html: `<span class="loader"></span>`,
         css: `.loader {

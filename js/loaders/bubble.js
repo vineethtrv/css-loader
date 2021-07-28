@@ -465,69 +465,43 @@ export const BUBBLE = [
           }
         `,
     },
-    
-    
-    
-    
-    
-    {
-        id: "2y45kuxbrr",
-        html: `<span class="loader"></span>`,
-        css: `.loader {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-}
-  .loader::after {
-    content: '';
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    position: absolute;
-    left: 0;
-    transform: translate(-50%, 100%);
-    box-sizing: border-box;
-    animation: animloader 1s linear infinite;
-    top: 0;
-  }
-
-@keyframes animloader {
-    0% {
-  background: white;
-  box-shadow: 9px -19px 0 -1px rgba(255, 255, 255, 0), 28px -19px 0 -2px rgba(255, 255, 255, 0), 39px -5px 0 -3px rgba(255, 255, 255, 0), 34px 10px 0 -4px rgba(255, 255, 255, 0), 22px 17px 0 -5px rgba(255, 255, 255, 0), 9px 16px 0 -6px rgba(255, 255, 255, 0);
-}
-    14% {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 9px -19px 0 -1px white, 28px -19px 0 -2px rgba(255, 255, 255, 0), 39px -5px 0 -3px rgba(255, 255, 255, 0), 34px 10px 0 -4px rgba(255, 255, 255, 0), 22px 17px 0 -5px rgba(255, 255, 255, 0), 9px 16px 0 -6px rgba(255, 255, 255, 0);
-}
-    28% {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 9px -19px 0 -1px rgba(255, 255, 255, 0), 28px -19px 0 -2px white, 39px -5px 0 -3px rgba(255, 255, 255, 0), 34px 10px 0 -4px rgba(255, 255, 255, 0), 22px 17px 0 -5px rgba(255, 255, 255, 0), 9px 16px 0 -6px rgba(255, 255, 255, 0);
-}
-    42% {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 9px -19px 0 -1px rgba(255, 255, 255, 0), 28px -19px 0 -2px rgba(255, 255, 255, 0), 39px -5px 0 -3px white, 34px 10px 0 -4px rgba(255, 255, 255, 0), 22px 17px 0 -5px rgba(255, 255, 255, 0), 9px 16px 0 -6px rgba(255, 255, 255, 0);
-}
-    57% {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 9px -19px 0 -1px rgba(255, 255, 255, 0), 28px -19px 0 -2px rgba(255, 255, 255, 0), 39px -5px 0 -3px rgba(255, 255, 255, 0), 34px 10px 0 -4px white, 22px 17px 0 -5px rgba(255, 255, 255, 0), 9px 16px 0 -6px rgba(255, 255, 255, 0);
-}
-    71% {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 9px -19px 0 -1px rgba(255, 255, 255, 0), 28px -19px 0 -2px rgba(255, 255, 255, 0), 39px -5px 0 -3px rgba(255, 255, 255, 0), 34px 10px 0 -4px rgba(255, 255, 255, 0), 22px 17px 0 -5px white, 9px 16px 0 -6px rgba(255, 255, 255, 0);
-}
-    85% {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 9px -19px 0 -1px rgba(255, 255, 255, 0), 28px -19px 0 -2px rgba(255, 255, 255, 0), 39px -5px 0 -3px rgba(255, 255, 255, 0), 34px 10px 0 -4px rgba(255, 255, 255, 0), 22px 17px 0 -5px rgba(255, 255, 255, 0), 9px 16px 0 -6px white;
-}
-    100% {
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 9px -19px 0 -1px rgba(255, 255, 255, 0), 28px -19px 0 -2px rgba(255, 255, 255, 0), 39px -5px 0 -3px rgba(255, 255, 255, 0), 34px 10px 0 -4px rgba(255, 255, 255, 0), 22px 17px 0 -5px rgba(255, 255, 255, 0), 9px 16px 0 -6px rgba(255, 255, 255, 0);
-}
-  }
-  `,
+  {
+    id: "spincVsSroadgd4f",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+      width: 86px;
+      height: 50px;
+      border-radius: 50px;
+      background:
+        radial-gradient(farthest-side,#0000 calc(100% - 10px),#FFF calc(100% - 10px) 100%,#0000) left,
+        radial-gradient(farthest-side,#0000 calc(100% - 10px),#FFF calc(100% - 10px) 100%,#0000) right;
+      background-size: calc(50% + 5px) 100%;
+      background-repeat: no-repeat;
+      position: relative;
+      animation: flipX 1s infinite linear;
+    }
+    .loader:before {
+      content: "";
+      position: absolute;
+      inset:0;
+      margin:auto;
+      width:10px;
+      height: 10px;
+      border-radius: 50%;
+      background:#FF3D00;
+      transform-origin: -14px 50%;
+      animation: rotate 0.5s infinite linear;
     }
 
+    @keyframes flipX {
+        0%,49.99% { transform:scaleX(1)}
+        50%,100% { transform:scaleX(-1)}
+    }
+
+    @keyframes rotate {
+        100% { transform:rotate(360deg)}
+    }
+        `,
+    },
+    
 ]
