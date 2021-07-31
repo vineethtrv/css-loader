@@ -1342,28 +1342,32 @@ code {
   width: 64px;
   height: 64px;
   position: relative;
-  background-image: linear-gradient(#FFF 16px, transparent 0), linear-gradient(#FF3D00 16px, transparent 0), linear-gradient(#FF3D00 16px, transparent 0), linear-gradient(#FFF 16px, transparent 0);
-  background-repeat: no-repeat;
-  background-size: 16px 16px;
-  background-position: left top , left bottom , right top , right bottom;
-  animation: rotate 1s linear infinite;
+  border-radius: 50%;
+  box-shadow: -10px 8px 0 18px inset #fff;
+  animation: rotate 2s ease-in infinite alternate;
+}
+
+#demo .loader::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  bottom: 16px;
+  background: #FF3D00;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  animation: scale 1s ease-in infinite alternate;
 }
 
 @keyframes rotate {
-  0% {
-    width: 64px;
-    height: 64px;
-    transform: rotate(0deg);
-  }
-  50% {
-    width: 30px;
-    height: 30px;
-    transform: rotate(180deg);
-  }
   100% {
-    width: 64px;
-    height: 64px;
-    transform: rotate(360deg);
+    transform: rotate(750deg);
+  }
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(0.5) translateY(5px);
   }
 }
 

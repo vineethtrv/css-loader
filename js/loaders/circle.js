@@ -1556,6 +1556,82 @@ export const CIRCLE = [
         }
 `,
   },
+  {
+    id: "thon1SqrAttam",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  position: relative;
+  width: 64px;
+  height: 60px;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  width: 64px;
+  height: 32px;
+  border-radius: 0 0 50px 50px;
+  animation: move 0.5s linear infinite alternate;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  background: #FF3D00;
+  width: 24px;
+  height: 24px;
+  transform: translateX(-50%) rotate(0deg);
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  100% { transform: translateX(-50%) rotate(360deg)}
+}
+@keyframes move {
+  0% { transform: rotate(10deg)}
+  100% { transform: rotate(-10deg)}
+}
+      `,
+  },
+  {
+    id: "crlHlfVadiKotadi",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  animation: rotate 1.5s ease-in infinite alternate;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #FF3D00;
+  background: currentColor;
+  width: 64px;
+  height: 32px;
+  border-radius: 0 0 50px 50px;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  background: #FFF;
+  width: 8px;
+  height: 64px;
+  animation: rotate 1.2s linear infinite alternate-reverse;
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg)}
+}
+      `,
+  },
     
     
     {
@@ -1689,6 +1765,38 @@ export const CIRCLE = [
 }
   }
   
+  `,
+    }, 
+
+
+  {
+    id: "potRoteBuble2x",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: -10px 8px 0 18px inset #fff;
+  animation: rotate 2s ease-in infinite alternate;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  bottom: 16px;
+  background: #FF3D00;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  animation: scale 1s ease-in infinite alternate;
+}
+@keyframes rotate {
+  100% { transform: rotate(750deg)}
+}
+@keyframes scale {
+ 100% { transform: scale(0.5) translateY(5px)}
+}
   `,
     }, 
 

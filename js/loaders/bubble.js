@@ -392,6 +392,45 @@ export const BUBBLE = [
   }
 }`,
     },
+  {
+    id: "cyclo5xballx",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+        position: relative;
+  width: 15px;
+  height: 64px;
+}
+.loader::after , .loader::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  background: currentColor;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  box-shadow: 45px 0 , -45px 0;
+  animation: move 0.5s linear infinite alternate;
+}
+
+.loader::before {
+  top: 100%;
+  box-shadow: 50px 0 ;
+  left: -25px;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes move {
+  0% { top: 0 }
+  50% { top: 50% }
+  100% { top: 100% }
+}`,
+    },
+
+
+
+
     {
         id: "bbleHrSpinShdw34f",
         html: `<span class="loader"></span>`,
