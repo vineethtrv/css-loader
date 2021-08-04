@@ -56,6 +56,82 @@ background-image: linear-gradient(0deg,
   `,
   },
   {
+    id: "gHomeChrgLdingFlash",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  margin: -64px auto 0;
+  background-color: #ccc;
+  background-image: radial-gradient(#fff 4px, #0000  0),
+                    radial-gradient(#fff 4px, #0000  0),
+                    radial-gradient(#fff 4px, #0000  0),
+                    radial-gradient(#fff 4px, #0000  0);
+  background-position: 24px center, 8px center, -8px center, -24px center;
+  position: relative;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15) inset;
+  animation: flash 1s linear infinite;
+}
+.loader::before , .loader::after {
+  content: '';
+  position: absolute;
+  border: 1px solid #ccc;
+  border-top-color:#0000;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 18px;
+  background: #fff;
+}
+
+.loader::before {
+  width: 0px;
+  height: 64px;
+  transform: translate(-50% , 18px);
+}
+
+@keyframes flash {
+ 0%{
+      background-image:
+        radial-gradient(#DDD 4px, #0000  0),
+        radial-gradient(#DDD 4px, #0000  0),
+        radial-gradient(#DDD 4px, #0000  0),
+        radial-gradient(#DDD 4px, #0000  0);
+  }
+ 25%{
+      background-image:
+      radial-gradient(#DDD 4px, #0000  0),
+      radial-gradient(#DDD 4px, #0000  0),
+      radial-gradient(#DDD 4px, #0000  0),
+      radial-gradient(#fff 4px, #0000  0);
+  }
+ 50%{
+      background-image:
+      radial-gradient(#DDD 4px, #0000  0),
+      radial-gradient(#DDD 4px, #0000  0),
+      radial-gradient(#fff 4px, #0000  0),
+      radial-gradient(#fff 4px, #0000  0);
+  }
+ 75%{
+      background-image:
+        radial-gradient(#DDD 4px, #0000  0),
+        radial-gradient(#fff 4px, #0000  0),
+        radial-gradient(#fff 4px, #0000  0),
+        radial-gradient(#fff 4px, #0000  0);
+  }
+ 100%{
+      background-image:
+        radial-gradient(#fff 4px, #0000  0),
+        radial-gradient(#fff 4px, #0000  0),
+        radial-gradient(#fff 4px, #0000  0),
+        radial-gradient(#fff 4px, #0000  0);
+  }
+  `,
+  },
+
+  {
     id: "colorPalatteSpltex3",
     html: `<span class="loader"></span>`,
     css: `.loader {
@@ -671,7 +747,63 @@ background-image: linear-gradient(0deg,
   }
 }
     `,
-    }, {
+    },
+    
+  {
+    id: "locakHackPrcess",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 64px;
+  height: 44px;
+  position: relative;
+  border: 5px solid #fff;
+  border-radius: 8px;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  border: 5px solid #fff;
+  width: 32px;
+  height: 28px;
+  border-radius: 50% 50% 0 0;
+  left: 50%;
+  top: 0;
+  transform: translate(-50% , -100%)
+
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  transform: translate(-50% , -50%);
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 16px 0 #fff, -16px 0 #fff;
+  animation: flash 0.5s ease-out infinite alternate;
+}
+
+@keyframes flash {
+  0% {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 16px 0 rgba(255, 255, 255, 0.25), -16px 0 rgba(255, 255, 255, 1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 16px 0 rgba(255, 255, 255, 0.25), -16px 0 rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 16px 0 rgba(255, 255, 255, 1), -16px 0 rgba(255, 255, 255, 0.25);
+  }
+}
+    `,
+    },
+    
+    
+    {
         id: "4z17obmn46s",
         html: `<span class="loader"></span>`,
         css: `.loader {

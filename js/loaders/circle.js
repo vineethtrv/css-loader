@@ -1269,6 +1269,40 @@ export const CIRCLE = [
   }
   `,
     },
+
+  {
+    id: "rippleBlixShd",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 8px;
+  height: 8px;
+  position: relative;
+  border-radius: 50%;
+  background: #fff;
+  animation: wave 1s ease-in infinite;
+}
+
+@keyframes wave {
+ 0% {  box-shadow:
+  0 0 0 0px rgba(255, 255,255, 1),
+  0 0 0 20px rgba(255, 255,255, 0.2),
+  0 0 0 40px rgba(255, 255,255, 0.6),
+  0 0 0 60px rgba(255, 255,255, 0.4),
+  0 0 0 80px rgba(255, 255,255, 0.2)
+  }
+  100% {  box-shadow:
+    0 0 0 80px rgba(255, 255,255, 0),
+    0 0 0 60px rgba(255, 255,255, 0.2),
+    0 0 0 40px rgba(255, 255,255, 0.4),
+    0 0 0 20px rgba(255, 255,255, 0.6),
+    0 0 0 0px rgba(255, 255,255, 1)
+  }
+}
+
+
+  `,
+    },
+
   {
     id: "coin-flip-b8sp",
     html: `<span class="loader"></span>`,
@@ -1843,6 +1877,44 @@ export const CIRCLE = [
 
 
   {
+    id: "bbl2TrnsSpltMv",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 64px;
+  height: 48px;
+  position: relative;
+  animation: split 1s ease-in infinite alternate;
+}
+.loader::before , .loader::after {
+  content: '';
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  transform: translateX(-10px);
+  background: #FF3D00;
+  opacity: 0.75;
+  backdrop-filter: blur(20px);
+}
+
+.loader::after {
+  left: auto;
+  right: 0;
+  background: #FFF;
+  transform: translateX(10px);
+}
+
+@keyframes split {
+ 0% , 25%{ width: 64px }
+ 100%{ width: 148px }
+}
+  `,
+  },
+
+
+  {
     id: "bbule2pUshpPlusering",
     html: `<span class="loader"></span>`,
     css: `.loader {
@@ -1948,6 +2020,42 @@ export const CIRCLE = [
             transform: translate(-50%, -50%) scale(0);
           }
       }
+  `,
+    }, 
+
+
+  {
+    id: "doduSpiBablFil",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  border-radius: 50%;
+  color: #FF3D00;
+  animation: fill 1s ease-in infinite alternate;
+}
+.loader::before , .loader::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  left: 48px;
+  top: 0;
+  animation: fill 0.9s ease-in infinite alternate;
+}
+
+.loader::after {
+  left: auto;
+  right: 48px;
+  animation-duration: 1.1s;
+}
+
+@keyframes fill {
+ 0% {  box-shadow: 0 0 0 2px inset }
+ 100%{ box-shadow: 0 0 0 10px inset }
+}
   `,
     }, 
     

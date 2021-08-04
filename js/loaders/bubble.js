@@ -169,6 +169,35 @@ export const BUBBLE = [
       }
       `
     },
+  {
+    id: "msgerBblLdan3xbl",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 32px 0 #fff, -32px 0 #fff;
+  position: relative;
+  animation: flash 0.5s ease-out infinite alternate;
+}
+
+@keyframes flash {
+  0% {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 32px 0 rgba(255, 255, 255, 0.25), -32px 0 rgba(255, 255, 255, 1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 32px 0 rgba(255, 255, 255, 0.25), -32px 0 rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 32px 0 rgba(255, 255, 255, 1), -32px 0 rgba(255, 255, 255, 0.25);
+  }
+}
+      `
+    },
     
     
     
@@ -253,8 +282,51 @@ export const BUBBLE = [
   100% {
     transform: rotate(360deg);
   }
-} `,
-    }, {
+} 
+`,
+    },
+  {
+    id: "collution2BallJp1x",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 82px;
+  height: 18px;
+  position: relative;
+}
+.loader::before , .loader::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translate(-50% , 10%);
+  top: 0;
+  background: #FF3D00;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  animation: jump 0.5s ease-in infinite alternate;
+}
+
+.loader::after {
+  background: #0000;
+  color: #fff;
+  top: 100%;
+  box-shadow: 32px -20px , -32px -20px;
+  animation: split 0.5s ease-out infinite alternate;
+}
+
+@keyframes split {
+  0% { box-shadow: 8px -20px, -8px -20px}
+  100% { box-shadow: 32px -20px , -32px -20px}
+}
+@keyframes jump {
+ 0% { transform: translate(-50% , -150%)}
+ 100% { transform: translate(-50% , 10%)}
+}
+`,
+    },
+    
+    
+    {
         id: "b4bqez184d",
         html: `<span class="loader"></span>`,
         css: `.loader {
@@ -390,7 +462,144 @@ export const BUBBLE = [
   100% {
     box-shadow: -38px 0 , -14px 0, 14px 0 , 38px -12px;
   }
-}`,
+}
+
+`,
+    },
+
+  {
+    id: "bbl4flowBrix",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  left: -32px;
+  border-radius: 50%;
+  color: #fff;
+  background: currentColor;
+  box-shadow: 32px 0 , -32px 0 ,  64px 0;
+}
+
+.loader::after {
+  content: '';
+  position: absolute;
+  left: -32px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 10px;
+  background:#FF3D00;
+  animation: move 3s linear infinite alternate;
+}
+
+@keyframes move {
+  0% , 5%{
+    left: -32px;
+    width: 16px;
+  }
+  15% , 20%{
+    left: -32px;
+    width: 48px;
+  }
+  30% , 35%{
+    left: 0px;
+    width: 16px;
+  }
+  45% , 50%{
+    left: 0px;
+    width: 48px;
+  }
+  60% , 65%{
+    left: 32px;
+    width: 16px;
+  }
+
+  75% , 80% {
+    left: 32px;
+    width: 48px;
+  }
+  95%, 100% {
+    left: 64px;
+    width: 16px;
+  }
+`,
+    },
+
+  {
+    id: "ntonPend5Xbal",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 32px 0 #fff, -32px 0 #fff;
+  position: relative;
+  animation: flash 0.3s ease-in infinite alternate;
+}
+.loader::before , .loader::after {
+  content: '';
+  position: absolute;
+  left: -64px;
+  top: 0;
+  background: #FFF;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transform-origin: 35px -35px;
+  transform: rotate(45deg);
+  animation: hitL 0.3s ease-in infinite alternate;
+}
+
+.loader::after {
+  left: 64px;
+  transform: rotate(-45deg);
+  transform-origin: -35px -35px;
+  animation: hitR 0.3s ease-out infinite alternate;
+}
+
+@keyframes flash {
+  0%  , 100%{
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 32px 0 rgba(255, 255, 255, 0.25), -32px 0 rgba(255, 255, 255, 0.25);
+  }
+  25% {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 32px 0 rgba(255, 255, 255, 0.25), -32px 0 rgba(255, 255, 255, 1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 32px 0 rgba(255, 255, 255, 0.25), -32px 0 rgba(255, 255, 255, 0.25);
+  }
+  75% {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 32px 0 rgba(255, 255, 255, 1), -32px 0 rgba(255, 255, 255, 0.25);
+  }
+}
+
+@keyframes hitL {
+ 0% {
+   transform: rotate(45deg);
+   background-color: rgba(255, 255, 255, 1);
+  }
+25% , 100% {
+   transform: rotate(0deg);
+  background-color: rgba(255, 255, 255, 0.25);
+  }
+}
+
+@keyframes hitR {
+ 0% , 75% {
+   transform: rotate(0deg);
+   background-color: rgba(255, 255, 255, 0.25);
+  }
+ 100% {
+   transform: rotate(-45deg);
+  background-color: rgba(255, 255, 255, 1);
+  }
+}
+`,
     },
   {
     id: "cyclo5xballx",
