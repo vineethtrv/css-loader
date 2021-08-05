@@ -167,8 +167,162 @@ export const BUBBLE = [
         0% , 100%{ transform: translate(15px) }
         50% { transform: translate(-15px) }
       }
+
+      
       `
     },
+
+  {
+    id: "ball@2Xsn-1",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  box-sizing: border-box;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  animation: flip 1s linear infinite;
+}
+.loader:after, .loader:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  border-radius: 50%;
+  background: #FF3D00;
+  animation: spin 1s linear infinite;
+  transform-origin: 12px 100%;
+}
+.loader:before {
+  transform-origin: 0 50%;
+  background: #fff;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes flip {
+  0%, 50% {
+    transform: rotateY(0deg);
+  }
+  50%, 100% {
+    transform: rotateY(180deg);
+  }
+}
+    `
+    },
+
+
+  {
+    id: "ball@2Xsn-2",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  box-sizing: border-box;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+}
+.loader:after, .loader:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  border-radius: 50%;
+  background: #FF3D00;
+  animation: spin 1s linear infinite;
+  transform-origin: 0px 100%;
+}
+.loader:before {
+  transform-origin: 0 50%;
+  background: #fff;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+    `
+    },
+  {
+    id: "ball@2Xsn-3",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  box-sizing: border-box;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+}
+.loader:after, .loader:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  border-radius: 50%;
+  background: #FF3D00;
+  animation: flipY 1s linear infinite;
+  transform-origin: 50% 50%;
+}
+.loader:before {
+  transform-origin: 0% 100%;
+  background: #fff;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes flipY {
+  0%, 50% {
+    transform: rotateY(0deg);
+  }
+  50%, 100% {
+    transform: rotateY(180deg);
+  }
+}
+    `
+    },
+
+
+  {
+    id: "ball@2Xsn-4",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: calc(100px - 14px);
+  height: 50px;
+  position: relative;
+  animation: flippx 1s infinite linear;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FF3D00;
+  transform-origin: -14px 50%;
+  animation: spin 0.5s infinite linear;
+}
+@keyframes flippx {
+  0%, 49% {
+    transform: scaleX(1);
+  }
+  50%, 100% {
+    transform: scaleX(-1);
+  }
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+    `
+    },
+
+
   {
     id: "msgerBblLdan3xbl",
     html: `<span class="loader"></span>`,

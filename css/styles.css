@@ -9,7 +9,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #263238;
+  background: #263038;
 }
 
 /* Handle */
@@ -24,7 +24,7 @@
 
 body {
   margin: 0;
-  background: #263238;
+  background: #263038;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -209,7 +209,7 @@ footer a:hover, footer a:active {
 }
 
 .showcase {
-  background: #263238;
+  background: #263038;
   margin-bottom: 15px;
 }
 
@@ -1339,51 +1339,51 @@ code {
 }
 
 #demo .loader {
-  width: 84px;
-  height: 52px;
+  width: 100px;
+  height: 75px;
+  margin: 0 auto;
+  background: #fff;
   position: relative;
-  border: 5px solid #fff;
-  border-radius: 8px;
+  border-radius: 100%;
 }
 
-#demo .loader::before {
+#demo .loader:before {
   content: '';
   position: absolute;
-  border: 5px solid #fff;
-  width: 36px;
-  height: 32px;
-  border-radius: 50% 50% 0 0;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, -100%);
+  box-sizing: border-box;
+  border: 15px solid transparent;
+  border-top: 25px solid #fff;
+  transform: rotate(45deg);
+  top: 50px;
+  left: -15px;
 }
 
-#demo .loader::after {
+#demo .loader:after {
   content: '';
+  width: 12px;
+  height: 12px;
   position: absolute;
-  transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
-  width: 8px;
-  height: 8px;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
-  background-color: #fff;
-  box-shadow: 16px 0 #fff, -16px 0 #fff;
+  background-color: #FF3D00;
+  box-shadow: 20px 0 #FF3D00, -20px 0 #FF3D00;
   animation: flash 0.5s ease-out infinite alternate;
 }
 
 @keyframes flash {
   0% {
-    background-color: rgba(255, 255, 255, 0.25);
-    box-shadow: 16px 0 rgba(255, 255, 255, 0.25), -16px 0 white;
+    background-color: rgba(255, 60, 0, 0.25);
+    box-shadow: 20px 0 rgba(255, 60, 0, 0.25), -20px 0 #FF3D00;
   }
   50% {
-    background-color: white;
-    box-shadow: 16px 0 rgba(255, 255, 255, 0.25), -16px 0 rgba(255, 255, 255, 0.25);
+    background-color: #FF3D00;
+    box-shadow: 20px 0 rgba(255, 60, 0, 0.25), -20px 0 rgba(255, 60, 0, 0.25);
   }
   100% {
-    background-color: rgba(255, 255, 255, 0.25);
-    box-shadow: 16px 0 white, -16px 0 rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 60, 0, 0.25);
+    box-shadow: 20px 0 #FF3D00, -20px 0 rgba(255, 60, 0, 0.25);
   }
 }
 
