@@ -1,16 +1,66 @@
-document.querySelectorAll('section').forEach(elm => {
+import { BUBBLE } from './loaders/bubble.js';
+import { CIRCLE } from './loaders/circle.js';
+import { GRAPH } from './loaders/graph.js';
+import { LINE } from './loaders/line.js';
+import { PROGRESS } from './loaders/progress.js';
+import { RECT } from './loaders/rect.js';
+import { SKELETON } from './loaders/skeleton.js';
+import { TEXT } from './loaders/text.js';
+
+
+
+const LOADERS = [...CIRCLE, ...BUBBLE, ...RECT, ...LINE, ...PROGRESS, ...TEXT, ...GRAPH , ...SKELETON ];
+
+
+const main = document.getElementById('main');
+
+
+// Create Spinners 
+LOADERS.forEach((loader, i) => {    
+    // Append Loader
+    main.appendChild(createLoader(i));
+    
+})
+
+
+function createLoader(i){
+    let loader = LOADERS[i];
+   
+    // Create html
+    let sectionEl = document.createElement('div');
+    sectionEl.setAttribute('class', 'section');
+    sectionEl.setAttribute('data-id', loader.id);
+    sectionEl.setAttribute('data-index', (i + 1));
+    let shadowRoot = sectionEl.attachShadow({ mode: 'open' });
+    
+    let loaderEl = document.createElement('span');
+    loaderEl.setAttribute('class', 'loader');
+    loaderEl.innerHTML = loader.content || null;
+    shadowRoot.appendChild(loaderEl);
+
+    //Create CSS 
+    let loaderStyles = document.createElement('style');
+    loaderStyles.type = 'text/css';
+    loaderStyles.innerHTML = loader.css;
+    shadowRoot.appendChild(loaderStyles);
+
+    return sectionEl
+}
+
+
+
+
+document.querySelectorAll('#main .section').forEach(elm => {
     elm.addEventListener('click', (e) => {
-        let index = 0;
-        if (e.target.nodeName === "SPAN") {
-            index = parseInt(e.target.parentElement.dataset.index);
-            document.querySelector('.showcase').innerHTML = e.target.outerHTML;
-            document.querySelector('.showcase')
-        } else {
-            index = parseInt(e.target.dataset.index);
-            document.querySelector('.showcase').innerHTML = e.target.innerHTML;
-        }
+        let index = parseInt(e.target.dataset.index);
+        let showCase = document.querySelector('.showcase');
+
+        showCase.replaceChildren(createLoader((index - 1)));
+
+        
         // console.log(e);
-        document.querySelector('.showcase').dataset.index = index;
+        showCase.dataset.index = index;
+
         // load code
         document.querySelector('#markup').textContent = LOADERS[index - 1].html;
         document.querySelector('#css').textContent = LOADERS[index - 1].css;
