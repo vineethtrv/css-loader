@@ -178,16 +178,16 @@ export const SKELETON = [
     to {
       background-position: 315px 0, 0 0, 15px 140px, 65px 145px;
     }
-  }`
+  }
+  `
   },
-    
-    
-    {
-        id: "a31hn504vze",
-        html: `<span class="loader"></span>`,
-        css: `.loader {
-  width: 164px;
-  height: 170px;
+
+  {
+    id: "sklCrdCrl2xTl",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 215px;
+  height: 215px;
   display: block;
   margin: auto;
   position: relative;
@@ -195,28 +195,97 @@ export const SKELETON = [
   box-sizing: border-box;
 }
 .loader::after {
-  content: '';  
+  content: '';
   width: calc(100% - 30px);
   height: calc(100% - 30px);
   top: 15px;
   left: 15px;
   position: absolute;
-  background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5) 50%, transparent 100%), linear-gradient(#DDD 74px, transparent 0), linear-gradient(#DDD 16px, transparent 0), linear-gradient(#DDD 24px, transparent 0);
+  background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5) 50%, transparent 100%),
+   radial-gradient(circle 50px , #DDD 100%, transparent 0),
+   linear-gradient(#DDD 16px, transparent 0),
+   linear-gradient(#DDD 24px, transparent 0);
   background-repeat: no-repeat;
-  background-size: 50px 170px, 100% 74px, 100% 16px, 100% 32px;
-  background-position: 0 0, 0 0, 0px 85px, 0px 110px;
+  background-size: 75px 175px, 100% 100px, 80% 16px, 80% 16px;
+  background-position: -185px 0, center 10px, center 125px, center 155px;
   box-sizing: border-box;
   animation: animloader 1s linear infinite;
 }
 
 @keyframes animloader {
-  0% {
-    background-position: 0 0, 0 0, 0px 85px, 0px 110px;
-  }
-  100% {
-    background-position: 150% 0, 0 0, 0px 85px, 0px 110px;
+  to {
+    background-position: 185px 0, center 10px, center 125px, center 155px;
   }
 }
+  `
+  },
+    
+    
+    {
+        id: "a31hn504vze",
+        html: `<span class="loader"></span>`,
+        css: `.loader {
+  width: 215px;
+  height: 215px;
+  display: block;
+  margin: auto;
+  position: relative;
+  background: #FFF;
+  box-sizing: border-box;
+}
+.loader::after {
+  content: '';
+  width: calc(100% - 30px);
+  height: calc(100% - 15px);
+  top: 15px;
+  left: 15px;
+  position: absolute;
+  background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5) 50%, transparent 100%),
+   linear-gradient(#DDD 100px, transparent 0),
+   linear-gradient(#DDD 16px, transparent 0),
+   linear-gradient(#DDD 50px, transparent 0);
+  background-repeat: no-repeat;
+  background-size: 75px 175px, 100% 100px, 100% 16px, 100% 30px;
+  background-position: -185px 0, center 0, center 115px, center 142px;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite;
+}
+
+@keyframes animloader {
+  to {
+    background-position: 185px 0, center 0, center 115px, center 142px;
+  }
+}
+
 `,
+    },
+    
+    {
+        id: "sklCrdSqr2xtxt",
+        html: `<span class="loader"></span>`,
+        css: `.loader {
+      width: 215px;
+      height: 220px;
+      background:
+          linear-gradient(0.25turn, transparent, #FFF, transparent),
+          linear-gradient(#DDD, #DDD),
+          linear-gradient(#DDD, #DDD),
+          linear-gradient(#DDD, #DDD);
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-size: 215px 220px, 215px 130px, 100px 15px, 150px 15px;
+      background-position: -215px 0, 0 0, 15px 150px, 15px 180px;
+      animation: loading 1.5s infinite;
+  }
+
+  @keyframes loading {
+    to {
+      background-position: 215px 0, 0 0, 15px 150px, 15px 180px;
     }
+  }
+`,
+    },
+
+
+
 ]

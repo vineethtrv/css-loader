@@ -1343,29 +1343,63 @@ code {
 }
 
 #demo .loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #FFF;
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: auto;
+  position: relative;
+  background: #222;
   border-radius: 50%;
-  display: inline-block;
   box-sizing: border-box;
-  animation: rotation 1s linear infinite;
+  transform-origin: 170px 50px;
+  border: 4px solid #333;
+  box-shadow: 3px 4px #0003 inset, 0 0 6px #0002 inset;
+  animation: panmov 0.4s ease-in-out infinite alternate;
 }
 
-#demo .loader:after {
+#demo .loader::before {
   content: '';
   position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #FF3D00;
-  left: 0px;
-  top: 0px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) skew(-15deg, 15deg) rotate(-15deg);
+  width: 55px;
+  height: 53px;
+  background: #fff;
+  background-image: radial-gradient(circle 3px, #fff6 90%, transparent 10%), radial-gradient(circle 12px, #ffc400 90%, transparent 10%), radial-gradient(circle 12px, #ffae00 100%, transparent 0);
+  background-repeat: no-repeat;
+  background-position: -4px -6px , -2px -2px , -1px -1px;
+  box-shadow: -2px -3px #0002 inset, 0 0 4px #0003 inset;
+  border-radius: 47% 36% 50% 50% / 49% 45% 42% 44%;
+  animation: ylmov 0.6s ease-in-out infinite alternate;
 }
 
-@keyframes rotation {
-  100% {
-    transform: rotate(360deg);
+#demo .loader::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 48px;
+  height: 15px;
+  width: 70px;
+  background: #222222;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 3px 0 3px #eee2 inset;
+  transform: rotate(5deg) translateX(3px);
+}
+
+@keyframes panmov {
+  0%, 10% {
+    transform: rotate(5deg);
+  }
+  90%, 100% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes ylmov {
+  to {
+    border-radius: 50% 36% 50% 50% / 49% 50% 45% 45%;
+    background-position: -2px -4px , 2px 2px , 1px 1px;
   }
 }
 
