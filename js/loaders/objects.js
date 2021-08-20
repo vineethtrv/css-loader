@@ -235,6 +235,133 @@ export const OBJECTS = [
   `,
     },
 
+  {
+    id: "globArRot",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+    position: relative;
+    width: 120px;
+    height: 140px;
+    background-image: radial-gradient(circle 30px, #fff 100%, transparent 0),
+    radial-gradient(circle 5px, #fff 100%, transparent 0),
+    radial-gradient(circle 5px, #fff 100%, transparent 0),
+    linear-gradient(#FFF 20px, transparent 0);
+    background-position: center 127px , 94px 102px , 16px 18px, center 114px;
+    background-size: 60px 60px, 10px 10px , 10px 10px , 4px 14px;
+    background-repeat: no-repeat;
+    z-index: 10;
+    perspective: 500px;
+  }
+  .loader::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+    border: 3px solid #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -55%) rotate(-45deg);
+    border-right-color: transparent;
+    box-sizing: border-box;
+}
+  .loader::after {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    transform: translate(-50%, -55%) rotate(-45deg) rotateY(0deg) ;
+    left: 50%;
+    top: 50%;
+    box-sizing: border-box;
+    border: 7px solid #FF3D00;
+    border-radius:50%;
+    animation: rotate 0.5s linear infinite;
+  }
+
+@keyframes rotate {
+  to{transform: translate(-50%, -55%) rotate(-45deg) rotateY(360deg)   }
+}
+    `,
+    },
+
+  {
+    id: "fillSandClock",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 50px;
+  height: 80px;
+  border-top: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+  position: relative;
+  background: linear-gradient(#FF3D00 30px, transparent 0) no-repeat;
+  background-size: 2px 40px;
+  background-position: 50% 0px;
+  animation: spinx 5s linear infinite;
+}
+.loader:before, .loader:after {
+  content: "";
+  width: 40px;
+  left: 50%;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  transform: translatex(-50%);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 0 0 20px 20px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0 0px;
+  animation: lqt 5s linear infinite;
+}
+.loader:after {
+  top: auto;
+  bottom: 0;
+  border-radius: 20px 20px 0 0;
+  animation: lqb 5s linear infinite;
+}
+@keyframes lqt {
+  0%, 100% {
+    background-image: linear-gradient(#FF3D00 40px, transparent 0);
+    background-position: 0% 0px;
+  }
+  50% {
+    background-image: linear-gradient(#FF3D00 40px, transparent 0);
+    background-position: 0% 40px;
+  }
+  50.1% {
+    background-image: linear-gradient(#FF3D00 40px, transparent 0);
+    background-position: 0% -40px;
+  }
+}
+@keyframes lqb {
+  0% {
+    background-image: linear-gradient(#FF3D00 40px, transparent 0);
+    background-position: 0 40px;
+  }
+  100% {
+    background-image: linear-gradient(#FF3D00 40px, transparent 0);
+    background-position: 0 -40px;
+  }
+}
+@keyframes spinx {
+  0%, 49% {
+    transform: rotate(0deg);
+    background-position: 50% 36px;
+  }
+  51%, 98% {
+    transform: rotate(180deg);
+    background-position: 50% 4px;
+  }
+  100% {
+    transform: rotate(360deg);
+    background-position: 50% 36px;
+  }
+}
+    `,
+  },
 
     {
         id: "eyeBallMoveSinleo6e",
@@ -329,84 +456,6 @@ export const OBJECTS = [
 `,
     },
  
-
-  {
-    id: "fillSandClock",
-    html: `<span class="loader"></span>`,
-    css: `.loader {
-  box-sizing: border-box;
-  display: inline-block;
-  width: 50px;
-  height: 80px;
-  border-top: 5px solid #fff;
-  border-bottom: 5px solid #fff;
-  position: relative;
-  background: linear-gradient(#FF3D00 30px, transparent 0) no-repeat;
-  background-size: 2px 40px;
-  background-position: 50% 0px;
-  animation: spinx 5s linear infinite;
-}
-.loader:before, .loader:after {
-  content: "";
-  width: 40px;
-  left: 50%;
-  height: 35px;
-  position: absolute;
-  top: 0;
-  transform: translatex(-50%);
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 0 0 20px 20px;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: 0 0px;
-  animation: lqt 5s linear infinite;
-}
-.loader:after {
-  top: auto;
-  bottom: 0;
-  border-radius: 20px 20px 0 0;
-  animation: lqb 5s linear infinite;
-}
-@keyframes lqt {
-  0%, 100% {
-    background-image: linear-gradient(#FF3D00 40px, transparent 0);
-    background-position: 0% 0px;
-  }
-  50% {
-    background-image: linear-gradient(#FF3D00 40px, transparent 0);
-    background-position: 0% 40px;
-  }
-  50.1% {
-    background-image: linear-gradient(#FF3D00 40px, transparent 0);
-    background-position: 0% -40px;
-  }
-}
-@keyframes lqb {
-  0% {
-    background-image: linear-gradient(#FF3D00 40px, transparent 0);
-    background-position: 0 40px;
-  }
-  100% {
-    background-image: linear-gradient(#FF3D00 40px, transparent 0);
-    background-position: 0 -40px;
-  }
-}
-@keyframes spinx {
-  0%, 49% {
-    transform: rotate(0deg);
-    background-position: 50% 36px;
-  }
-  51%, 98% {
-    transform: rotate(180deg);
-    background-position: 50% 4px;
-  }
-  100% {
-    transform: rotate(360deg);
-    background-position: 50% 36px;
-  }
-}
-    `,
-    },
 
     {
         id: "h7vm0fttsne",
@@ -1555,7 +1604,8 @@ export const OBJECTS = [
   }
 }
 `,
-    }, {
+    },
+     {
         id: "8fzm1l50fw4",
         html: `<span class="loader"></span>`,
         css: `.loader {

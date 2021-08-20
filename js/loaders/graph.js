@@ -43,51 +43,6 @@ export const GRAPH = [
           }
 `,
   },
-
-  {
-    id: "navigator2SpinLding",
-    html: `<span class="loader"></span>`,
-    css: `.loader {
-      width: 64px;
-      height: 64px;
-      position: relative;
-      background: #FFF;
-      border-radius: 50%;
-      transform: rotate(45deg);
-      animation: rotate 2s linear infinite;
-    }
-    .loader:before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 15px;
-      height: 30px;
-      background: #FF3D00;
-      transform: skew(5deg , 60deg) translate(-50%, -5%);
-    }
-
-    .loader:after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #FFF;
-      transform:translate(-50% , -50%);
-    }
-
-    @keyframes rotate {
-      0% { transform: rotate(45deg)}
-      30% , 50% , 70%  { transform: rotate(230deg)}
-      40% , 60% , 80% { transform: rotate(240deg)}
-      100% {  transform: rotate(245deg)}
-   }
-  `,
-  },
-
   {
     id: "bookPagging",
     html: `<span class="loader"></span>`,
@@ -454,6 +409,125 @@ background-image: linear-gradient(0deg,
 }
   `,
   },
+  {
+    id: "phoneplzSldingswp",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 112px;
+  height: 218px;
+  border-radius: 8px;
+  background: #fff;
+  background-image:
+  linear-gradient(#c70000 30px, transparent 0),
+  linear-gradient(#e4c200 30px, transparent 0),
+  linear-gradient(#00a136 30px, transparent 0),
+  linear-gradient(#0026ff 30px, transparent 0),
+  linear-gradient(#7e0069 30px, transparent 0);
+  background-repeat: no-repeat;
+  background-position: 5px 5px, 5px 40px, 5px 75px, 5px 110px , 5px 145px;
+  background-size: 90px 30px;
+  border: 6px solid #222;
+  border-width: 18px 6px 20px;
+  box-sizing: border-box;
+  position: relative;
+  animation: clpszp 4s linear infinite;
+}
+.loader:before{
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: -18px;
+  width: 112px;
+  height: 218px;
+  border-radius: 8px;
+  background: linear-gradient(80deg, rgba(0,0,0,0.05) 45%,rgba(0,0,0,0) 46%);
+}
+.loader:after{
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  left: 60px;
+  top: 8px;
+  width: 24px;
+  height: 24px;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  background: rgba(0,0,0,0.12);
+  border: 2px solid rgba(255,255,255,0.2);
+  animation: thumbMove 4s linear infinite ;
+}
+
+@keyframes thumbMove {
+  0% {
+    left: 60px;
+    top: 8px;
+  }
+  10% {
+    left: 20px;
+    top: 8px;
+  }
+  20% {
+    left: 10px;
+    top: 40px;
+  }
+  30% {
+    left: 50px;
+    top: 40px;
+  }
+  40% {
+    left: 50px;
+    top: 80px;
+  }
+  50% {
+    left: 20px;
+    top: 80px;
+  }
+  60% {
+    left: 10px;
+    top: 110px;
+  }
+  70% {
+    left: 60px;
+    top: 110px;
+  }
+  80% {
+    left: 75px;
+    top: 135px;
+  }
+  90% {
+    left: 45px;
+    top: 155px;
+  }
+  100% {
+    left: 25px;
+    top: 8px;
+  }
+
+}
+
+@keyframes clpszp {
+  0% {
+    background-position: 5px 5px, 5px 40px, 5px 75px, 5px 110px , 5px 145px;
+  }
+  20% {
+    background-position: -100px 5px, 5px 40px, 5px 75px, 5px 110px , 5px 145px;
+  }
+  40% {
+    background-position: -100px 5px, 100px 40px, 5px 75px, 5px 110px , 5px 145px;
+  }
+  60% {
+    background-position: -100px 5px, 100px 40px, -100px 75px, 5px 110px , 5px 145px;
+  }
+  80% {
+    background-position: -100px 5px, 100px 40px, -100px 75px, 100px 110px , 5px 145px;
+  }
+  100% {
+    background-position: -100px 5px, 100px 40px, -100px 75px, 100px 110px , -100px 145px;
+  }
+}
+      `,
+  },
 
   {
     id: "grpCookPanEgg",
@@ -513,6 +587,71 @@ background-image: linear-gradient(0deg,
       border-radius: 50% 36% 50% 50% / 49% 50% 45% 45%;
       background-position: -2px -4px , 2px 2px , 1px 1px;
    }
+}
+  `,
+  },
+
+  {
+    id: "grpPanFlyEgg",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+    position: relative;
+    width: 120px;
+    height: 14px;
+    border-radius: 0 0 15px 15px;
+    background-color: #3e494d;
+    box-shadow: 0 -1px 4px #5d6063 inset;
+    animation: panex 0.5s linear alternate infinite;
+    transform-origin: 170px 0;
+    z-index: 10;
+    perspective: 300px;
+
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  left: calc( 100% - 2px);
+  top: 0;
+  z-index: -2;
+  height: 10px;
+  width: 70px;
+  border-radius: 0 4px 4px 0;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#6c4924, #4b2d21), linear-gradient(#4d5457 24px, transparent 0), linear-gradient(#9f9e9e 24px, transparent 0);
+  background-size: 50px 10px , 4px 8px , 24px 4px;
+  background-position: right center , 17px center , 0px center;
+}
+  .loader::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: -2;
+    transform: translate(-50% , -20px) rotate3d(75, -2, 3, 78deg);
+    width: 55px;
+    height: 53px;
+    background: #fff;
+    background-image:
+    radial-gradient(circle 3px , #fff6 90%, transparent 10%),
+    radial-gradient(circle 12px , #ffc400 90%, transparent 10%),
+    radial-gradient(circle 12px , #ffae00 100%, transparent 0);
+    background-repeat: no-repeat;
+    background-position: -4px -6px , -2px -2px , -1px -1px;
+    box-shadow: -2px -3px #0002 inset, 0 0 4px #0003 inset;
+    border-radius: 47% 36% 50% 50% / 49% 45% 42% 44%;
+    animation: eggRst 1s ease-out infinite;
+  }
+
+@keyframes eggRst {
+  0% ,  100%{  transform: translate(-50%, -20px) rotate3d(90, 0, 0, 90deg); opacity: 0; }
+  10% , 90% {  transform: translate(-50%, -30px) rotate3d(90, 0, 0, 90deg); opacity: 1; }
+  25%  {transform:  translate(-50% , -40px) rotate3d(85, 17, 2, 70deg) }
+  75% {transform:  translate(-50% , -40px) rotate3d(75, -3, 2, 70deg) }
+  50% {transform:  translate(-55% , -50px) rotate3d(75, -8, 3, 50deg) }
+}
+@keyframes panex {
+  0%{  transform: rotate(-5deg)  }
+  100%{  transform: rotate(10deg)  }
 }
   `,
   },
