@@ -96,6 +96,61 @@ export const OBJECTS = [
         }
   `,
   },
+
+  {
+    id: "pendRoxy-2x",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  position: relative;
+  width: 164px;
+  height: 164px;
+  perspective: 300px;
+}
+.loader::before  {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image:
+    radial-gradient(circle 15px, #FF3D00 100%, transparent 0),
+    radial-gradient(circle 15px, #FF3D00 100%, transparent 0),
+    linear-gradient(#FF3D00 100px, transparent 0),
+    linear-gradient(#FF3D00 100px, transparent 0);
+  background-repeat: no-repeat;
+  background-size: 30px 30px, 30px 30px, 40% 2px, 40% 2px;
+  background-position: left center, right center, left center, right center;
+  animation: rotateY 1s linear infinite;
+}
+.loader::after  {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image:
+    radial-gradient(circle 15px, #fff 100%, transparent 0),
+    radial-gradient(circle 15px, #fff 100%, transparent 0),
+    linear-gradient(#fff 100px, transparent 0),
+    linear-gradient(#fff 100px, transparent 0);
+  background-repeat: no-repeat;
+  background-size: 30px 30px, 30px 30px, 2px 40% , 2px 40%;
+  background-position: top center, bottom center, top center, bottom center;
+  animation: rotateX 1s linear infinite;
+}
+
+@keyframes rotateY {
+  0%{ transform: rotateY(0deg)}
+  100% { transform: rotateY(-180deg)}
+}
+@keyframes rotateX {
+  0%, 25% { transform: rotateX(0deg)}
+  75%,  100% { transform: rotateX(-180deg)}
+}
+  `,
+  },
    
   {
     id: "packManEt2Xb",
