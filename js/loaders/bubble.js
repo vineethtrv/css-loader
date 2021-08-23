@@ -454,8 +454,8 @@ export const BUBBLE = [
   transform: translate(-50% , 10%);
   top: 0;
   background: #FF3D00;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   animation: jump 0.5s ease-in infinite alternate;
 }
@@ -477,6 +477,73 @@ export const BUBBLE = [
  100% { transform: translate(-50% , 10%)}
 }
 `,
+    },
+
+  {
+    id: "bbl2xcrlrot",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #FF3D00;
+  position: relative;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: #fff;
+  transform: rotate(0deg) translate(30px);
+  animation: rotate 1s ease infinite;
+}
+.loader:after {
+  animation-delay: 0.5s
+}
+@keyframes rotate {
+  100% {transform: rotate(360deg) translate(30px)
+}
+    `,
+    },
+    
+
+  {
+    id: "brb1xbeeMv",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 64px;
+  height: 12px;
+  background:
+    radial-gradient(circle 6px, #FFF 100%, transparent 0),
+    radial-gradient(circle 6px, #FFF 100%, transparent 0);
+  background-size:12px 12px;
+  background-position: left center , right center ;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #FF3D00;
+  inset:0;
+  margin: auto;
+  animation: mvX 0.6s, mvY 0.3s;
+  animation-timing-function:cubic-bezier(.5,-300,.5, 300);
+  animation-iteration-count:infinite;
+}
+
+@keyframes mvX {
+    100% { left: 0.85px}
+}
+@keyframes mvY {
+    100% { top : 0.5px }
+}
+      `,
     },
     
     
@@ -509,7 +576,45 @@ export const BUBBLE = [
     box-shadow: -38px 6px, -14px -6px, 14px 6px;
   }
 }`,
-    }, {
+    }, 
+  {
+    id: "bbl3xrnhit",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 108px;
+  height: 16px;
+  background:
+    radial-gradient(circle 8px at 8px center, #FFF 100%, transparent 0),
+    radial-gradient(circle 8px at 8px center, #FFF 100%, transparent 0);
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  position: relative;
+  animation: ballX 1s linear infinite;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background:#FFF;
+  inset:0;
+  margin:auto;
+  animation: moveX 1s cubic-bezier(0.5,300,0.5,-300) infinite;
+}
+@keyframes ballX {
+  0%,25%,50%,75%, 100%  {background-position: 25% 0,75% 0}
+  40%     {background-position: 25% 0,85% 0}
+  90%     {background-position: 15% 0,75% 0}
+}
+@keyframes moveX {
+  100% {transform:translate(0.15px)}
+}
+
+  `,
+    }, 
+    
+    {
         id: "jk3s5paxg1",
         html: `<span class="loader"></span>`,
         css: `.loader {
