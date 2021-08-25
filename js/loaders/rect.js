@@ -617,6 +617,20 @@ export const RECT = [
 }
     `,
   },
+
+  {
+    id: "pir-fnd-flw",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+        border: 24px solid #fff;
+        border-color: #FF3D00 #fff  #fff #fff;
+        animation : rotate 2s steps(4) infinite;
+      }
+      @keyframes rotate {
+        100% { transform: rotate(360deg); }
+      }
+      `
+  },
   {
     id: "sqr4xmlt2clrRotSpn",
     html: `<span class="loader"></span>`,
@@ -1092,7 +1106,111 @@ export const RECT = [
       }
     `,
   },
+  {
+    id: "prm-splt-clr-rots",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+            width: 48px;
+            height: 48px;
+            position: relative;
+            animation : rotate 4s linear infinite;
+          }
+          .loader:before,
+          .loader:after {
+            content:"";
+            display: block;
+            border: 24px solid;
+            border-color: transparent transparent #fff  #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: mvx 1s infinite ease-in;
+          }
+          .loader:before {
+            left: -1px;
+            top: 1px;
+            border-color:#FF3D00  #FF3D00 transparent transparent;
+            animation-name:mvrx;
+          }
 
+          @keyframes rotate {
+            100% {transform: rotate(360deg)}
+          }
+          @keyframes mvx {
+            0% , 15% {transform: translate(0 , 0) rotate(0deg)}
+            50% {transform: translate(-50% , 50%) rotate(180deg)}
+            100% {transform: translate(0% , 0%) rotate(180deg)}
+          }
+          @keyframes mvrx {
+            0% , 15%  {transform: translate(0 , 0) rotate(0deg)}
+            50% {transform: translate(50% , -50%) rotate(180deg)}
+            100% {transform: translate(0% , 0%) rotate(180deg)}
+          }
+    `,
+  },
+
+
+  {
+    id: "pir-weld-flw",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+          position: relative;
+          width: 48px;
+          height: 48px;
+        }
+        .loader:before,
+        .loader:after {
+          content:"";
+          display: block;
+          border: 32px solid transparent;
+          border-top-color: #fff;
+          position: absolute;
+          left: 0;
+          top: 0;
+          animation: weld-rotate 2s infinite ease-in;
+        }
+        .loader:before {
+          border-color: transparent  transparent transparent #FF3D00;
+          animation-delay: 0.5s;
+        }
+        @keyframes weld-rotate {
+          0% , 25% {transform: rotate(0deg)}
+          50% , 75% {transform: rotate(180deg)}
+          100% {transform: rotate(360deg)}
+        }
+      `
+  },
+  {
+    id: "pir-wottippu-flw",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+          position: relative;
+          width: 48px;
+          height: 48px;
+        }
+        .loader:before,
+        .loader:after {
+          content:"";
+          display: block;
+          border: 32px solid transparent;
+          border-top-color: #fff;
+          position: absolute;
+          left: 0;
+          top: 0;
+          animation: weld-rotate 2s infinite ease-in;
+        }
+        .loader:before {
+          border-color: transparent  transparent transparent #FF3D00;
+          animation-delay: 0.5s;
+            animation-direction: reverse;
+        }
+        @keyframes weld-rotate {
+          0% , 25% {transform: rotate(0deg)}
+          50% , 75% {transform: rotate(180deg)}
+          100% {transform: rotate(360deg)}
+        }
+      `
+  },
   {
     id: "brik-splt-mv",
     html: `<span class="loader"></span>`,
@@ -1235,127 +1353,70 @@ export const RECT = [
 }
   `
   },
-
-
+  
   {
-    id: "pir-fnd-flw",
+    id: "sqr-bbl-flpFlw",
     html: `<span class="loader"></span>`,
     css: `.loader {
-        border: 24px solid #fff;
-        border-color: #FF3D00 #fff  #fff #fff;
-        animation : rotate 2s steps(4) infinite;
-      }
-      @keyframes rotate {
-        100% { transform: rotate(360deg); }
-      }
+  width: 56px;
+  height: 56px;
+  position: relative;
+  background: #fff;
+  border-radius: 4px;
+  perspective: 500px;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 24px;
+  height: 24px;
+  background: #FF3D00;
+  border-radius: 50%;
+  transform-origin: 100% 100%;
+  animation: flip 2s linear infinite;
+}
+@keyframes flip {
+    0% , 100%{ transform: rotateX(0deg) rotateY(0deg)}
+    25%{ transform: rotateX(0deg) rotateY(-180deg)}
+    50%{ transform: rotateX(-180deg) rotateY(-180deg)}
+    75%{ transform: rotateX(-180deg) rotateY(0deg)}
+}
+  `
+  },
+  
+    {
+      id: "gsupn3q1npb",
+      html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 54px;
+  height: 54px;
+  position: relative;
+  background: #fff;
+  border-radius: 4px;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 24px;
+  height: 24px;
+  background: #FF3D00;
+  border-radius: 50%;
+  transform-origin: 100% 100%;
+  animation: move 1s linear infinite;
+}
+@keyframes move {
+    0% , 100%{ transform: translate(0 ,0)}
+    25%{ transform: translate(100% ,0)}
+    50%{ transform: translate(100% ,100%)}
+    75%{ transform: translate(0 ,100%)}
+}
       `
   },
 
-  {
-    id: "prm-splt-clr-rots",
-    html: `<span class="loader"></span>`,
-    css: `.loader {
-            width: 48px;
-            height: 48px;
-            position: relative;
-            animation : rotate 4s linear infinite;
-          }
-          .loader:before,
-          .loader:after {
-            content:"";
-            display: block;
-            border: 24px solid;
-            border-color: transparent transparent #fff  #fff;
-            position: absolute;
-            left: 0;
-            top: 0;
-            animation: mvx 1s infinite ease-in;
-          }
-          .loader:before {
-            left: -1px;
-            top: 1px;
-            border-color:#FF3D00  #FF3D00 transparent transparent;
-            animation-name:mvrx;
-          }
-
-          @keyframes rotate {
-            100% {transform: rotate(360deg)}
-          }
-          @keyframes mvx {
-            0% , 15% {transform: translate(0 , 0) rotate(0deg)}
-            50% {transform: translate(-50% , 50%) rotate(180deg)}
-            100% {transform: translate(0% , 0%) rotate(180deg)}
-          }
-          @keyframes mvrx {
-            0% , 15%  {transform: translate(0 , 0) rotate(0deg)}
-            50% {transform: translate(50% , -50%) rotate(180deg)}
-            100% {transform: translate(0% , 0%) rotate(180deg)}
-          }
-    `,
-  },
-
-
-  {
-    id: "pir-weld-flw",
-    html: `<span class="loader"></span>`,
-    css: `.loader {
-          position: relative;
-          width: 48px;
-          height: 48px;
-        }
-        .loader:before,
-        .loader:after {
-          content:"";
-          display: block;
-          border: 32px solid transparent;
-          border-top-color: #fff;
-          position: absolute;
-          left: 0;
-          top: 0;
-          animation: weld-rotate 2s infinite ease-in;
-        }
-        .loader:before {
-          border-color: transparent  transparent transparent #FF3D00;
-          animation-delay: 0.5s;
-        }
-        @keyframes weld-rotate {
-          0% , 25% {transform: rotate(0deg)}
-          50% , 75% {transform: rotate(180deg)}
-          100% {transform: rotate(360deg)}
-        }
-      `
-  },
-  {
-    id: "pir-wottippu-flw",
-    html: `<span class="loader"></span>`,
-    css: `.loader {
-          position: relative;
-          width: 48px;
-          height: 48px;
-        }
-        .loader:before,
-        .loader:after {
-          content:"";
-          display: block;
-          border: 32px solid transparent;
-          border-top-color: #fff;
-          position: absolute;
-          left: 0;
-          top: 0;
-          animation: weld-rotate 2s infinite ease-in;
-        }
-        .loader:before {
-          border-color: transparent  transparent transparent #FF3D00;
-          animation-delay: 0.5s;
-            animation-direction: reverse;
-        }
-        @keyframes weld-rotate {
-          0% , 25% {transform: rotate(0deg)}
-          50% , 75% {transform: rotate(180deg)}
-          100% {transform: rotate(360deg)}
-        }
-      `
-  },
   {
     id: "gsupn3q1npb",
     html: `<span class="loader"></span>`,
