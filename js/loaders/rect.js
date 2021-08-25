@@ -1353,6 +1353,70 @@ export const RECT = [
 }
   `
   },
+
+  {
+    id: "sqr-bblBounceFlp",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 50px;
+  height: 165px;
+  position: relative;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50% , 0);
+  width: 16px;
+  height: 16px;
+  background: #FF3D00;
+  border-radius: 50%;
+  animation: bounce 2s linear infinite;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 48px;
+  width: 48px;
+  background: #fff;
+  border-radius: 4px;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes bounce {
+  0% , 50% , 100%{
+    transform: translate(-50%, 0px);
+    height: 20px;
+  }
+  20% {
+    transform: translate(-25%, 85px);
+    height: 28px;
+  }
+  25% {
+    transform: translate(-25%, 110px);
+    height: 12px;
+  }
+  70% {
+    transform: translate(-75%, 85px);
+    height: 28px;
+  }
+  75% {
+    transform: translate(-75%, 108px);
+    height: 12px;
+  }
+}
+@keyframes rotate {
+  0% , 50% , 100%{ transform: rotate(0deg)}
+  25% { transform: rotate(90deg)}
+  75%{ transform: rotate(-90deg)}
+}
+  `
+  },
   
   {
     id: "sqr-bbl-flpFlw",
@@ -1387,7 +1451,7 @@ export const RECT = [
   },
   
     {
-      id: "gsupn3q1npb",
+      id: "cubBblflowwt",
       html: `<span class="loader"></span>`,
     css: `.loader {
   width: 54px;
@@ -1415,6 +1479,68 @@ export const RECT = [
     75%{ transform: translate(0 ,100%)}
 }
       `
+  },
+
+  {
+    id: "cubeRotDial",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 54px;
+  height: 54px;
+  position: relative;
+  border-radius: 4px;
+  background-color: #fff;
+  background-image:
+    radial-gradient(circle 5px , #FF3D00 100%, transparent 0),
+    radial-gradient(circle 5px , #FF3D00 100%, transparent 0),
+    radial-gradient(circle 5px , #FF3D00 100%, transparent 0),
+    radial-gradient(circle 5px , #FF3D00 100%, transparent 0),
+    radial-gradient(circle 5px , #FF3D00 100%, transparent 0),
+    radial-gradient(circle 5px , #FF3D00 100%, transparent 0);
+    background-repeat: no-repeat;
+  animation: move 4s linear infinite , rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% , 20%{ transform: rotate(0deg)}
+  30% , 40% { transform: rotate(90deg)}
+  50% , 60% { transform: rotate(180deg)}
+  70% , 80% { transform: rotate(270deg)}
+  90%,  100% { transform: rotate(360deg)}
+}
+@keyframes move {
+  0% ,  9%{
+      background-position:
+      -12px -15px,  -12px 0px, -12px 15px,
+      12px -15px,  12px 0px,  12px 15px;
+  }
+  10% , 25%{
+      background-position:
+      0px -15px,  -12px 0px, -12px 15px,
+      34px -15px,  12px 0px,  12px 15px;
+  }
+  30% , 45%{
+      background-position:
+      0px -34px, -12px -10px, -12px 12px,
+      34px -15px, 12px -10px, 12px 12px;
+  }
+  50% , 65% {
+      background-position:
+      0px -34px, -12px -34px, -12px 12px,
+      34px -12px, 0px -10px, 12px 12px;
+  }
+  70% , 85% {
+      background-position:
+      0px -34px, -12px -34px, 0px 12px,
+      34px -12px, 0px -10px, 34px 12px;
+  }
+ 90% , 100% {
+      background-position:
+      0px -34px, -12px -34px, 0px 0px,
+      34px -12px, 0px 0px, 34px 12px;
+  }
+}
+  `
   },
 
   {
