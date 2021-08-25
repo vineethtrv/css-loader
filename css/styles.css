@@ -28,6 +28,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body > img {
+  display: none;
+}
+
 body.pop {
   overflow: hidden;
 }

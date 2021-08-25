@@ -26,6 +26,9 @@ body {
   margin: 0;
   background: $base;
   font-family: Arial, Helvetica, sans-serif;
+  > img {
+    display: none;
+  }
   &.pop {
     overflow: hidden;
   }
