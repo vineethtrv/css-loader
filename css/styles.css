@@ -1347,8 +1347,8 @@ code {
 }
 
 #demo .loader {
-  width: 50px;
-  height: 165px;
+  width: 48px;
+  height: 86px;
   position: relative;
 }
 
@@ -1357,60 +1357,44 @@ code {
   position: absolute;
   left: 50%;
   top: 0;
-  transform: translate(-50%, 0);
-  width: 16px;
-  height: 16px;
-  background: #FF3D00;
+  transform: translate(-50%, 50%);
+  width: 10px;
+  height: 10px;
+  background: #FFF;
   border-radius: 50%;
-  animation: bounce 2s linear infinite;
+  animation: bounce 1s ease-in infinite alternate;
 }
 
 #demo .loader::after {
   content: '';
-  position: absolute;
   left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  height: 48px;
+  top: 0;
+  position: absolute;
   width: 48px;
-  background: #fff;
-  border-radius: 4px;
-  animation: rotate 2s linear infinite;
+  height: 86px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  border-radius: 50% 50% 50% 50% / 25% 25% 25% 25%;
+  animation: kick 1s ease-in infinite alternate;
 }
 
 @keyframes bounce {
-  0%, 50%, 100% {
-    transform: translate(-50%, 0px);
-    height: 20px;
+  0% {
+    top: 0%;
+    opacity: 1;
   }
-  20% {
-    transform: translate(-25%, 85px);
-    height: 28px;
-  }
-  25% {
-    transform: translate(-25%, 110px);
-    height: 12px;
-  }
-  70% {
-    transform: translate(-75%, 85px);
-    height: 28px;
-  }
-  75% {
-    transform: translate(-75%, 108px);
-    height: 12px;
+  100% {
+    top: 75%;
+    opacity: 0.2;
   }
 }
 
-@keyframes rotate {
-  0%, 50%, 100% {
-    transform: rotate(0deg);
+@keyframes kick {
+  0%, 75% {
+    height: 86px;
   }
-  25% {
-    transform: rotate(90deg);
-  }
-  75% {
-    transform: rotate(-90deg);
+  100% {
+    height: 78px;
   }
 }
 

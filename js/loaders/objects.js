@@ -1477,7 +1477,66 @@ export const OBJECTS = [
   }
 }
 `,
-    }, {
+    },
+    
+    
+  {
+    id: "anbeLighup",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 4px;
+  height: 86px;
+  background: #fff;
+  margin: auto;
+  position: relative;
+  animation: shake 1s linear infinite alternate,
+             lightup 1s linear infinite;
+  transform-origin: 0 0;
+}
+
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 16px;
+  box-sizing:border-box;
+  border: 5px solid #FF3D00;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+}
+.loader::after {
+  content: '';
+  left: 50%;
+  bottom: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 32px;
+  border-radius: 50px 50px 0 0;
+  background: #fff;
+}
+
+@keyframes shake {
+  0% { transform: rotate(10deg)  }
+  100% { transform: rotate(-10deg)  }
+}
+@keyframes lightup {
+  0% ,20% , 40% {
+    opacity: 0
+  }
+  10%, 30% , 50% , 100% {
+    opacity: 1
+  }
+}
+    `
+  },
+    
+    
+    
+    {
         id: "2hmjm05ufjc",
         html: `<span class="loader"></span>`,
         css: `.loader {
@@ -1698,6 +1757,149 @@ export const OBJECTS = [
 }
 `,
     },
+
+  {
+  id: "mouseScrDwn",
+  html: `<span class="loader"></span>`,
+  css: `.loader {
+  width: 48px;
+  height: 78px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  position: relative;
+  border-radius: 50% 50% 50% 50% / 25% 25% 25% 25%;
+}
+
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50% , 50%);
+  width: 10px;
+  height: 10px;
+  background: #FFF;
+  border-radius: 50%;
+  animation: fadeDown 1s ease-out infinite;
+}
+
+@keyframes fadeDown {
+  0% {
+    top: 0%;
+    opacity: 1;
+  }
+  100% {
+    top: 60%;
+    opacity: 0;
+  }
+}
+`,
+  },
+{
+  id: "mouseLnScrDwn",
+  html: `<span class="loader"></span>`,
+  css: `.loader {
+  width: 48px;
+  height: 78px;
+  position: relative;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  margin: auto;
+  border-radius: 50% 50% 50% 50% / 25% 25% 25% 25%;
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 10px;
+  animation: scrollDown 1.5s linear infinite;
+}
+@keyframes scrollDown {
+  0% {
+    top: 15px;
+    height: 4px;
+    opacity: 1;
+  }
+  33% {
+    top: 15px;
+    height: 40px;
+  }
+  66% {
+    top: 50px;
+    height: 10px;
+    opacity: 1;
+  }
+  100% {
+    top: 56px;
+    height: 4px;
+    opacity: 0;
+  }
+}
+`,
+  },
+  {
+    id: "mouseBallBounce",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 48px;
+  height: 86px;
+  position: relative;
+}
+
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50% , 50%);
+  width: 10px;
+  height: 10px;
+  background: #FFF;
+  border-radius: 50%;
+  animation: bounce 1s ease-in infinite alternate;
+}
+.loader::after {
+  content: '';
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 48px;
+  height: 86px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  border-radius: 50% 50% 50% 50% / 25% 25% 25% 25%;
+  animation: kick 1s ease-in infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    top: 0%;
+    opacity: 1;
+  }
+  100% {
+    top: 75%;
+    opacity: 0.2;
+  }
+}
+@keyframes kick {
+  0% , 75% {
+    height: 86px
+  }
+   100% {
+    height: 78px
+  }
+}
+`,
+  },
+
+
+
+
      {
         id: "8fzm1l50fw4",
         html: `<span class="loader"></span>`,

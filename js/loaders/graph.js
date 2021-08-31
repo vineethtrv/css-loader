@@ -1,5 +1,4 @@
 export const GRAPH = [
-
   {
     id: "starLord-andro6e",
     html: `<span class="loader"></span>`,
@@ -119,14 +118,14 @@ export const GRAPH = [
     position: absolute;
     width: 20px;
     height: 40px;
-    border: 1px solid #fff;
+    border: 1px solid #FF3D00;
     border-width: 12px 2px 7px;
     border-radius: 2px 2px 1px 1px;
     box-sizing: border-box;
     transform: rotate(45deg) translate(24px, -10px);
-    background-image: linear-gradient(#FFF 20px, transparent 0),
-    linear-gradient(#FFF 30px, transparent 0),
-    linear-gradient(#FFF 30px, transparent 0);
+    background-image: linear-gradient(#FF3D00 20px, transparent 0),
+    linear-gradient(#FF3D00 30px, transparent 0),
+    linear-gradient(#FF3D00 30px, transparent 0);
     background-size: 10px 12px , 1px 30px, 1px 30px;
     background-repeat: no-repeat;
     background-position: center , 12px 0px , 3px 0px;
