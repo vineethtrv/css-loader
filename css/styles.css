@@ -1347,54 +1347,42 @@ code {
 }
 
 #demo .loader {
-  width: 48px;
-  height: 86px;
+  width: 32px;
+  height: 32px;
+  transform: translateY(100%);
+  border-radius: 50%;
+  background: #FFF;
   position: relative;
 }
 
-#demo .loader::before {
-  content: '';
+#demo .loader:before, #demo .loader:after {
+  content: "";
   position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, 50%);
-  width: 10px;
-  height: 10px;
-  background: #FFF;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  animation: bounce 1s ease-in infinite alternate;
+  background: #FFF;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -200%;
 }
 
-#demo .loader::after {
-  content: '';
-  left: 0;
-  top: 0;
-  position: absolute;
-  width: 48px;
-  height: 86px;
-  box-sizing: border-box;
-  border: 2px solid #fff;
-  border-radius: 50% 50% 50% 50% / 25% 25% 25% 25%;
-  animation: kick 1s ease-in infinite alternate;
+#demo .loader:after {
+  animation: moveX 0.5s infinite linear alternate;
 }
 
-@keyframes bounce {
+@keyframes moveX {
   0% {
     top: 0%;
-    opacity: 1;
+    transform: translateX(-50%) scale(1.5);
+  }
+  50% {
+    top: -75%;
+    transform: translateX(-50%) scale(0.5);
   }
   100% {
-    top: 75%;
-    opacity: 0.2;
-  }
-}
-
-@keyframes kick {
-  0%, 75% {
-    height: 86px;
-  }
-  100% {
-    height: 78px;
+    top: -200%;
+    transform: translateX(-50%) scale(1.5);
   }
 }
 

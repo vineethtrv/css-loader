@@ -1345,7 +1345,7 @@ export const CIRCLE = [
     },
 
   {
-    id: "coin-flip-b8sp",
+    id: "vishuChakra",
     html: `<span class="loader"></span>`,
     css: `.loader {
         font-size:48px;
@@ -1401,6 +1401,154 @@ export const CIRCLE = [
           1em 1em 0 -.35em currentcolor;
         }
       }
+      `,
+    },
+
+  {
+    id: "chkarBlast",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+.loader::before , .loader::after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% , -50%);
+  width: 48em;
+  height: 48em;
+  background-image:
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0);
+  background-position: 0em -18em, 0em 18em, 18em 0em, -18em 0em,
+                       13em -13em, -13em -13em, 13em 13em, -13em 13em;
+    background-repeat: no-repeat;
+  font-size: 0.5px;
+  border-radius: 50%;
+  animation: blast 1s ease-in infinite;
+}
+.loader::after {
+  font-size: 1px;
+  background: #fff;
+  animation: bounce 1s ease-in infinite;
+}
+
+@keyframes bounce {
+  0% , 100%{ font-size: 0.75px }
+  50% { font-size: 1.5px }
+}
+@keyframes blast {
+  0% , 40% {
+    font-size: 0.5px;
+  }
+  70% {
+    opacity: 1;
+    font-size: 4px;
+  }
+   100% {
+     font-size: 6px;
+    opacity: 0;
+  }
+}
+`,
+    },
+  {
+    id: "spnkInfBablRot",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: calc(100px - 24px);
+  height: 50px;
+  position: relative;
+  animation: flippx 2s infinite linear;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FFF;
+  transform-origin: -24px 50%;
+  animation: spin 1s infinite linear;
+}
+.loader:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% , -50%);
+  background: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+@keyframes flippx {
+  0%, 49% {
+    transform: scaleX(1);
+  }
+  50%, 100% {
+    transform: scaleX(-1);
+  }
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+      `,
+    },
+  {
+    id: "ranDrpBblHrflx",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 32px;
+  height: 32px;
+  transform: translateY(100%);
+  border-radius: 50%;
+  background: #FFF;
+  position: relative;
+}
+.loader:before , .loader:after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #FFF;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -200%;
+}
+.loader:after {
+  animation: moveX 0.5s infinite linear alternate;
+}
+
+@keyframes moveX {
+  0% {
+    top: 0% ;
+    transform: translateX(-50%) scale(1.5);
+  }
+  50% {
+    top: -75% ;
+    transform: translateX(-50%) scale(0.5);
+  }
+  100% {
+    top: -200%;
+    transform: translateX(-50%) scale(1.5);
+  }
+}
       `,
     },
     
