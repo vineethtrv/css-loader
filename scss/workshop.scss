@@ -1288,25 +1288,150 @@ body {
 
 
 // 27
-.md-0 {
-    .loader {
+.md-27 {
+  .loader{
+    display: block;
     position: relative;
-    width: 64px;
-    height: 64px;
-    border-radius:50%;
-    border: 5px dashed #fff;
+    width: 118px;
+    height: 160px;
+    background-color: #FFF;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform-origin: 50% 100%;
+    animation: 2s eggRot linear infinite alternate;
+}
+.loader:after{
+  content:"";
+  position: absolute;
+  left: 50%;
+  bottom: 15%;
+  width: 80px;
+  height: 86px;
+  transform: translateX(-50%);
+  background-color: #ffd900;
+  border-radius: 50% ;
+}
+
+@keyframes eggRot {
+  0%{    transform: rotate(-25deg)}
+  100%{    transform: rotate(25deg)}
+}
+}
+
+// 28
+.md-28 {
+.loader {
+      width: 96px;
+      box-sizing: content-box;
+      height: 48px;
+      background: #FFF;
+      border-color: #de3500;
+      border-style: solid;
+      border-width: 2px 2px 50px 2px;
+      border-radius: 100%;
+      position: relative;
+      animation: 3s yinYang linear infinite;
+    }
+    .loader:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background: #FFF;
+      border: 18px solid #de3500;
+      border-radius: 100%;
+      width: 12px;
+      height: 12px;
+      box-sizing: content-box;
+    }
+    .loader:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: #de3500;
+      border: 18px solid #FFF;
+      border-radius: 100%;
+      width: 12px;
+      height: 12px;
+      box-sizing: content-box;
+    }
+
+    
+    @keyframes yinYang {
+    100%{    transform: rotate(360deg)}
+  }
+}
+
+
+// 29
+.md-29 {
+.loader {
+    background: #de3500;
+    width: 48px;
+    height: 48px;
+    position: relative;
+    text-align: center;
     animation: 3s rotate linear infinite;
   }
-
-
-@keyframes spikeUp {
-  0% { background-size: 5px 40px}
-  16% { background-size: 5px 55px, 5px 40px, 5px 40px, 5px 40px, 5px 40px, 5px 40px}
-  33% { background-size: 5px 40px, 5px 55px, 5px 40px, 5px 40px, 5px 40px, 5px 40px}
-  50% { background-size: 5px 40px, 5px 40px, 5px 55px, 5px 40px, 5px 40px, 5px 40px}
-  66% { background-size: 5px 40px, 5px 40px, 5px 40px, 5px 55px, 5px 40px, 5px 40px}
-  83% { background-size: 5px 40px, 5px 40px, 5px 40px, 5px 40px, 5px 55px, 5px 40px}
-  100% { background-size: 5px 40px, 5px 40px, 5px 40px, 5px 40px, 5px 40px, 5px 55px}
+.loader:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #FFFF;
+    transform: rotate(135deg);
+  } box-sizing: content-box;
+  @keyframes rotate {
+    100%{    transform: rotate(360deg)}
+  }
 }
+
+// 30
+.md-30 {
+ .loader {
+      position: relative;
+      color: #de3500;
+      width: 0;
+      height: 0;
+      border-right: 50px solid transparent;
+      border-bottom: 35px solid #de3500;
+      border-left: 50px solid transparent;
+      animation: 3s starRotate linear infinite;
+    }
+    .loader:before {
+      border-bottom: 40px solid #de3500;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      position: absolute;
+      height: 0;
+      width: 0;
+      top: -22px;
+      left: -31px;
+      display: block;
+      content: '';
+      transform: rotate(-35deg);
+    }
+    .loader:after {
+      content: '';
+      position: absolute;
+      display: block;
+      color: #de3500;
+      top: 1.5px;
+      transform: rotate(-70deg);
+      left: -52px;
+      width: 0px;
+      height: 0px;
+      border-right: 50px solid transparent;
+      border-bottom: 35px solid #de3500;
+      border-left: 50px solid transparent;
+    }
+
+  @keyframes starRotate {
+    0%{    transform: rotate(0deg) scale(0.15)}
+    50%{    transform: rotate(360deg) scale(1)}
+    100%{    transform: rotate(720deg) scale(0.15)}
+  }
 }
 
