@@ -1285,3 +1285,28 @@ body {
   100% { background-size: 5px 40px, 5px 40px, 5px 40px, 5px 40px, 5px 40px, 5px 55px}
 }
 }
+
+
+// 27
+.md-0 {
+    .loader {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    border-radius:50%;
+    border: 5px dashed #fff;
+    animation: 3s rotate linear infinite;
+  }
+
+
+@keyframes spikeUp {
+  0% { background-size: 5px 40px}
+  16% { background-size: 5px 55px, 5px 40px, 5px 40px, 5px 40px, 5px 40px, 5px 40px}
+  33% { background-size: 5px 40px, 5px 55px, 5px 40px, 5px 40px, 5px 40px, 5px 40px}
+  50% { background-size: 5px 40px, 5px 40px, 5px 55px, 5px 40px, 5px 40px, 5px 40px}
+  66% { background-size: 5px 40px, 5px 40px, 5px 40px, 5px 55px, 5px 40px, 5px 40px}
+  83% { background-size: 5px 40px, 5px 40px, 5px 40px, 5px 40px, 5px 55px, 5px 40px}
+  100% { background-size: 5px 40px, 5px 40px, 5px 40px, 5px 40px, 5px 40px, 5px 55px}
+}
+}
+
