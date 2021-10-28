@@ -34,6 +34,7 @@ body {
     color: #ccc;
     cursor: pointer;
     transition: 0.2s linear;
+    overflow: hidden;
     &:nth-child(2n + 1) {
       background: rgba(#000, 0.1);
     }
@@ -968,7 +969,6 @@ body {
 
 
   @keyframes colorBallMoveX {
-    
     0%  {
       background-position: 0% 0;
       transform: translate(-15px, -50%);
@@ -1317,7 +1317,7 @@ body {
 }
 }
 
-// 28
+
 .md-28 {
 .loader {
       width: 96px;
@@ -1363,7 +1363,7 @@ body {
 }
 
 
-// 29
+
 .md-29 {
 .loader {
     background: #de3500;
@@ -1381,14 +1381,15 @@ body {
     height: 100%;
     width: 100%;
     background: #FFFF;
-    transform: rotate(135deg);
-  } box-sizing: content-box;
+    animation: 1.5s rotate reverse linear infinite ;
+
+  } 
   @keyframes rotate {
+    0%{    transform: rotate(0deg)}
     100%{    transform: rotate(360deg)}
   }
 }
 
-// 30
 .md-30 {
  .loader {
       position: relative;
@@ -1435,3 +1436,156 @@ body {
   }
 }
 
+// 31
+.md-31 {
+ .loader {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color:#de3500 #0000 #fff #0000;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: 1s rotate linear infinite;
+ }
+ .loader:before , .loader:after{
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    border: 10px solid transparent;
+    border-bottom-color:#fff;
+    transform: translate(-10px, 19px) rotate(-35deg); 
+  }
+ .loader:after {
+    border-color: #de3500 #0000 #0000 #0000 ;
+    transform: translate(32px, 3px) rotate(-35deg); 
+  }
+   @keyframes rotate {
+    100%{    transform: rotate(360deg)}
+  }
+}
+// 32
+.md-32 {
+ .loader {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    border-width: 3px 2px 3px 2px;
+    border-style: solid dotted solid dotted;
+    border-color: #de3500 rgba(255, 255, 255,0.3) #fff rgba(151, 107, 93, 0.3);
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: 1s rotate linear infinite;
+ }
+ .loader:before , .loader:after{
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    border: 10px solid transparent;
+    border-bottom-color:#fff;
+    transform: translate(-10px, 19px) rotate(-35deg); 
+  }
+ .loader:after {
+    border-color: #de3500 #0000 #0000 #0000 ;
+    transform: translate(32px, 3px) rotate(-35deg); 
+  }
+   @keyframes rotate {
+    100%{    transform: rotate(360deg)}
+  }
+}
+
+
+// 33
+.md-34 {
+  .loader{
+    position: relative;
+    width: 100px;
+    height: 130px;
+    background: #fff;
+    border-radius: 4px;
+  }
+  .loader:before{
+    content: '';
+    position: absolute;
+    width: 54px;
+    height: 25px;
+    left: 50%;
+    top: 0;
+    background-image:
+    radial-gradient(ellipse at center, #0000 24%,#de3500 25%,#de3500 64%,#0000 65%),
+    linear-gradient(to bottom, #0000 34%,#de3500 35%);
+    background-size: 12px 12px , 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    transform: translate(-50% , -65%);
+    box-shadow: 0 -3px rgba(0, 0, 0, 0.25) inset;
+  }
+ .loader:after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    width: 66%;
+    height: 60%;
+    background: linear-gradient(to bottom, #de3500 30%, #0000 31%);
+    background-size: 100% 16px;
+    animation: writeDown 2s ease-out infinite;
+ }
+
+ @keyframes writeDown {
+    0% { height: 0%; opacity: 0;} 
+    20%{ height: 0%; opacity: 1;}
+    80% { height: 65%; opacity: 1;}
+    100% { height: 65%; opacity: 0;}
+ }
+
+}
+
+// 35
+
+.md-35 {
+  .loader {
+    width: 120px;
+    height: 80px;
+    position: relative;
+    transform: rotate(-90deg);
+    background: linear-gradient(174deg, #0000 49%,#000 50%, #0000 51%);
+  }
+  .loader:after,
+  .loader:before {
+    content: "";
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    display: block;
+    position: absolute;
+    border: 4px dashed #fff;
+    bottom: 49px;
+    transform: rotate(0deg);
+    box-sizing: border-box;
+    animation: tape 4s linear infinite;
+
+  }
+  .loader:before {
+    right: -14px;
+    box-shadow: 0 0 0 4px #fff, 0 0 0 34px #000 , 0 0 5px 34px #0005;
+  }
+  .loader:after {
+    left: -13px;
+    box-shadow: 0 0 0 4px #fff, 0 0 0 65px #000, 0 0 5px 65px #0005;
+  }
+
+  @keyframes tape {
+    0% {
+      transform: rotate(0deg) scale(0.4);
+    }
+    100% {
+      transform: rotate(-360deg) scale(0.4);
+    }
+  }
+}
