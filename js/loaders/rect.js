@@ -235,8 +235,48 @@ export const RECT = [
   100% {
     transform: rotate(-360deg);
   }
-}`,
-}, {
+}
+
+`,
+}, 
+  {
+    id: "dmndSkFill",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: rotate(45deg);
+    overflow: hidden;
+  }
+  .loader:after{
+    content: '';
+    position: absolute;
+    inset: 8px;
+    margin: auto;
+    background: #222b32;
+  }
+  .loader:before{
+    content: '';
+    position: absolute;
+    inset: -15px;
+    margin: auto;
+    background: #de3500;
+    animation: diamondLoader 2s linear infinite;
+  }
+  @keyframes diamondLoader {
+    0%  ,10% {
+      transform: translate(-64px , -64px) rotate(-45deg)
+    }
+    90% , 100% {
+      transform: translate(0px , 0px) rotate(-45deg)
+    }
+  }
+`,
+}, 
+
+{
 	id: "tcrxas6ttns",
   html: `<span class="loader"></span>`,
 	css: `.loader {
@@ -667,6 +707,73 @@ export const RECT = [
       }
     `,
   },
+  {
+    id: "sqr$PuncUp",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+    animation: rotate 1s infinite;
+    height: 50px;
+    width: 50px;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    display: block;
+    height: 20px;
+    width: 20px;
+  }
+  .loader:before {
+    animation: box1 1s infinite;
+    background-color: #fff;
+    box-shadow: 30px 0 0 #ff3d00;
+    margin-bottom: 10px;
+  }
+  .loader:after {
+    animation: box2 1s infinite;
+    background-color: #ff3d00;
+    box-shadow: 30px 0 0 #fff;
+  }
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg) scale(0.8) }
+    50% { transform: rotate(360deg) scale(1.2) }
+    100% { transform: rotate(720deg) scale(0.8) }
+  }
+
+  @keyframes box1 {
+    0% {
+      box-shadow: 30px 0 0 #ff3d00;
+    }
+    50% {
+      box-shadow: 0 0 0 #ff3d00;
+      margin-bottom: 0;
+      transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #ff3d00;
+      margin-bottom: 10px;
+    }
+  }
+
+  @keyframes box2 {
+    0% {
+      box-shadow: 30px 0 0 #fff;
+    }
+    50% {
+      box-shadow: 0 0 0 #fff;
+      margin-top: -20px;
+      transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #fff;
+      margin-top: 0;
+    }
+  }
+    `,
+  },
+
+
+
 
   {
     id: "sqrFlwupShdw67",
@@ -1314,6 +1421,65 @@ export const RECT = [
             transform: scale(1.2, 1);
           }
         }
+      `
+  },
+  {
+    id: "sqrWalkBrk2x",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    border-radius: 50%;
+    animation:ellipseAnimation 2s linear infinite;
+  }
+
+  @keyframes ellipseAnimation {
+    0% {
+      border-radius: 50%;
+    }
+
+    12.5% {
+      border-radius: 0 50% 50% 50%;
+      transform: rotate(45deg);
+    }
+
+    25% {
+      border-radius: 0 0 50% 50%;
+      transform: rotate(90deg);
+    }
+
+    37.5% {
+      border-radius: 0 0 0 50%;
+      transform: rotate(135deg);
+    }
+
+    50% {
+      border-radius: 0;
+      transform: rotate(180deg);
+    }
+
+    62.5% {
+      border-radius: 50% 0 0 0;
+      transform: rotate(225deg);
+    }
+
+    75% {
+      border-radius: 50% 50% 0 0;
+      transform: rotate(270deg);
+    }
+
+    87.5% {
+       border-radius: 50% 50% 50% 0;
+      transform: rotate(315deg);
+    }
+
+    100% {
+       border-radius: 50%;
+      transform: rotate(360deg);
+    }
+  }
       `
   },
 

@@ -1,5 +1,327 @@
 export const OBJECTS = [
   {
+    id: "sqrBxRol",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  background: #de3500;
+  width: 48px;
+  height: 48px;
+  position: relative;
+  text-align: center;
+  animation: 3s rotate linear infinite;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #FFFF;
+  animation: 1.5s rotate reverse linear infinite ;
+
+}
+@keyframes rotate {
+  0%{    transform: rotate(0deg)}
+  100%{    transform: rotate(360deg)}
+}
+      `,
+  },
+  
+  {
+    id: "linQbFll",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  position: relative;
+  font-size: 16px;
+  width:  5.5em;
+  height: 5.5em;
+  }
+  .loader:before{
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(45deg);
+    height: 100%;
+    width: 4px;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+  }
+  .loader:after{
+    content: '';
+    position: absolute;
+    left: 0.2em;
+    bottom: 0.18em;
+    width: 1em;
+    height: 1em;
+    background-color: #de3500;
+    border-radius: 15%;
+    animation: rollingRock 2.5s cubic-bezier(.79, 0, .47, .97) infinite;
+  }
+@keyframes rollingRock {
+  0% {transform: translate(0, -1em) rotate(-45deg)}
+  5% {transform: translate(0, -1em) rotate(-50deg)}
+  20% {transform: translate(1em, -2em) rotate(47deg)}
+  25% {transform: translate(1em, -2em) rotate(45deg)}
+  30% {transform: translate(1em, -2em) rotate(40deg)}
+  45% {transform: translate(2em, -3em) rotate(137deg)}
+  50% {transform: translate(2em, -3em) rotate(135deg)}
+  55% {transform: translate(2em, -3em) rotate(130deg)}
+  70% {transform: translate(3em, -4em) rotate(217deg)}
+  75% {transform: translate(3em, -4em) rotate(220deg)}
+  100% {transform: translate(0, -1em) rotate(-225deg)}
+}
+      `,
+  },
+  {
+    id: "pngPong",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  position: relative;
+  height: 40px;
+  width: 6px;
+  color: #FFF;
+  animation: paddles 0.75s ease-out infinite;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 15px;
+  width: 12px;
+  height: 12px;
+  background-color: #de3500;
+  border-radius: 50%;
+  animation: ballbounce 0.6s ease-out infinite;
+}
+
+@keyframes paddles {
+  0% { box-shadow: -25px -10px, 25px 10px}
+  50% { box-shadow: -25px 8px, 25px -10px }
+  100% { box-shadow: -25px -10px, 25px 10px}
+}
+@keyframes ballbounce {
+  0% { transform: translateX(-20px) scale(1, 1.2) }
+  25% { transform: scale(1.2, 1) }
+  50% { transform: translateX(15px) scale(1, 1.2) }
+  75% { transform: scale(1.2, 1) }
+  100% { transform: translateX(-20px) }
+}
+      `,
+  },
+  {
+    id: "layerSprd",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+    position: relative;
+    width:  48px;
+    height: 48px;
+    background: #de3500;
+    transform: perspective(200px) rotateX(65deg) rotate(45deg);
+    color: #fff;
+    animation: layers1 1s linear infinite alternate;
+  }
+  .loader:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+    animation: layers2 1s linear infinite alternate;
+  }
+
+  @keyframes layers1 {
+    0% { box-shadow: 0px 0px 0 0px  }
+   90% , 100% { box-shadow: 20px 20px 0 -4px  }
+  }
+
+  @keyframes layers2 {
+    0% { transform: translate(0, 0) scale(1) }
+    90% , 100% { transform: translate(-25px, -25px) scale(1.2) }
+  }
+      `,
+  },
+  {
+    id: "brckBblUp",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+    color: #fff;
+    font-family: Consolas, Menlo, Monaco, monospace;
+    font-weight: bold;
+    font-size: 78px;
+    opacity: 0.8;
+  }
+  .loader:before {
+    content: "{";
+    display: inline-block;
+    animation: pulse 0.4s alternate infinite ease-in-out;
+  }
+  .loader:after {
+    content: "}";
+    display: inline-block;
+    animation: pulse 0.4s 0.3s alternate infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    to {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+  }
+      `,
+  },
+  {
+    id: "wifiLd",
+    html: `<span class="loader"></span>`,
+    css: `.loader, .loader:before {
+	display: inline-block;
+	border: 20px double transparent;
+	border-top-color: #fff;
+	border-radius: 50%;
+  box-sizing: border-box;
+}
+.loader {
+	padding: 8px;
+  animation: wifiLoading 1s ease-in infinite;
+}
+.loader:before {
+	content: '';
+	width: 0; height: 0;
+}
+@keyframes wifiLoading {
+  0% { border-style: none}
+  100% { border-style: double}
+}
+      `,
+  },
+  {
+    id: "strShw",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+      position: relative;
+      color: #de3500;
+      width: 0;
+      height: 0;
+      border-right: 50px solid transparent;
+      border-bottom: 35px solid #de3500;
+      border-left: 50px solid transparent;
+      animation: 3s starRotate linear infinite;
+    }
+    .loader:before {
+      border-bottom: 40px solid #de3500;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      position: absolute;
+      height: 0;
+      width: 0;
+      top: -22px;
+      left: -31px;
+      display: block;
+      content: '';
+      transform: rotate(-35deg);
+    }
+    .loader:after {
+      content: '';
+      position: absolute;
+      display: block;
+      color: #de3500;
+      top: 1.5px;
+      transform: rotate(-70deg);
+      left: -52px;
+      width: 0px;
+      height: 0px;
+      border-right: 50px solid transparent;
+      border-bottom: 35px solid #de3500;
+      border-left: 50px solid transparent;
+    }
+
+  @keyframes starRotate {
+    0%{    transform: rotate(0deg) scale(0.15)}
+    50%{    transform: rotate(360deg) scale(1)}
+    100%{    transform: rotate(720deg) scale(0.15)}
+  }
+      `,
+  },
+  {
+    id: "glCoinFlip",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  transform: translateZ(1px);
+}
+.loader:after {
+  content: '$';
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  text-align: center;
+  line-height:40px;
+  font-size: 32px;
+  font-weight: bold;
+  background: #FFD700;
+  color: #DAA520;
+  border: 4px double ;
+  box-sizing: border-box;
+  box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, .1);
+  animation: coin-flip 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes coin-flip {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
+      `,
+  },
+  {
+    id: "heartBeat",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  position: relative;
+  width: 40px;
+  height: 60px;
+  animation: heartBeat 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  background: #ff3d00 ;
+  width: 40px;
+  height: 60px;
+  border-radius: 50px 50px 0 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: rotate(45deg);
+  transform-origin: 50% 68%;
+  box-shadow: 5px 4px 5px #0004 inset;
+}
+.loader:after {
+  transform: rotate(-45deg);
+}
+@keyframes heartBeat {
+  0% { transform: scale(0.95) }
+  5% { transform: scale(1.1) }
+  39% { transform: scale(0.85) }
+  45% { transform: scale(1) }
+  60% { transform: scale(0.95) }
+  100% { transform: scale(0.9) }
+}
+      `,
+  },
+
+  {
     id: "colorPalatteSpltex3",
     html: `<span class="loader"></span>`,
     css: `.loader {
@@ -2184,53 +2506,7 @@ export const OBJECTS = [
 }
 `,
     }, 
-     {
-        id: "gayoz753h8n",
-        html: `<span class="loader"></span>`,
-        css: `.loader {
-  width: 106px;
-  height: 56px;
-  display: block;
-  margin: 30px auto;
-  background-image: linear-gradient(#FFF 50px, transparent 0), linear-gradient(#FFF 50px, transparent 0), linear-gradient(#FFF 50px, transparent 0), linear-gradient(#FFF 50px, transparent 0), radial-gradient(circle 14px, #FFF 100%, transparent 0);
-  background-size: 48px 15px , 15px 35px, 15px 35px, 25px 15px, 28px 28px;
-  background-position: 25px 5px, 58px 20px, 25px 17px, 2px 37px, 76px 0px;
-  background-repeat: no-repeat;
-  position: relative;
-  transform: rotate(-45deg);
-  box-sizing: border-box;
-}
-.loader::after,
-.loader::before {
-  content: '';  
-  position: absolute;
-  width: 56px;
-  height: 56px;
-  border: 6px solid #FFF;
-  border-radius: 50%;
-  left: -45px;
-  top: -10px;
-  background-repeat: no-repeat;
-  background-image: linear-gradient(#FFF 64px, transparent 0), linear-gradient(#FFF 66px, transparent 0), radial-gradient(circle 4px, #FFF 100%, transparent 0);
-  background-size: 40px 1px , 1px 40px, 8px 8px;
-  background-position: center center;
-  box-sizing: border-box;
-  animation: rotation 0.3s linear infinite;
-}
-.loader::before {
-  left: 25px;
-  top: 60px;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} `,
-    },
+    
      {
         id: "povx9w7f6a",
         html: `<span class="loader"></span>`,
@@ -2304,4 +2580,264 @@ export const OBJECTS = [
 `,
     },
 
+
+  {
+    id: "gayoz753h8n",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 106px;
+  height: 56px;
+  display: block;
+  margin: 30px auto;
+  background-image: linear-gradient(#FFF 50px, transparent 0), linear-gradient(#FFF 50px, transparent 0), linear-gradient(#FFF 50px, transparent 0), linear-gradient(#FFF 50px, transparent 0), radial-gradient(circle 14px, #FFF 100%, transparent 0);
+  background-size: 48px 15px , 15px 35px, 15px 35px, 25px 15px, 28px 28px;
+  background-position: 25px 5px, 58px 20px, 25px 17px, 2px 37px, 76px 0px;
+  background-repeat: no-repeat;
+  position: relative;
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+.loader::after,
+.loader::before {
+  content: '';  
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border: 6px solid #FFF;
+  border-radius: 50%;
+  left: -45px;
+  top: -10px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#FFF 64px, transparent 0), linear-gradient(#FFF 66px, transparent 0), radial-gradient(circle 4px, #FFF 100%, transparent 0);
+  background-size: 40px 1px , 1px 40px, 8px 8px;
+  background-position: center center;
+  box-sizing: border-box;
+  animation: rotation 0.3s linear infinite;
+}
+.loader::before {
+  left: 25px;
+  top: 60px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} `,
+  },
+  {
+    id: "carDashrse",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+          position: relative;
+    width: 164px;
+    height: 164px;
+    border-radius: 50%;
+    animation: rotate 0.75s linear infinite;
+  }
+  .loader::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    border: 1px solid #FF3D00;
+    border-width: 12px 2px 7px;
+    border-radius: 2px 2px 1px 1px;
+    box-sizing: border-box;
+    transform: rotate(45deg) translate(24px, -10px);
+    background-image: linear-gradient(#FF3D00 20px, transparent 0),
+    linear-gradient(#FF3D00 30px, transparent 0),
+    linear-gradient(#FF3D00 30px, transparent 0);
+    background-size: 10px 12px , 1px 30px, 1px 30px;
+    background-repeat: no-repeat;
+    background-position: center , 12px 0px , 3px 0px;
+}
+  .loader::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 4px;
+    left: 20px;
+    top: 47px;
+    border-radius: 50%;
+    color: #Fff;
+    box-shadow: -4px 7px 2px, -7px 16px 3px 1px,
+      -11px 24px 4px 1px, -6px 24px 4px 1px,
+      -14px 35px 6px 2px, -5px 36px 8px 2px,
+      -5px 45px 8px 2px, -14px 49px 8px 2px,
+      6px 60px 11px 1px, -11px 66px 11px 1px,
+      11px 75px 13px, -1px 82px 15px;
+  }
+
+@keyframes rotate {
+  to{transform:rotate(360deg)   }
+}
+  `,
+  },
+  {
+    id: "starLord-andro6e",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+            position: relative;
+            animation: flix 3s ease-in infinite alternate;
+          }
+          .loader:before {
+            content: '';
+            display: block;
+            font-size: 0;
+            width: 48px;
+            height: 48px;
+            background-color: #fff ;
+            background-image:
+              radial-gradient(circle 12px at 22px 22px, #FF3D00 100%, transparent 0),
+              radial-gradient(circle 10px at 6px 40px, #FF3D00 100%, transparent 0),
+              radial-gradient(circle 14px at 31px -6px, #FF3D00 100%, transparent 0),
+              radial-gradient(circle 5px at 40px 30px, #FF3D00 100%, transparent 0);
+            border-radius: 50%;
+            animation: rotate 1s linear infinite;
+          }
+          .loader:after {
+              content: '';
+              position: absolute;
+              top: 0%;
+              transform: translate(-50% , -100%);
+              left: 50%;
+              width: 24px;
+              height: 12px;
+              background: #fff;
+              border-radius: 50px 50px 0 0;
+            }
+
+          @keyframes flix {
+            0%  , 60% { transform: rotate(-10deg)}
+            100%  , 30% , 80% { transform: rotate(5deg)}
+          }
+          @keyframes rotate {
+            100%   { transform: rotate(360deg)}
+          }
+`,
+  },
+  {
+    id: "rockets-luncRd",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 32px;
+  height: 90px;
+  display: block;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 50% 50% 0 0;
+  border-bottom: 10px solid #FF3D00;
+  background-color: #FFF;
+  background-image: radial-gradient(ellipse at center, #FFF 34%, #FF3D00 35%, #FF3D00 54%, #FFF 55%), linear-gradient(#FF3D00 10px, transparent 0);
+  background-size: 28px 28px;
+  background-position: center 20px , center 2px;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: animloaderBack 1s linear infinite alternate;
+}
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: 0px 15px #FF3D00 inset;
+  top: 67px;
+}
+.loader::after {
+  content: '';  
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 34px;
+  height: 34px;
+  top: 112%;
+  background: radial-gradient(ellipse at center, #ffdf00 8%, rgba(249, 62, 0, 0.6) 24%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 50% 50% 0;
+  background-repeat: no-repeat;
+  background-position: -44px -44px;
+  background-size: 100px 100px;
+  box-shadow: 4px 4px 12px 0px rgba(255, 61, 0, 0.5);
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloaderBack {
+  0%, 30%, 70% {
+    transform: translateY(0px);
+  }
+  20%, 40%, 100% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: 4px 4px 12px 2px rgba(255, 61, 0, 0.75);
+    width: 34px;
+    height: 34px;
+    background-position: -44px -44px;
+    background-size: 100px 100px;
+  }
+  100% {
+    box-shadow: 2px 2px 8px 0px rgba(255, 61, 0, 0.5);
+    width: 30px;
+    height: 28px;
+    background-position: -36px -36px;
+    background-size: 80px 80px;
+  }
+}
+`,
+  },
+  {
+    id: "cheLoad",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 96px;
+  box-sizing: content-box;
+  height: 48px;
+  background: #FFF;
+  border-color: #de3500;
+  border-style: solid;
+  border-width: 2px 2px 50px 2px;
+  border-radius: 100%;
+  position: relative;
+  animation: 3s yinYang linear infinite;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #FFF;
+  border: 18px solid #de3500;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
+}
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #de3500;
+  border: 18px solid #FFF;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
+}
+@keyframes yinYang {
+  100%{transform: rotate(360deg)}
+}
+`,
+  },
 ]

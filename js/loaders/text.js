@@ -729,6 +729,107 @@ export const TEXT = [
     }
 `,
 },
+  
+  {
+    id: "text-ball-spn-ar",
+    html: `<span class="loader"></span>`,
+    css: `.loader{
+    position: relative;
+    font-size: 48px;
+    letter-spacing: 2px;
+  }
+  .loader:before {
+    content: "Loading";
+    color: #fff;
+  }
+  .loader:after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #ff3d00;
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    top: -70px;
+    animation: motion 3s ease-in-out infinite;
+  }
+
+  @keyframes motion {
+    0%, 50%, 100% {
+      transform: translateX(0) scale(1);
+    }
+    25% {
+      transform: translateX(-100px) scale(0.3);
+    }
+    75% {
+      transform: translateX(100px) scale(0.3);
+    }
+  }
+`,
+},
+  {
+    id: "text-balloon",
+    html: `<span class="loader"></span>`,
+    css: `.loader{
+    position: relative;
+    font-size: 48px;
+    letter-spacing: 6px;
+  }
+  .loader:before {
+    content: "Loading";
+    color: #fff;
+  }
+  .loader:after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #ff3d00;
+    background-image: radial-gradient(circle 2px, #fff4 100%, transparent 0),
+      radial-gradient(circle 1px, #fff3 100%, transparent 0);
+    background-position: 14px -4px, 12px -1px;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: -5px;
+    right: 66px;
+    transform-origin: center bottom;
+    animation: fillBaloon 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes fillBaloon {
+    0% { transform: scale(1)}
+    100% { transform: scale(3)}
+  }
+`,
+},
+  {
+    id: "text-smoky",
+    html: `<span class="loader"></span>`,
+    css: `.loader{
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    animation: smokeOut 1s ease-in-out infinite alternate;
+    text-shadow: 0 0 1px white;
+  }
+  .loader:before {
+    content: "Loading";
+  }
+
+  @keyframes smokeOut {
+    100% {
+      opacity: 0.08;
+      filter: blur(5px);
+      letter-spacing: 4px;
+    }
+  }
+`,
+},
+
+
 ]
 
 
