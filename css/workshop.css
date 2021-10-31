@@ -40,6 +40,12 @@ body section:nth-child(2n + 1) {
   background: rgba(0, 0, 0, 0.1);
 }
 
+.md-1 .loader {
+  position: relative;
+  width: 100px;
+  height: 16px;
+}
+
 .md-0 .loader {
   position: relative;
   width: 64px;
