@@ -45,13 +45,3 @@ body section:nth-child(2n + 1) {
   width: 100px;
   height: 16px;
 }
-
-.md-0 .loader {
-  position: relative;
-  width: 64px;
-  height: 64px;
-  background-image: linear-gradient(#fff 45px, transparent 0), linear-gradient(#fff 20px, transparent 0), linear-gradient(#fff 20px, transparent 0);
-  background-repeat: no-repeat;
-  background-size: 30px 4px;
-  background-position: 0px 11px , 8px 35px, 0px 60px;
-}

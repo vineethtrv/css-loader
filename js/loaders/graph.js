@@ -842,6 +842,73 @@ export const GRAPH = [
   }
       `,
   },
+  {
+    id: "washingMachine",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 120px;
+  height: 150px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#ddd 50%, #bbb 51%),
+    linear-gradient(#ddd, #ddd), linear-gradient(#ddd, #ddd),
+    radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%),
+    radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%),
+    radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%);
+  background-position: 0 20px, 45px 0, 8px 6px, 55px 3px, 75px 3px, 95px 3px;
+  background-size: 100% 4px, 1px 23px, 30px 8px, 15px 15px, 15px 15px, 15px 15px;
+  position: relative;
+  border-radius: 6%;
+  animation: shake 3s ease-in-out infinite;
+  transform-origin: 60px 180px;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 100%;
+  width: 7px;
+  height: 5px;
+  background: #aaa;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 102px 0 #aaa;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 20px;
+  background-color: #bbdefb;
+  background-image: 
+    linear-gradient( to right, #0004 0%, #0004 49%, #0000 50%, #0000 100% ),
+    linear-gradient(135deg, #64b5f6 50%, #607d8b 51%);
+  background-size: 30px 100%, 90px 80px;
+  border-radius: 50%;
+  background-repeat: repeat, no-repeat;
+  background-position: 0 0;
+  box-sizing: border-box;
+  border: 10px solid #DDD;
+  box-shadow: 0 0 0 4px #999 inset, 0 0 6px 6px #0004 inset;
+  animation: spin 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg) }
+  50% { transform: rotate(360deg) }
+  75% { transform: rotate(750deg) }
+  100% { transform: rotate(1800deg) }
+}
+@keyframes shake {
+  65%, 80%, 88%, 96% { transform: rotate(0.5deg) }
+  50%, 75%, 84%, 92% { transform: rotate(-0.5deg) }
+  0%, 50%, 100%  { transform: rotate(0) }
+}`,
+  },
 
   {
     id: "kolIcereamClrShift",
@@ -899,6 +966,76 @@ background-image: linear-gradient(0deg,
 
   `,
   },
+  {
+    id: "bearWatch",
+    html: `<span class="loader"></span>`,
+    css: `.loader {
+  width: 160px;
+  height: 185px;
+  position: relative;
+  background: #fff;
+  border-radius: 100px 100px 0 0;
+}
+.loader:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 125px;
+  left: 50%;
+  top: 25px;
+  transform: translateX(-50%);
+  background-image: radial-gradient(circle, #000 48%, transparent 55%),
+    radial-gradient(circle, #000 48%, transparent 55%),
+    radial-gradient(circle, #fff 30%, transparent 45%),
+    radial-gradient(circle, #000 48%, transparent 51%),
+    linear-gradient(#000 20px, transparent 0),
+    linear-gradient(#cfecf9 60px, transparent 0),
+    radial-gradient(circle, #cfecf9 50%, transparent 51%),
+    radial-gradient(circle, #cfecf9 50%, transparent 51%);
+  background-repeat: no-repeat;
+  background-size: 16px 16px, 16px 16px, 10px 10px, 42px 42px, 12px 3px,
+    50px 25px, 70px 70px, 70px 70px;
+  background-position: 25px 10px, 55px 10px, 36px 44px, 50% 30px, 50% 85px,
+    50% 50px, 50% 22px, 50% 45px;
+  animation: faceLift 3s linear infinite alternate;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 125px;
+  left: -20%;
+  top: 0;
+  background-image: radial-gradient(circle, #fff 48%, transparent 50%),
+    radial-gradient(circle, #fff 48%, transparent 50%);
+  background-repeat: no-repeat;
+  background-size: 65px 65px;
+  background-position: 0px 12px, 145px 12px;
+  animation: earLift 3s linear infinite alternate;
+}
+
+@keyframes faceLift {
+  0% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(-30%);
+  }
+}
+@keyframes earLift {
+  0% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+  `,
+  },
+
+
+
+
   {
     id: "dnsEgg",
     html: `<span class="loader"></span>`,
