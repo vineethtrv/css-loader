@@ -11,8 +11,15 @@ $size: 48px;
       box-sizing: border-box;
     }
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar:hover {
+  width: 18px;
+  background: #0004;
+}
+::-webkit-scrollbar-track:hover {
+  background: #0001; 
 }
 
 /* Track */
@@ -50,7 +57,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  position: sticky;
+  top: 0px;
+  z-index: 10;
   nav {
     display: flex;
     align-items: center;
@@ -87,7 +96,7 @@ header {
   &::after{
     content: '';
     position: absolute;
-    left: 95px;
+    left: 20px;
     bottom: 7px;
     border: 3px solid $lite;
     border-bottom-color: $brand;
