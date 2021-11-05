@@ -497,7 +497,8 @@ export const GRAPH = [
 
   {
     id: "pprDltFlp",
-    html: `<span class="loader"></span>`,
+    html: `<span class="loader">Deleting</span>`,
+    content: 'Deleting',
     css: `.loader {
   position: relative;
   background: #ff3d00;
@@ -505,7 +506,9 @@ export const GRAPH = [
   height: 30px;
   line-height: 18px;
   text-align: center;
-  color: #000000;
+  color: #931010;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   font-size: 14px;
   box-sizing: border-box;
   border: 5px groove #de3500;
