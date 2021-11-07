@@ -1,0 +1,27 @@
+https://youtu.be/bFof6OIWDbo
+
+
+
+
+https://cssloaders.github.io/
+
+
+
+A general situation that we all might face while going through websites/apps is to wait for something to get loaded. 
+Considering this, created a collection of such loaders. It's developed using pure CSS. 
+Hence it will load fast and is easily customizable too.
+
+
+
+
+
+
+
+
+==== Comment ====
+
+Hey 👋,
+In the internet era, the one thing most of us do not want to see on the screen will be the word "loading". We might be bored of seeing the usual loaders.
+
+So, here is something aesthetic, lightweight and customisable loaders and spinners for your Website/Apps. These loaders are built on pure CSS, haven't used any images/SVG so there's no dependency.
+Feel free to use the CSS Loaders for your aesthetic websites/apps.
