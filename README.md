@@ -27,7 +27,6 @@ Each loader has been build on top of a single html tag, so that it is easily por
 
 
 
-
 https://user-images.githubusercontent.com/5153908/140634567-7c860b10-2f8c-4ef2-8b8c-b8427ec20db0.mp4
 
 
