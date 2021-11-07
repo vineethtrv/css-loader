@@ -3,7 +3,7 @@ A general situation that we all might face while going through websites/apps is 
 Considering this, I tried to create a library having a collection of such loaders/spinners. There are no image dependencies for this library. It's developed using pure CSS. Hence it will load fast and is easily customizable too.
 
 [![image](https://user-images.githubusercontent.com/5153908/140635756-e2a4d043-d86b-4748-b006-7db8e7e03079.png)
-](https://cssloaders.github.io)  [![CSS Loaders - Collection of different types of CSS loaders, spinners | Product Hunt](https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=318866&theme=light)](https://www.producthunt.com/posts/css-loaders?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-css-loaders)  
+](https://cssloaders.github.io)  
 
 
 
@@ -17,16 +17,17 @@ Each loader has been build on top of a single html tag, so that it is easily por
 
 ```html
 
-
 <div class="loader"></div>
-
 
 ```
 
 
+## Video Walkthrough 
+
+https://user-images.githubusercontent.com/5153908/140642916-e8d0e071-96ab-45ac-98d3-10c858e504a5.mp4
 
 
 
-https://user-images.githubusercontent.com/5153908/140634567-7c860b10-2f8c-4ef2-8b8c-b8427ec20db0.mp4
+Please feel free to comment your suggestions and feedbacks on Product Hunt
 
-
+[![CSS Loaders - Collection of different types of CSS loaders, spinners | Product Hunt](https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=318866&theme=light)](https://www.producthunt.com/posts/css-loaders?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-css-loaders)   
