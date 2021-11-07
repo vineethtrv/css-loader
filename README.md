@@ -3,7 +3,7 @@ A general situation that we all might face while going through websites/apps is 
 Considering this, I tried to create a library having a collection of such loaders/spinners. There are no image dependencies for this library. It's developed using pure CSS. Hence it will load fast and is easily customizable too.
 
 [![image](https://user-images.githubusercontent.com/5153908/140635756-e2a4d043-d86b-4748-b006-7db8e7e03079.png)
-](https://cssloaders.github.io)
+](https://cssloaders.github.io)  [![CSS Loaders - Collection of different types of CSS loaders, spinners | Product Hunt](https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=318866&theme=light)](https://www.producthunt.com/posts/css-loaders?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-css-loaders)  
 
 
 
@@ -11,7 +11,10 @@ Considering this, I tried to create a library having a collection of such loader
 
 
 
-All loader are created in single tag html
+## HTML
+
+Each loader has been build on top of a single html tag, so that it is easily portable. Hence more convenient to be intrgrate with projects 
+
 ```html
 
 
