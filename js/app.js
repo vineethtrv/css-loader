@@ -12,6 +12,22 @@ import { SKELETON } from './loaders/skeleton.js';
 
 const LOADERS = [...CIRCLE, ...BUBBLE, ...RECT, ...LINE, ...PROGRESS, ...TEXT, ...OBJECTS, ...GRAPH , ...SKELETON ];
 
+const STORAGE_KEY = 'css-loader-favourites';
+
+function getFavourites() {
+    try {
+        return new Set(JSON.parse(localStorage.getItem(STORAGE_KEY)) || []);
+    } catch {
+        return new Set();
+    }
+}
+
+function saveFavourites(favs) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...favs]));
+}
+
+let favourites = getFavourites();
+let showFavsOnly = false;
 
 const main = document.getElementById('main');
 
@@ -45,21 +61,43 @@ function createLoader(i){
     loaderStyles.innerHTML = loader.css;
     shadowRoot.appendChild(loaderStyles);
 
+    // Slot lets light DOM children (fav button) render through the shadow root
+    shadowRoot.appendChild(document.createElement('slot'));
+
     return sectionEl
 }
 
 
-
-
+// Add favourite buttons and click handlers to each section
 document.querySelectorAll('#main .section').forEach(elm => {
+    const id = elm.dataset.id;
+
+    // Favourite button
+    const favBtn = document.createElement('button');
+    favBtn.className = 'fav-btn' + (favourites.has(id) ? ' active' : '');
+    favBtn.innerHTML = '&#9829;';
+    favBtn.title = 'Add to favourites';
+    favBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (favourites.has(id)) {
+            favourites.delete(id);
+            favBtn.classList.remove('active');
+        } else {
+            favourites.add(id);
+            favBtn.classList.add('active');
+        }
+        saveFavourites(favourites);
+        if (showFavsOnly) applyFilter();
+    });
+    elm.appendChild(favBtn);
+
+    // Open popup on section click
     elm.addEventListener('click', (e) => {
-        let index = parseInt(e.target.dataset.index);
+        let index = parseInt(elm.dataset.index);
         let showCase = document.querySelector('.showcase');
 
         showCase.replaceChildren(createLoader((index - 1)));
 
-        
-        // console.log(e);
         showCase.dataset.index = index;
 
         // load code
@@ -71,6 +109,33 @@ document.querySelectorAll('#main .section').forEach(elm => {
         document.querySelector('.overlay').classList.add('in')
     })
 })
+
+
+// Favourites filter toggle button in header
+const filterBtn = document.createElement('button');
+filterBtn.className = 'fav-filter-btn';
+filterBtn.innerHTML = '&#9829; Favourites';
+filterBtn.addEventListener('click', () => {
+    showFavsOnly = !showFavsOnly;
+    filterBtn.classList.toggle('active', showFavsOnly);
+    applyFilter();
+});
+document.querySelector('header nav').prepend(filterBtn);
+
+function applyFilter() {
+    main.classList.toggle('favs-active', showFavsOnly);
+    const sections = document.querySelectorAll('#main .section');
+    let visibleIndex = 0;
+    sections.forEach(section => {
+        const isHidden = showFavsOnly && !favourites.has(section.dataset.id);
+        section.classList.toggle('hidden', isHidden);
+        section.classList.remove('alt-bg');
+        if (!isHidden) {
+            section.classList.toggle('alt-bg', visibleIndex % 2 === 0);
+            visibleIndex++;
+        }
+    });
+}
 
 
 // close popup

@@ -299,3 +299,72 @@ div[data-id="prog-crak-erh"]{
   justify-content: flex-start !important;
 }
 
+.fav-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  color: rgba(#fff, 0.25);
+  z-index: 2;
+  padding: 4px;
+  transition: color 0.15s, transform 0.15s;
+  pointer-events: auto;
+  &:hover {
+    color: $brand;
+    transform: scale(1.2);
+  }
+  &.active {
+    color: $brand;
+  }
+}
+
+#main.favs-active {
+  align-items: start;
+  justify-content: start;
+  .section:nth-child(2n+1) {
+    background: transparent;
+    &:hover {
+      background: rgba(#000, 0.3);
+    }
+  }
+  .section.alt-bg {
+    background: rgba(#000, 0.1);
+    &:hover {
+      background: rgba(#000, 0.3);
+    }
+  }
+}
+
+#main .section.hidden {
+  display: none;
+}
+
+.fav-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  background: transparent;
+  border: 1px solid rgba(#fff, 0.3);
+  border-radius: 20px;
+  color: rgba(#fff, 0.6);
+  cursor: pointer;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all 0.2s;
+  margin-right: 10px;
+  &:hover {
+    border-color: $brand;
+    color: $brand;
+  }
+  &.active {
+    background: $brand;
+    border-color: $brand;
+    color: #fff;
+  }
+}
+
