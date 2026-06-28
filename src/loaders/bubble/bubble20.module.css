@@ -1,0 +1,64 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  position: relative;
+  width: calc(100 * var(--size));
+  height: calc(16 * var(--size));
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  width: calc(16 * var(--size));
+  height: calc(16 * var(--size));
+  border-radius: 50%;
+  background: var(--color-1);
+  box-shadow: calc(32 * var(--size)) 0 var(--color-1);
+  left: 0;
+  top: 0;
+  animation: ballMoveX 2s linear infinite;
+}
+.loader:after {
+  box-shadow: none;
+  transform: translateX(calc(64 * var(--size))) scale(1);
+  z-index: 2;
+  animation: none;
+  animation: trfLoader 2s linear infinite;
+}
+
+@keyframes trfLoader {
+  0%,
+  5% {
+    transform: translateX(calc(64 * var(--size))) scale(1);
+    background: var(--color-1);
+  }
+  10% {
+    transform: translateX(calc(64 * var(--size))) scale(1);
+    background: var(--color-2);
+  }
+  40% {
+    transform: translateX(calc(32 * var(--size))) scale(1.5);
+    background: var(--color-2);
+  }
+  90%,
+  95% {
+    transform: translateX(0) scale(1);
+    background: var(--color-2);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    background: var(--color-1);
+  }
+}
+@keyframes ballMoveX {
+  0%,
+  10% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(32 * var(--size)));
+  }
+}

@@ -1,0 +1,68 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(16 * var(--size));
+  height: calc(16 * var(--size));
+  position: relative;
+  left: calc(-32 * var(--size));
+  border-radius: 50%;
+  color: var(--color-1);
+  background: currentColor;
+  box-shadow:
+    calc(32 * var(--size)) 0,
+    calc(-32 * var(--size)) 0,
+    calc(64 * var(--size)) 0;
+}
+
+.loader::after {
+  content: '';
+  position: absolute;
+  left: calc(-32 * var(--size));
+  top: 0;
+  width: calc(16 * var(--size));
+  height: calc(16 * var(--size));
+  border-radius: calc(10 * var(--size));
+  background: var(--color-2);
+  animation: move 3s linear infinite alternate;
+}
+
+@keyframes move {
+  0%,
+  5% {
+    left: calc(-32 * var(--size));
+    width: calc(16 * var(--size));
+  }
+  15%,
+  20% {
+    left: calc(-32 * var(--size));
+    width: calc(48 * var(--size));
+  }
+  30%,
+  35% {
+    left: 0;
+    width: calc(16 * var(--size));
+  }
+  45%,
+  50% {
+    left: 0;
+    width: calc(48 * var(--size));
+  }
+  60%,
+  65% {
+    left: calc(32 * var(--size));
+    width: calc(16 * var(--size));
+  }
+
+  75%,
+  80% {
+    left: calc(32 * var(--size));
+    width: calc(48 * var(--size));
+  }
+  95%,
+  100% {
+    left: calc(64 * var(--size));
+    width: calc(16 * var(--size));
+  }
+}

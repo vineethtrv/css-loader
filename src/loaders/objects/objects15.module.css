@@ -1,0 +1,59 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  position: relative;
+  width: calc(120 * var(--size));
+  height: calc(140 * var(--size));
+  background-image:
+    radial-gradient(circle calc(30 * var(--size)), var(--color-1) 100%, transparent 0),
+    radial-gradient(circle calc(5 * var(--size)), var(--color-1) 100%, transparent 0),
+    radial-gradient(circle calc(5 * var(--size)), var(--color-1) 100%, transparent 0),
+    linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0);
+  background-position:
+    center calc(127 * var(--size)),
+    calc(94 * var(--size)) calc(102 * var(--size)),
+    calc(16 * var(--size)) calc(18 * var(--size)),
+    center calc(114 * var(--size));
+  background-size:
+    calc(60 * var(--size)) calc(60 * var(--size)),
+    calc(10 * var(--size)) calc(10 * var(--size)),
+    calc(10 * var(--size)) calc(10 * var(--size)),
+    calc(4 * var(--size)) calc(14 * var(--size));
+  background-repeat: no-repeat;
+  z-index: 10;
+  perspective: calc(500 * var(--size));
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  width: calc(100 * var(--size));
+  height: calc(100 * var(--size));
+  border-radius: 50%;
+  border: calc(3 * var(--size)) solid var(--color-1);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -55%) rotate(-45deg);
+  border-right-color: transparent;
+  box-sizing: border-box;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  height: calc(80 * var(--size));
+  width: calc(80 * var(--size));
+  transform: translate(-50%, -55%) rotate(-45deg) rotateY(0deg);
+  left: 50%;
+  top: 50%;
+  box-sizing: border-box;
+  border: calc(7 * var(--size)) solid var(--color-2);
+  border-radius: 50%;
+  animation: rotate 0.5s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: translate(-50%, -55%) rotate(-45deg) rotateY(360deg);
+  }
+}

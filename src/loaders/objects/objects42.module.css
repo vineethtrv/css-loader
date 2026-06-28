@@ -1,0 +1,39 @@
+.loader {
+  --color-1: rgba(255, 255, 255, 0.5);
+  --color-2: #ff3d00;
+  --color-3: rgba(255, 255, 255, 0.1);
+  --size: 1px;
+
+  position: relative;
+  width: calc(120 * var(--size));
+  height: calc(120 * var(--size));
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 calc(20 * var(--size)) calc(-5 * var(--size)) var(--color-1),
+    inset 0 calc(-40 * var(--size)) calc(40 * var(--size)) calc(-20 * var(--size)) var(--color-1);
+  background: linear-gradient(var(--color-2) calc(120 * var(--size)), transparent 0) no-repeat;
+  background-position: 0 calc(120 * var(--size));
+  animation: fillLq 10s linear infinite alternate;
+}
+.loader:before {
+  position: absolute;
+  content: '';
+  width: 40%;
+  height: 25%;
+  top: calc(20 * var(--size));
+  left: calc(10 * var(--size));
+  background: var(--color-3);
+  border-radius: 50%;
+  transform: rotate(-45deg);
+}
+
+@keyframes fillLq {
+  0%,
+  10% {
+    background-position: 0 calc(120 * var(--size));
+  }
+  90%,
+  100% {
+    background-position: 0 0;
+  }
+}

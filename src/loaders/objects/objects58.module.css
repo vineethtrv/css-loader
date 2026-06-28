@@ -1,0 +1,67 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  position: relative;
+  animation: flix 3s ease-in infinite alternate;
+}
+.loader:before {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  background-color: var(--color-1);
+  background-image:
+    radial-gradient(
+      circle calc(12 * var(--size)) at calc(22 * var(--size)) calc(22 * var(--size)),
+      var(--color-2) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(10 * var(--size)) at calc(6 * var(--size)) calc(40 * var(--size)),
+      var(--color-2) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(14 * var(--size)) at calc(31 * var(--size)) calc(-6 * var(--size)),
+      var(--color-2) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(5 * var(--size)) at calc(40 * var(--size)) calc(30 * var(--size)),
+      var(--color-2) 100%,
+      transparent 0
+    );
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0%;
+  transform: translate(-50%, -100%);
+  left: 50%;
+  width: calc(24 * var(--size));
+  height: calc(12 * var(--size));
+  background: var(--color-1);
+  border-radius: calc(50 * var(--size)) calc(50 * var(--size)) 0 0;
+}
+
+@keyframes flix {
+  0%,
+  60% {
+    transform: rotate(-10deg);
+  }
+  100%,
+  30%,
+  80% {
+    transform: rotate(5deg);
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

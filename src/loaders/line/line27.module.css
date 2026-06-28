@@ -1,0 +1,27 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(120 * var(--size));
+  height: calc(4 * var(--size));
+  border-radius: calc(2 * var(--size));
+  display: block;
+  margin: calc(30 * var(--size)) auto;
+  background: var(--color-1);
+  transform-origin: center;
+  box-sizing: border-box;
+  animation: stretch 1.2s ease-in-out infinite;
+}
+
+@keyframes stretch {
+  0%,
+  100% {
+    transform: scaleX(0.1);
+    background: var(--color-2);
+  }
+  50% {
+    transform: scaleX(1);
+    background: var(--color-1);
+  }
+}

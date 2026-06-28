@@ -1,0 +1,58 @@
+.loader {
+  --color-1: #0000;
+  --color-2: #fff;
+  --color-3: #ff3d00;
+  --size: 1px;
+
+  width: calc(86 * var(--size));
+  height: calc(50 * var(--size));
+  border-radius: calc(50 * var(--size));
+  background:
+    radial-gradient(
+        farthest-side,
+        var(--color-1) calc(100% - calc(10 * var(--size))),
+        var(--color-2) calc(100% - calc(10 * var(--size))) 100%,
+        var(--color-1)
+      )
+      left,
+    radial-gradient(
+        farthest-side,
+        var(--color-1) calc(100% - calc(10 * var(--size))),
+        var(--color-2) calc(100% - calc(10 * var(--size))) 100%,
+        var(--color-1)
+      )
+      right;
+  background-size: calc(50% + calc(5 * var(--size))) 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  animation: flipX 1s infinite linear;
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: calc(10 * var(--size));
+  height: calc(10 * var(--size));
+  border-radius: 50%;
+  background: var(--color-3);
+  transform-origin: calc(-14 * var(--size)) 50%;
+  animation: rotate 0.5s infinite linear;
+}
+
+@keyframes flipX {
+  0%,
+  49.99% {
+    transform: scaleX(1);
+  }
+  50%,
+  100% {
+    transform: scaleX(-1);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

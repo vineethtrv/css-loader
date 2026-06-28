@@ -1,0 +1,41 @@
+.loader {
+  --color-1: #ff3d00;
+  --color-2: #fff;
+  --size: 1px;
+
+  width: calc(24 * var(--size));
+  height: calc(24 * var(--size));
+  border-radius: 50%;
+  display: block;
+  margin: calc(20 * var(--size)) auto;
+  position: relative;
+  background: var(--color-1);
+  box-shadow: 0 0 0 0 var(--color-1);
+  box-sizing: border-box;
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  60%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 61, 0, 0.6);
+    background: var(--color-1);
+  }
+  10% {
+    transform: scale(1.35);
+    background: var(--color-2);
+  }
+  20% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.35);
+    background: var(--color-2);
+  }
+  50% {
+    transform: scale(1);
+    box-shadow: 0 0 0 calc(20 * var(--size)) rgba(255, 61, 0, 0);
+  }
+}

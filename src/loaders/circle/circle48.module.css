@@ -1,0 +1,54 @@
+.loader {
+  --color-1: rgba(255, 255, 255, 1);
+  --color-2: rgb(220, 220, 220);
+  --color-3: rgb(170, 170, 170);
+  --color-4: rgb(10, 10, 10);
+  --color-5: #ffffff05;
+  --color-6: #ffffff40;
+  --color-7: #ffffff50;
+  --color-8: #ffffff80;
+  --color-9: #ffffffbb;
+  --color-10: #ffffff;
+  --color-11: #ffffff90;
+  --color-12: #ffffff60;
+  --size: 1px;
+
+  width: calc(100 * var(--size));
+  height: calc(100 * var(--size));
+  background: linear-gradient(
+    165deg,
+    var(--color-1) 0%,
+    var(--color-2) 40%,
+    var(--color-3) 98%,
+    var(--color-4) 100%
+  );
+  border-radius: 50%;
+  position: relative;
+}
+
+.loader:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border-bottom: 0 solid var(--color-5);
+  box-shadow:
+    0 calc(-10 * var(--size)) calc(20 * var(--size)) calc(20 * var(--size)) var(--color-6) inset,
+    0 calc(-5 * var(--size)) calc(15 * var(--size)) calc(10 * var(--size)) var(--color-7) inset,
+    0 calc(-2 * var(--size)) calc(5 * var(--size)) var(--color-8) inset,
+    0 calc(-3 * var(--size)) calc(2 * var(--size)) var(--color-9) inset,
+    0 calc(2 * var(--size)) 0 var(--color-10),
+    0 calc(2 * var(--size)) calc(3 * var(--size)) var(--color-10),
+    0 calc(5 * var(--size)) calc(5 * var(--size)) var(--color-11),
+    0 calc(10 * var(--size)) calc(15 * var(--size)) var(--color-12),
+    0 calc(10 * var(--size)) calc(20 * var(--size)) calc(20 * var(--size)) var(--color-6);
+  filter: blur(calc(3 * var(--size)));
+  animation: 2s rotate linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

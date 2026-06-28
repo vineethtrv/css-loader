@@ -1,0 +1,43 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --color-3: #fff4;
+  --color-4: #fff3;
+  --size: 1px;
+
+  position: relative;
+  font-size: calc(48 * var(--size));
+  letter-spacing: calc(6 * var(--size));
+}
+.loader:before {
+  content: 'Loading';
+  color: var(--color-1);
+}
+.loader:after {
+  content: '';
+  width: calc(20 * var(--size));
+  height: calc(20 * var(--size));
+  background-color: var(--color-2);
+  background-image:
+    radial-gradient(circle calc(2 * var(--size)), var(--color-3) 100%, transparent 0),
+    radial-gradient(circle calc(1 * var(--size)), var(--color-4) 100%, transparent 0);
+  background-position:
+    calc(14 * var(--size)) calc(-4 * var(--size)),
+    calc(12 * var(--size)) calc(-1 * var(--size));
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  top: calc(5 * var(--size));
+  right: calc(66 * var(--size));
+  transform-origin: center bottom;
+  animation: fillBaloon 1s ease-in-out infinite alternate;
+}
+
+@keyframes fillBaloon {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(3);
+  }
+}

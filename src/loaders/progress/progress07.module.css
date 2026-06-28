@@ -1,0 +1,56 @@
+.loader {
+  --color-1: rgba(255, 255, 255, 0.15);
+  --color-2: #fff;
+  --color-3: rgba(0, 0, 0, 0.25);
+  --size: 1px;
+
+  width: 100%;
+  height: calc(4.8 * var(--size));
+  display: inline-block;
+  background: var(--color-1);
+  position: relative;
+  overflow: hidden;
+}
+.loader::after {
+  content: '';
+  width: 0%;
+  height: calc(4.8 * var(--size));
+  background-color: var(--color-2);
+  font-size: calc(15 * var(--size));
+  background-image: linear-gradient(
+    45deg,
+    var(--color-3) 25%,
+    transparent 25%,
+    transparent 50%,
+    var(--color-3) 50%,
+    var(--color-3) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1em 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  animation:
+    animFw 10s ease-in infinite,
+    barStripe 1s linear infinite;
+}
+
+@keyframes barStripe {
+  0% {
+    background-position: 1em 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes animFw {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

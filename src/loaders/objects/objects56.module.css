@@ -1,0 +1,67 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(106 * var(--size));
+  height: calc(56 * var(--size));
+  display: block;
+  margin: calc(30 * var(--size)) auto;
+  background-image:
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0),
+    radial-gradient(circle calc(14 * var(--size)), var(--color-1) 100%, transparent 0);
+  background-size:
+    calc(48 * var(--size)) calc(15 * var(--size)),
+    calc(15 * var(--size)) calc(35 * var(--size)),
+    calc(15 * var(--size)) calc(35 * var(--size)),
+    calc(25 * var(--size)) calc(15 * var(--size)),
+    calc(28 * var(--size)) calc(28 * var(--size));
+  background-position:
+    calc(25 * var(--size)) calc(5 * var(--size)),
+    calc(58 * var(--size)) calc(20 * var(--size)),
+    calc(25 * var(--size)) calc(17 * var(--size)),
+    calc(2 * var(--size)) calc(37 * var(--size)),
+    calc(76 * var(--size)) 0;
+  background-repeat: no-repeat;
+  position: relative;
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  position: absolute;
+  width: calc(56 * var(--size));
+  height: calc(56 * var(--size));
+  border: calc(6 * var(--size)) solid var(--color-1);
+  border-radius: 50%;
+  left: calc(-45 * var(--size));
+  top: calc(-10 * var(--size));
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(var(--color-1) calc(64 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(66 * var(--size)), transparent 0),
+    radial-gradient(circle calc(4 * var(--size)), var(--color-1) 100%, transparent 0);
+  background-size:
+    calc(40 * var(--size)) calc(1 * var(--size)),
+    calc(1 * var(--size)) calc(40 * var(--size)),
+    calc(8 * var(--size)) calc(8 * var(--size));
+  background-position: center center;
+  box-sizing: border-box;
+  animation: rotation 0.3s linear infinite;
+}
+.loader::before {
+  left: calc(25 * var(--size));
+  top: calc(60 * var(--size));
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

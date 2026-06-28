@@ -1,0 +1,55 @@
+.loader {
+  --color-1: rgba(255, 255, 255, 0.15);
+  --color-2: rgba(0, 0, 0, 0.25);
+  --color-3: #fff;
+  --size: 1px;
+
+  width: 100%;
+  height: calc(8 * var(--size));
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: var(--color-1);
+  background-image: linear-gradient(
+    45deg,
+    var(--color-2) 25%,
+    transparent 25%,
+    transparent 50%,
+    var(--color-2) 50%,
+    var(--color-2) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: calc(15 * var(--size)) calc(15 * var(--size));
+  z-index: 10;
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  width: 0%;
+  height: 100%;
+  background-color: var(--color-3);
+  position: absolute;
+  border-radius: 0 calc(4 * var(--size)) calc(4 * var(--size)) 0;
+  top: 0;
+  left: 0;
+  animation: animFw 10s ease-in infinite;
+}
+
+@keyframes animFw {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

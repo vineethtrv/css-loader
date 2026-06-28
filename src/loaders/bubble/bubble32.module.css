@@ -1,0 +1,58 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(16 * var(--size));
+  height: calc(16 * var(--size));
+  border-radius: 50%;
+  display: block;
+  margin: calc(30 * var(--size)) auto;
+  position: relative;
+  background: transparent;
+  box-shadow:
+    calc(-20 * var(--size)) calc(-20 * var(--size)) var(--color-1),
+    calc(20 * var(--size)) calc(-20 * var(--size)) var(--color-1),
+    calc(20 * var(--size)) calc(20 * var(--size)) var(--color-1),
+    calc(-20 * var(--size)) calc(20 * var(--size)) var(--color-1);
+  box-sizing: border-box;
+  animation: cornerCycle 1.6s linear infinite;
+}
+
+@keyframes cornerCycle {
+  0% {
+    box-shadow:
+      calc(-20 * var(--size)) calc(-20 * var(--size)) var(--color-2),
+      calc(20 * var(--size)) calc(-20 * var(--size)) var(--color-1),
+      calc(20 * var(--size)) calc(20 * var(--size)) var(--color-1),
+      calc(-20 * var(--size)) calc(20 * var(--size)) var(--color-1);
+  }
+  25% {
+    box-shadow:
+      calc(-20 * var(--size)) calc(-20 * var(--size)) var(--color-1),
+      calc(20 * var(--size)) calc(-20 * var(--size)) var(--color-2),
+      calc(20 * var(--size)) calc(20 * var(--size)) var(--color-1),
+      calc(-20 * var(--size)) calc(20 * var(--size)) var(--color-1);
+  }
+  50% {
+    box-shadow:
+      calc(-20 * var(--size)) calc(-20 * var(--size)) var(--color-1),
+      calc(20 * var(--size)) calc(-20 * var(--size)) var(--color-1),
+      calc(20 * var(--size)) calc(20 * var(--size)) var(--color-2),
+      calc(-20 * var(--size)) calc(20 * var(--size)) var(--color-1);
+  }
+  75% {
+    box-shadow:
+      calc(-20 * var(--size)) calc(-20 * var(--size)) var(--color-1),
+      calc(20 * var(--size)) calc(-20 * var(--size)) var(--color-1),
+      calc(20 * var(--size)) calc(20 * var(--size)) var(--color-1),
+      calc(-20 * var(--size)) calc(20 * var(--size)) var(--color-2);
+  }
+  100% {
+    box-shadow:
+      calc(-20 * var(--size)) calc(-20 * var(--size)) var(--color-2),
+      calc(20 * var(--size)) calc(-20 * var(--size)) var(--color-1),
+      calc(20 * var(--size)) calc(20 * var(--size)) var(--color-1),
+      calc(-20 * var(--size)) calc(20 * var(--size)) var(--color-1);
+  }
+}

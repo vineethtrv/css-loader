@@ -1,0 +1,38 @@
+.loader {
+  --color-1: rgba(0, 0, 0, 0.5);
+  --color-2: #222b32;
+  --color-3: #de3500;
+  --size: 1px;
+
+  position: relative;
+  width: calc(64 * var(--size));
+  height: calc(64 * var(--size));
+  background-color: var(--color-1);
+  transform: rotate(45deg);
+  overflow: hidden;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  inset: calc(8 * var(--size));
+  margin: auto;
+  background: var(--color-2);
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  inset: calc(-15 * var(--size));
+  margin: auto;
+  background: var(--color-3);
+  animation: diamondLoader 2s linear infinite;
+}
+@keyframes diamondLoader {
+  0%,
+  10% {
+    transform: translate(calc(-64 * var(--size)), calc(-64 * var(--size))) rotate(-45deg);
+  }
+  90%,
+  100% {
+    transform: translate(0, 0) rotate(-45deg);
+  }
+}

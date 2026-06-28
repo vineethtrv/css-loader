@@ -1,0 +1,40 @@
+.loader {
+  --color-1: rgba(255, 255, 255, 0.25);
+  --color-2: #fff;
+  --size: 1px;
+
+  width: calc(60 * var(--size));
+  height: calc(8 * var(--size));
+  display: block;
+  margin: calc(30 * var(--size)) auto;
+  position: relative;
+  background: var(--color-1);
+  border-radius: calc(4 * var(--size));
+  box-shadow:
+    0 calc(-20 * var(--size)) var(--color-1),
+    0 calc(20 * var(--size)) var(--color-1);
+  box-sizing: border-box;
+  animation: chase 1.5s linear infinite;
+}
+
+@keyframes chase {
+  0%,
+  100% {
+    background: var(--color-2);
+    box-shadow:
+      0 calc(-20 * var(--size)) var(--color-1),
+      0 calc(20 * var(--size)) var(--color-1);
+  }
+  33% {
+    background: var(--color-1);
+    box-shadow:
+      0 calc(-20 * var(--size)) var(--color-1),
+      0 calc(20 * var(--size)) var(--color-2);
+  }
+  66% {
+    background: var(--color-1);
+    box-shadow:
+      0 calc(-20 * var(--size)) var(--color-2),
+      0 calc(20 * var(--size)) var(--color-1);
+  }
+}

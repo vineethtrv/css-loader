@@ -1,0 +1,54 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(80 * var(--size));
+  height: calc(40 * var(--size));
+  display: block;
+  margin: calc(20 * var(--size)) auto;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(var(--color-1), var(--color-1)) 0 0 / calc(4 * var(--size)) 100% no-repeat,
+    linear-gradient(var(--color-1), var(--color-1)) calc(10 * var(--size)) 0 /
+      calc(2 * var(--size)) 100% no-repeat,
+    linear-gradient(var(--color-1), var(--color-1)) calc(18 * var(--size)) 0 /
+      calc(6 * var(--size)) 100% no-repeat,
+    linear-gradient(var(--color-1), var(--color-1)) calc(30 * var(--size)) 0 /
+      calc(3 * var(--size)) 100% no-repeat,
+    linear-gradient(var(--color-1), var(--color-1)) calc(40 * var(--size)) 0 /
+      calc(8 * var(--size)) 100% no-repeat,
+    linear-gradient(var(--color-1), var(--color-1)) calc(56 * var(--size)) 0 /
+      calc(2 * var(--size)) 100% no-repeat,
+    linear-gradient(var(--color-1), var(--color-1)) calc(64 * var(--size)) 0 /
+      calc(5 * var(--size)) 100% no-repeat,
+    linear-gradient(var(--color-1), var(--color-1)) calc(74 * var(--size)) 0 /
+      calc(3 * var(--size)) 100% no-repeat;
+  box-sizing: border-box;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 61, 0, 0) 35%,
+    var(--color-2) 50%,
+    rgba(255, 61, 0, 0) 65%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  box-sizing: border-box;
+  animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

@@ -1,0 +1,52 @@
+.loader {
+  --color-1: #de3500;
+  --size: 1px;
+
+  position: relative;
+  color: var(--color-1);
+  width: 0;
+  height: 0;
+  border-right: calc(50 * var(--size)) solid transparent;
+  border-bottom: calc(35 * var(--size)) solid var(--color-1);
+  border-left: calc(50 * var(--size)) solid transparent;
+  animation: 3s starRotate linear infinite;
+}
+.loader:before {
+  border-bottom: calc(40 * var(--size)) solid var(--color-1);
+  border-left: calc(15 * var(--size)) solid transparent;
+  border-right: calc(15 * var(--size)) solid transparent;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: calc(-22 * var(--size));
+  left: calc(-31 * var(--size));
+  display: block;
+  content: '';
+  transform: rotate(-35deg);
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  display: block;
+  color: var(--color-1);
+  top: calc(1.5 * var(--size));
+  transform: rotate(-70deg);
+  left: calc(-52 * var(--size));
+  width: 0;
+  height: 0;
+  border-right: calc(50 * var(--size)) solid transparent;
+  border-bottom: calc(35 * var(--size)) solid var(--color-1);
+  border-left: calc(50 * var(--size)) solid transparent;
+}
+
+@keyframes starRotate {
+  0% {
+    transform: rotate(0deg) scale(0.15);
+  }
+  50% {
+    transform: rotate(360deg) scale(1);
+  }
+  100% {
+    transform: rotate(720deg) scale(0.15);
+  }
+}

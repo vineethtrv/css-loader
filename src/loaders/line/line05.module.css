@@ -1,0 +1,41 @@
+.loader {
+  --color-1: #0000;
+  --color-2: #fff;
+  --size: 1px;
+
+  width: calc(45 * var(--size));
+  height: calc(40 * var(--size));
+  background:
+    linear-gradient(
+      var(--color-1) calc(1 * 100% / 6),
+      var(--color-2) 0 calc(3 * 100% / 6),
+      var(--color-1) 0
+    ),
+    linear-gradient(
+      var(--color-1) calc(2 * 100% / 6),
+      var(--color-2) 0 calc(4 * 100% / 6),
+      var(--color-1) 0
+    ),
+    linear-gradient(
+      var(--color-1) calc(3 * 100% / 6),
+      var(--color-2) 0 calc(5 * 100% / 6),
+      var(--color-1) 0
+    );
+  background-size: calc(10 * var(--size)) 400%;
+  background-repeat: no-repeat;
+  animation: matrix 1s infinite linear;
+}
+@keyframes matrix {
+  0% {
+    background-position:
+      0% 100%,
+      50% 100%,
+      100% 100%;
+  }
+  100% {
+    background-position:
+      0% 0%,
+      50% 0%,
+      100% 0%;
+  }
+}

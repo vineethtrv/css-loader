@@ -1,0 +1,59 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #de3500;
+  --size: 1px;
+
+  position: relative;
+  height: calc(40 * var(--size));
+  width: calc(6 * var(--size));
+  color: var(--color-1);
+  animation: paddles 0.75s ease-out infinite;
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: calc(15 * var(--size));
+  width: calc(12 * var(--size));
+  height: calc(12 * var(--size));
+  background-color: var(--color-2);
+  border-radius: 50%;
+  animation: ballbounce 0.6s ease-out infinite;
+}
+
+@keyframes paddles {
+  0% {
+    box-shadow:
+      calc(-25 * var(--size)) calc(-10 * var(--size)),
+      calc(25 * var(--size)) calc(10 * var(--size));
+  }
+  50% {
+    box-shadow:
+      calc(-25 * var(--size)) calc(8 * var(--size)),
+      calc(25 * var(--size)) calc(-10 * var(--size));
+  }
+  100% {
+    box-shadow:
+      calc(-25 * var(--size)) calc(-10 * var(--size)),
+      calc(25 * var(--size)) calc(10 * var(--size));
+  }
+}
+@keyframes ballbounce {
+  0% {
+    transform: translateX(calc(-20 * var(--size))) scale(1, 1.2);
+  }
+  25% {
+    transform: scale(1.2, 1);
+  }
+  50% {
+    transform: translateX(calc(15 * var(--size))) scale(1, 1.2);
+  }
+  75% {
+    transform: scale(1.2, 1);
+  }
+  100% {
+    transform: translateX(calc(-20 * var(--size)));
+  }
+}

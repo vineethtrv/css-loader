@@ -1,0 +1,71 @@
+.loader {
+  --color-1: #fff;
+  --color-2: rgba(255, 255, 255, 0);
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(24 * var(--size));
+  display: inline-block;
+  position: relative;
+  border: calc(1 * var(--size)) solid var(--color-1);
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: calc(1 * var(--size)) solid var(--color-1);
+  width: calc(5 * var(--size));
+  height: calc(12 * var(--size));
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  left: calc(-8 * var(--size));
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80%;
+  width: calc(6 * var(--size));
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow:
+      calc(11 * var(--size)) 0 var(--color-2),
+      calc(22 * var(--size)) 0 var(--color-2),
+      calc(33 * var(--size)) 0 var(--color-2),
+      calc(44 * var(--size)) 0 var(--color-2);
+  }
+  25% {
+    box-shadow:
+      calc(11 * var(--size)) 0 white,
+      calc(22 * var(--size)) 0 var(--color-2),
+      calc(33 * var(--size)) 0 var(--color-2),
+      calc(44 * var(--size)) 0 var(--color-2);
+  }
+  50% {
+    box-shadow:
+      calc(11 * var(--size)) 0 white,
+      calc(22 * var(--size)) 0 white,
+      calc(33 * var(--size)) 0 var(--color-2),
+      calc(44 * var(--size)) 0 var(--color-2);
+  }
+  75% {
+    box-shadow:
+      calc(11 * var(--size)) 0 white,
+      calc(22 * var(--size)) 0 white,
+      calc(33 * var(--size)) 0 white,
+      calc(44 * var(--size)) 0 var(--color-2);
+  }
+  100% {
+    box-shadow:
+      calc(11 * var(--size)) 0 white,
+      calc(22 * var(--size)) 0 white,
+      calc(33 * var(--size)) 0 white,
+      calc(44 * var(--size)) 0 white;
+  }
+}

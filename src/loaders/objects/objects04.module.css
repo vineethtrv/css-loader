@@ -1,0 +1,28 @@
+.loader,
+.loader:before {
+  display: inline-block;
+  border: calc(20 * var(--size)) double transparent;
+  border-top-color: var(--color-1);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  padding: calc(8 * var(--size));
+  animation: wifiLoading 1s ease-in infinite;
+}
+.loader:before {
+  content: '';
+  width: 0;
+  height: 0;
+}
+@keyframes wifiLoading {
+  0% {
+    border-style: none;
+  }
+  100% {
+    border-style: double;
+  }
+}

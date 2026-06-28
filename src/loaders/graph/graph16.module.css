@@ -1,0 +1,34 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ffd900;
+  --size: 1px;
+
+  display: block;
+  position: relative;
+  width: calc(118 * var(--size));
+  height: calc(160 * var(--size));
+  background-color: var(--color-1);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  transform-origin: 50% 100%;
+  animation: 2s eggRot linear infinite alternate;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 15%;
+  width: calc(80 * var(--size));
+  height: calc(86 * var(--size));
+  transform: translateX(-50%);
+  background-color: var(--color-2);
+  border-radius: 50%;
+}
+
+@keyframes eggRot {
+  0% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}

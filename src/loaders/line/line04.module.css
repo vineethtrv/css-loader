@@ -1,0 +1,46 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(8 * var(--size));
+  height: calc(48 * var(--size));
+  display: inline-block;
+  position: relative;
+  border-radius: calc(4 * var(--size));
+  color: var(--color-1);
+  box-sizing: border-box;
+  animation: animloader 0.6s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow:
+      calc(20 * var(--size)) calc(-10 * var(--size)),
+      calc(40 * var(--size)) calc(10 * var(--size)),
+      calc(60 * var(--size)) 0;
+  }
+  25% {
+    box-shadow:
+      calc(20 * var(--size)) 0,
+      calc(40 * var(--size)) 0,
+      calc(60 * var(--size)) calc(10 * var(--size));
+  }
+  50% {
+    box-shadow:
+      calc(20 * var(--size)) calc(10 * var(--size)),
+      calc(40 * var(--size)) calc(-10 * var(--size)),
+      calc(60 * var(--size)) 0;
+  }
+  75% {
+    box-shadow:
+      calc(20 * var(--size)) 0,
+      calc(40 * var(--size)) 0,
+      calc(60 * var(--size)) calc(-10 * var(--size));
+  }
+  100% {
+    box-shadow:
+      calc(20 * var(--size)) calc(-10 * var(--size)),
+      calc(40 * var(--size)) calc(10 * var(--size)),
+      calc(60 * var(--size)) 0;
+  }
+}

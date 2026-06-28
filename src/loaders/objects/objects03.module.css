@@ -1,0 +1,27 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  color: var(--color-1);
+  font-family: Consolas, Menlo, Monaco, monospace;
+  font-weight: bold;
+  font-size: calc(78 * var(--size));
+  opacity: 0.8;
+}
+.loader:before {
+  content: '{';
+  display: inline-block;
+  animation: pulse 0.4s alternate infinite ease-in-out;
+}
+.loader:after {
+  content: '}';
+  display: inline-block;
+  animation: pulse 0.4s 0.3s alternate infinite ease-in-out;
+}
+
+@keyframes pulse {
+  to {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}

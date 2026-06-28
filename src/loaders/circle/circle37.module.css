@@ -1,0 +1,34 @@
+.loader {
+  --color-1: #ff3d00;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  border-width: calc(3 * var(--size));
+  border-style: dashed solid solid dotted;
+  border-color: var(--color-1) var(--color-1) transparent var(--color-1);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: calc(20 * var(--size));
+  top: calc(31 * var(--size));
+  border: calc(10 * var(--size)) solid transparent;
+  border-right-color: var(--color-1);
+  transform: rotate(-40deg);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

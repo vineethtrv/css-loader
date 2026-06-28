@@ -1,0 +1,38 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  display: block;
+  position: relative;
+  height: calc(32 * var(--size));
+  width: calc(120 * var(--size));
+  background: linear-gradient(var(--color-1) calc(4 * var(--size)), transparent 0) no-repeat;
+  background-position: 0 calc(16 * var(--size));
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: calc(2 * var(--size));
+  width: calc(28 * var(--size));
+  height: calc(28 * var(--size));
+  border-radius: 50%;
+  background: var(--color-2);
+  border: calc(6 * var(--size)) solid var(--color-1);
+  box-sizing: border-box;
+  animation: ballbns 1.5s linear infinite;
+}
+
+@keyframes ballbns {
+  0% {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(0%);
+  }
+}

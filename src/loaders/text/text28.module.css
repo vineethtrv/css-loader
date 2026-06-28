@@ -1,0 +1,34 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  font-size: calc(48 * var(--size));
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  letter-spacing: calc(2 * var(--size));
+  color: var(--color-1);
+  box-sizing: border-box;
+}
+.loader::before {
+  content: 'Loading';
+  animation: animloader 6s steps(1) infinite;
+}
+
+@keyframes animloader {
+  0% {
+    content: 'Loading';
+  }
+  25% {
+    content: 'Saving';
+  }
+  50% {
+    content: 'Updating';
+  }
+  75% {
+    content: 'Waiting';
+  }
+  100% {
+    content: 'Loading';
+  }
+}

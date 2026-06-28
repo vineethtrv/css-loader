@@ -1,0 +1,29 @@
+/* @content: "Loading" */
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  font-size: calc(48 * var(--size));
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  letter-spacing: calc(2 * var(--size));
+  color: var(--color-1);
+  transform-origin: center;
+  box-sizing: border-box;
+  animation: animloader 2s ease-in-out infinite;
+}
+
+@keyframes animloader {
+  0%,
+  10% {
+    transform: perspective(calc(400 * var(--size))) rotateX(0deg);
+  }
+  50% {
+    transform: perspective(calc(400 * var(--size))) rotateX(360deg);
+  }
+  90%,
+  100% {
+    transform: perspective(calc(400 * var(--size))) rotateX(720deg);
+  }
+}

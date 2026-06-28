@@ -1,0 +1,51 @@
+.loader {
+  --color-1: #fff;
+  --color-2: rgba(255, 61, 0, 0.9);
+  --size: 1px;
+
+  width: calc(40 * var(--size));
+  height: calc(98 * var(--size));
+  display: inline-block;
+  position: relative;
+  border: calc(2 * var(--size)) solid var(--color-1);
+  box-sizing: border-box;
+  color: var(--color-2);
+  border-radius: calc(20 * var(--size)) calc(20 * var(--size)) calc(4 * var(--size))
+    calc(4 * var(--size));
+  background: var(--color-1);
+  animation: fill 2s linear infinite alternate;
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, -95%);
+  border: calc(2 * var(--size)) solid var(--color-1);
+  border-bottom: none;
+  background: var(--color-1);
+  width: calc(15 * var(--size));
+  height: calc(35 * var(--size));
+  animation: fillNeck 2s linear infinite alternate;
+}
+
+@keyframes fill {
+  0% {
+    box-shadow: 0 0 inset;
+  }
+  50%,
+  100% {
+    box-shadow: 0 calc(-98 * var(--size)) inset;
+  }
+}
+
+@keyframes fillNeck {
+  0%,
+  50% {
+    box-shadow: 0 0 inset;
+  }
+  100% {
+    box-shadow: 0 calc(-20 * var(--size)) inset;
+  }
+}

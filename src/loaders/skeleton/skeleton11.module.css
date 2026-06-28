@@ -1,0 +1,53 @@
+.loader {
+  --color-1: rgba(38, 50, 56, 0.4);
+  --color-2: #ddd;
+  --size: 1px;
+
+  width: calc(320 * var(--size));
+  height: calc(80 * var(--size));
+  display: block;
+  background-image:
+    linear-gradient(100deg, transparent, var(--color-1) 50%, transparent 80%),
+    radial-gradient(
+      circle calc(30 * var(--size)) at calc(30 * var(--size)) calc(40 * var(--size)),
+      var(--color-2) 99%,
+      transparent 0
+    ),
+    linear-gradient(var(--color-2) calc(14 * var(--size)), transparent 0),
+    linear-gradient(var(--color-2) calc(14 * var(--size)), transparent 0),
+    linear-gradient(var(--color-2) calc(14 * var(--size)), transparent 0);
+  background-repeat: no-repeat;
+  background-size:
+    calc(75 * var(--size)) calc(80 * var(--size)),
+    calc(80 * var(--size)) calc(80 * var(--size)),
+    calc(230 * var(--size)) calc(14 * var(--size)),
+    calc(170 * var(--size)) calc(14 * var(--size)),
+    calc(120 * var(--size)) calc(14 * var(--size));
+  background-position:
+    -50% 0,
+    0 0,
+    calc(80 * var(--size)) calc(12 * var(--size)),
+    calc(80 * var(--size)) calc(36 * var(--size)),
+    calc(80 * var(--size)) calc(60 * var(--size));
+  box-sizing: border-box;
+  animation: animloader 1.1s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    background-position:
+      0% 0,
+      0 0,
+      calc(80 * var(--size)) calc(12 * var(--size)),
+      calc(80 * var(--size)) calc(36 * var(--size)),
+      calc(80 * var(--size)) calc(60 * var(--size));
+  }
+  100% {
+    background-position:
+      120% 0,
+      0 0,
+      calc(80 * var(--size)) calc(12 * var(--size)),
+      calc(80 * var(--size)) calc(36 * var(--size)),
+      calc(80 * var(--size)) calc(60 * var(--size));
+  }
+}

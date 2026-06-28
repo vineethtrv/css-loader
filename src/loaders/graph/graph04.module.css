@@ -1,0 +1,84 @@
+.loader {
+  --color-1: #ccc;
+  --color-2: #fff;
+  --color-3: #0000;
+  --color-4: rgba(0, 0, 0, 0.15);
+  --color-5: #ddd;
+  --size: 1px;
+
+  width: calc(148 * var(--size));
+  height: calc(148 * var(--size));
+  border-radius: 50%;
+  margin: calc(-64 * var(--size)) auto 0;
+  background-color: var(--color-1);
+  background-image:
+    radial-gradient(var(--color-2) calc(4 * var(--size)), var(--color-3) 0),
+    radial-gradient(var(--color-2) calc(4 * var(--size)), var(--color-3) 0),
+    radial-gradient(var(--color-2) calc(4 * var(--size)), var(--color-3) 0),
+    radial-gradient(var(--color-2) calc(4 * var(--size)), var(--color-3) 0);
+  background-position:
+    calc(24 * var(--size)) center,
+    calc(8 * var(--size)) center,
+    calc(-8 * var(--size)) center,
+    calc(-24 * var(--size)) center;
+  position: relative;
+  box-shadow: 0 0 calc(5 * var(--size)) var(--color-4) inset;
+  animation: flash 1s linear infinite;
+}
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  border: calc(1 * var(--size)) solid var(--color-1);
+  border-top-color: var(--color-3);
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: calc(16 * var(--size));
+  height: calc(18 * var(--size));
+  background: var(--color-2);
+}
+
+.loader::before {
+  width: 0;
+  height: calc(64 * var(--size));
+  transform: translate(-50%, calc(18 * var(--size)));
+}
+
+@keyframes flash {
+  0% {
+    background-image:
+      radial-gradient(var(--color-5) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-5) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-5) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-5) calc(4 * var(--size)), var(--color-3) 0);
+  }
+  25% {
+    background-image:
+      radial-gradient(var(--color-5) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-5) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-5) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-2) calc(4 * var(--size)), var(--color-3) 0);
+  }
+  50% {
+    background-image:
+      radial-gradient(var(--color-5) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-5) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-2) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-2) calc(4 * var(--size)), var(--color-3) 0);
+  }
+  75% {
+    background-image:
+      radial-gradient(var(--color-5) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-2) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-2) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-2) calc(4 * var(--size)), var(--color-3) 0);
+  }
+  100% {
+    background-image:
+      radial-gradient(var(--color-2) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-2) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-2) calc(4 * var(--size)), var(--color-3) 0),
+      radial-gradient(var(--color-2) calc(4 * var(--size)), var(--color-3) 0);
+  }
+}

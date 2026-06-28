@@ -1,0 +1,21 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  display: inline-block;
+  position: relative;
+  background: var(--color-1);
+  box-sizing: border-box;
+  animation: zeroRotation 1s ease infinite alternate-reverse;
+}
+
+@keyframes zeroRotation {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+  }
+}

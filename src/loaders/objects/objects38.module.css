@@ -1,0 +1,80 @@
+.loader {
+  --color-1: #fff;
+  --color-2: rgba(0, 0, 0, 0);
+  --size: 1px;
+
+  width: calc(60 * var(--size));
+  height: calc(60 * var(--size));
+  display: block;
+  margin: calc(20 * var(--size)) auto;
+  position: relative;
+  background:
+    radial-gradient(ellipse at center, var(--color-1) 69%, var(--color-2) 70%),
+    linear-gradient(
+      to right,
+      var(--color-2) 47%,
+      var(--color-1) 48%,
+      var(--color-1) 52%,
+      var(--color-2) 53%
+    );
+  background-size:
+    calc(20 * var(--size)) calc(20 * var(--size)),
+    calc(20 * var(--size)) auto;
+  background-repeat: repeat-x;
+  background-position:
+    center bottom,
+    center calc(-5 * var(--size));
+  box-sizing: border-box;
+}
+.loader::before,
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: calc(-20 * var(--size));
+  top: 0;
+  width: calc(20 * var(--size));
+  height: calc(60 * var(--size));
+  background:
+    radial-gradient(ellipse at center, var(--color-1) 69%, var(--color-2) 70%),
+    linear-gradient(
+      to right,
+      var(--color-2) 47%,
+      var(--color-1) 48%,
+      var(--color-1) 52%,
+      var(--color-2) 53%
+    );
+  background-size:
+    calc(20 * var(--size)) calc(20 * var(--size)),
+    calc(20 * var(--size)) auto;
+  background-repeat: no-repeat;
+  background-position:
+    center bottom,
+    center calc(-5 * var(--size));
+  transform: rotate(0deg);
+  transform-origin: 50% 0%;
+  animation: animPend 1s linear infinite alternate;
+}
+.loader::after {
+  animation: animPend2 1s linear infinite alternate;
+  left: 100%;
+}
+
+@keyframes animPend {
+  0% {
+    transform: rotate(22deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes animPend2 {
+  0%,
+  55% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-22deg);
+  }
+}

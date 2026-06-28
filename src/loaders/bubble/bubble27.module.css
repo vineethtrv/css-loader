@@ -1,0 +1,43 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  position: relative;
+  width: calc(15 * var(--size));
+  height: calc(64 * var(--size));
+}
+.loader::after,
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-1);
+  background: currentColor;
+  width: calc(16 * var(--size));
+  height: calc(16 * var(--size));
+  border-radius: 50%;
+  box-shadow:
+    calc(45 * var(--size)) 0,
+    calc(-45 * var(--size)) 0;
+  animation: move 0.5s linear infinite alternate;
+}
+
+.loader::before {
+  top: 100%;
+  box-shadow: calc(50 * var(--size)) 0;
+  left: calc(-25 * var(--size));
+  animation-direction: alternate-reverse;
+}
+
+@keyframes move {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 50%;
+  }
+  100% {
+    top: 100%;
+  }
+}

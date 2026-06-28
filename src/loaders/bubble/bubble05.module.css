@@ -1,0 +1,41 @@
+.loader {
+  --color-1: #ff3d00;
+  --color-2: #fff;
+  --size: 1px;
+
+  box-sizing: border-box;
+  position: relative;
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  animation: flip 1s linear infinite;
+}
+.loader:after,
+.loader:before {
+  content: '';
+  width: calc(24 * var(--size));
+  height: calc(24 * var(--size));
+  position: absolute;
+  border-radius: 50%;
+  background: var(--color-1);
+  animation: spin 1s linear infinite;
+  transform-origin: calc(12 * var(--size)) 100%;
+}
+.loader:before {
+  transform-origin: 0 50%;
+  background: var(--color-2);
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes flip {
+  0%,
+  50% {
+    transform: rotateY(0deg);
+  }
+  50%,
+  100% {
+    transform: rotateY(180deg);
+  }
+}

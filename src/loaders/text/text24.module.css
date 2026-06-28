@@ -1,0 +1,27 @@
+/* @content: "Loading" */
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  font-size: calc(48 * var(--size));
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  letter-spacing: calc(2 * var(--size));
+  color: var(--color-1);
+  transform-origin: center bottom;
+  box-sizing: border-box;
+  animation: animloader 0.7s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  50% {
+    transform: scale(1.15, 0.75) translateY(calc(4 * var(--size)));
+  }
+  100% {
+    transform: scale(0.9, 1.2) translateY(calc(-10 * var(--size)));
+  }
+}

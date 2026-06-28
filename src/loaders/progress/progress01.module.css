@@ -1,0 +1,34 @@
+.loader {
+  --color-1: rgba(255, 255, 255, 0.15);
+  --color-2: #fff;
+  --size: 1px;
+
+  width: 100%;
+  height: calc(4.8 * var(--size));
+  display: inline-block;
+  position: relative;
+  background: var(--color-1);
+  overflow: hidden;
+}
+.loader::after {
+  content: '';
+  width: calc(96 * var(--size));
+  height: calc(4.8 * var(--size));
+  background: var(--color-2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  animation: hitZak 1s linear infinite alternate;
+}
+
+@keyframes hitZak {
+  0% {
+    left: 0;
+    transform: translateX(-1%);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(-99%);
+  }
+}

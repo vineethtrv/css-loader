@@ -1,0 +1,46 @@
+.layout {
+    min-height: 100vh;
+    display: flex;
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+    }
+}
+
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 7.1rem);
+}
+
+
+.section {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.load-error {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    margin: 1rem;
+    background: var(--error-bg);
+    color: var(--error-fg);
+    border: 1px solid var(--error-border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+
+    button {
+        padding: 0.4rem 0.9rem;
+        background: var(--error-button-bg);
+        color: var(--error-button-fg);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+}

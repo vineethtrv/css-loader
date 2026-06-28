@@ -1,0 +1,59 @@
+.loader {
+  --color-1: #fff;
+  --color-2: rgba(255, 255, 255, 0.25);
+  --color-3: rgba(255, 255, 255, 1);
+  --size: 1px;
+
+  width: calc(64 * var(--size));
+  height: calc(44 * var(--size));
+  position: relative;
+  border: calc(5 * var(--size)) solid var(--color-1);
+  border-radius: calc(8 * var(--size));
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  border: calc(5 * var(--size)) solid var(--color-1);
+  width: calc(32 * var(--size));
+  height: calc(28 * var(--size));
+  border-radius: 50% 50% 0 0;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -100%);
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  width: calc(8 * var(--size));
+  height: calc(8 * var(--size));
+  border-radius: 50%;
+  background-color: var(--color-1);
+  box-shadow:
+    calc(16 * var(--size)) 0 var(--color-1),
+    calc(-16 * var(--size)) 0 var(--color-1);
+  animation: flash 0.5s ease-out infinite alternate;
+}
+
+@keyframes flash {
+  0% {
+    background-color: var(--color-2);
+    box-shadow:
+      calc(16 * var(--size)) 0 var(--color-2),
+      calc(-16 * var(--size)) 0 var(--color-3);
+  }
+  50% {
+    background-color: var(--color-3);
+    box-shadow:
+      calc(16 * var(--size)) 0 var(--color-2),
+      calc(-16 * var(--size)) 0 var(--color-2);
+  }
+  100% {
+    background-color: var(--color-2);
+    box-shadow:
+      calc(16 * var(--size)) 0 var(--color-3),
+      calc(-16 * var(--size)) 0 var(--color-2);
+  }
+}

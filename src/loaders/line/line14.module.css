@@ -1,0 +1,84 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  position: relative;
+  width: calc(55 * var(--size));
+  height: calc(55 * var(--size));
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0);
+  background-size: calc(5 * var(--size)) calc(40 * var(--size));
+  background-position:
+    0 center,
+    calc(10 * var(--size)) center,
+    calc(20 * var(--size)) center,
+    calc(30 * var(--size)) center,
+    calc(40 * var(--size)) center,
+    calc(50 * var(--size)) center;
+  animation: spikeUp 1s linear infinite alternate;
+}
+@keyframes spikeUp {
+  0% {
+    background-size: calc(5 * var(--size)) calc(40 * var(--size));
+  }
+  16% {
+    background-size:
+      calc(5 * var(--size)) calc(55 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size));
+  }
+  33% {
+    background-size:
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(55 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size));
+  }
+  50% {
+    background-size:
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(55 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size));
+  }
+  66% {
+    background-size:
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(55 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size));
+  }
+  83% {
+    background-size:
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(55 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size));
+  }
+  100% {
+    background-size:
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(40 * var(--size)),
+      calc(5 * var(--size)) calc(55 * var(--size));
+  }
+}

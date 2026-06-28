@@ -1,0 +1,59 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(108 * var(--size));
+  height: calc(16 * var(--size));
+  background:
+    radial-gradient(
+      circle calc(8 * var(--size)) at calc(8 * var(--size)) center,
+      var(--color-1) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(8 * var(--size)) at calc(8 * var(--size)) center,
+      var(--color-1) 100%,
+      transparent 0
+    );
+  background-size: calc(16 * var(--size)) calc(16 * var(--size));
+  background-repeat: no-repeat;
+  position: relative;
+  animation: ballX 1s linear infinite;
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  width: calc(16 * var(--size));
+  height: calc(16 * var(--size));
+  border-radius: 50%;
+  background: var(--color-1);
+  inset: 0;
+  margin: auto;
+  animation: moveX 1s cubic-bezier(0.5, 300, 0.5, -300) infinite;
+}
+@keyframes ballX {
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    background-position:
+      25% 0,
+      75% 0;
+  }
+  40% {
+    background-position:
+      25% 0,
+      85% 0;
+  }
+  90% {
+    background-position:
+      15% 0,
+      75% 0;
+  }
+}
+@keyframes moveX {
+  100% {
+    transform: translate(calc(0.15 * var(--size)));
+  }
+}

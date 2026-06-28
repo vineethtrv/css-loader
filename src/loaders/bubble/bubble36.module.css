@@ -1,0 +1,45 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(14 * var(--size));
+  height: calc(14 * var(--size));
+  border-radius: 50%;
+  display: block;
+  margin: calc(20 * var(--size)) auto;
+  position: relative;
+  background: var(--color-1);
+  box-sizing: border-box;
+  animation: blink 1.2s -0.6s ease-in-out infinite;
+}
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: calc(14 * var(--size));
+  height: calc(14 * var(--size));
+  border-radius: 50%;
+  background: var(--color-1);
+  box-sizing: border-box;
+}
+.loader::before {
+  left: calc(-22 * var(--size));
+  animation: blink 1.2s -0.8s ease-in-out infinite;
+}
+.loader::after {
+  left: calc(22 * var(--size));
+  animation: blink 1.2s -0.4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,28 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+}
+.loader:before,
+.loader:after {
+  content: '';
+  display: block;
+  height: calc(24 * var(--size));
+  background: var(--color-1);
+  animation: mvx 0.3s infinite ease-in alternate;
+}
+.loader:before {
+  animation-name: mvrx;
+}
+@keyframes mvx {
+  100% {
+    transform: translateY(50%);
+  }
+}
+@keyframes mvrx {
+  100% {
+    transform: translateY(-50%);
+  }
+}

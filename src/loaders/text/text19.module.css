@@ -1,0 +1,39 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  position: relative;
+  font-size: calc(48 * var(--size));
+  letter-spacing: calc(2 * var(--size));
+}
+.loader:before {
+  content: 'Loading';
+  color: var(--color-1);
+}
+.loader:after {
+  content: '';
+  width: calc(20 * var(--size));
+  height: calc(20 * var(--size));
+  background-color: var(--color-2);
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  top: calc(-70 * var(--size));
+  animation: motion 3s ease-in-out infinite;
+}
+
+@keyframes motion {
+  0%,
+  50%,
+  100% {
+    transform: translateX(0) scale(1);
+  }
+  25% {
+    transform: translateX(calc(-100 * var(--size))) scale(0.3);
+  }
+  75% {
+    transform: translateX(calc(100 * var(--size))) scale(0.3);
+  }
+}

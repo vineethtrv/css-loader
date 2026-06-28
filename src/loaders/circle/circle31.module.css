@@ -1,0 +1,26 @@
+.loader {
+  --color-1: rgba(255, 255, 255, 0.15);
+  --color-2: rgba(255, 255, 255, 0.25);
+  --color-3: rgba(255, 255, 255, 0.35);
+  --color-4: rgba(255, 255, 255, 0.5);
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: calc(10 * var(--size)) solid;
+  border-color: var(--color-1) var(--color-2) var(--color-3) var(--color-4);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

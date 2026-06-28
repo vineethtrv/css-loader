@@ -1,0 +1,40 @@
+.loader {
+  --color-1: #ff3d00;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  border-radius: 50%;
+  display: block;
+  margin: calc(15 * var(--size)) auto;
+  position: relative;
+  box-sizing: border-box;
+  animation: zeroRotation 1s linear infinite alternate;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--color-1);
+  width: calc(16 * var(--size));
+  height: calc(16 * var(--size));
+  transform: translate(-50%, 50%);
+  border-radius: 50%;
+}
+.loader::before {
+  left: auto;
+  right: 0;
+  transform: translate(50%, 100%);
+}
+
+@keyframes zeroRotation {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+  }
+}

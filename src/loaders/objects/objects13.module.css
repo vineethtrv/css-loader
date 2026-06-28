@@ -1,0 +1,65 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff9371;
+  --color-3: #ff3d00;
+  --size: 1px;
+
+  width: calc(64 * var(--size));
+  height: calc(64 * var(--size));
+  position: relative;
+  background: var(--color-1);
+  border-radius: calc(4 * var(--size));
+  overflow: hidden;
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(40 * var(--size));
+  height: calc(40 * var(--size));
+  transform: rotate(45deg) translate(30%, 40%);
+  background: var(--color-2);
+  box-shadow: calc(32 * var(--size)) calc(-34 * var(--size)) 0 calc(5 * var(--size)) var(--color-3);
+  animation: slide 2s infinite ease-in-out alternate;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  left: calc(10 * var(--size));
+  top: calc(10 * var(--size));
+  width: calc(16 * var(--size));
+  height: calc(16 * var(--size));
+  border-radius: 50%;
+  background: var(--color-3);
+  transform: rotate(0deg);
+  transform-origin: calc(35 * var(--size)) calc(145 * var(--size));
+  animation: rotate 2s infinite ease-in-out;
+}
+
+@keyframes slide {
+  0%,
+  100% {
+    bottom: calc(-35 * var(--size));
+  }
+  25%,
+  75% {
+    bottom: calc(-2 * var(--size));
+  }
+  20%,
+  80% {
+    bottom: calc(2 * var(--size));
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(-15deg);
+  }
+  25%,
+  75% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}

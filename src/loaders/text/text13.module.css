@@ -1,0 +1,24 @@
+/* @content: "Loading" */
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  font-size: calc(48 * var(--size));
+  display: inline-block;
+  letter-spacing: calc(2 * var(--size));
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-1);
+  box-sizing: border-box;
+  animation: animloader 1s ease-in infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    filter: blur(0);
+    transform: skew(0deg);
+  }
+  100% {
+    filter: blur(calc(3 * var(--size)));
+    transform: skew(-4deg);
+  }
+}

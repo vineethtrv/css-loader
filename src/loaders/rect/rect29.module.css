@@ -1,0 +1,49 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  position: relative;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  display: block;
+  border: calc(24 * var(--size)) solid transparent;
+  border-color: transparent transparent var(--color-1) var(--color-1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: mvx 1s infinite ease-in;
+}
+.loader:before {
+  left: calc(-1 * var(--size));
+  top: calc(1 * var(--size));
+  border-color: var(--color-1) var(--color-1) transparent transparent;
+  animation-name: mvrx;
+}
+@keyframes mvx {
+  0%,
+  25% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, 50%) rotate(180deg);
+  }
+  100% {
+    transform: translate(0%, 0%) rotate(180deg);
+  }
+}
+@keyframes mvrx {
+  0%,
+  25% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(50%, -50%) rotate(180deg);
+  }
+  100% {
+    transform: translate(0%, 0%) rotate(180deg);
+  }
+}

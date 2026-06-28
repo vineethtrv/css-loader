@@ -1,0 +1,82 @@
+.loader {
+  --color-1: #263238;
+  --color-2: #fff;
+  --color-3: #ddd;
+  --color-4: rgba(0, 0, 0, 0.5);
+  --size: 1px;
+
+  width: calc(175 * var(--size));
+  height: calc(80 * var(--size));
+  display: block;
+  margin: auto;
+  background-image:
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0),
+    radial-gradient(
+      circle calc(25 * var(--size)) at calc(25 * var(--size)) calc(25 * var(--size)),
+      var(--color-2) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(50 * var(--size)) at calc(50 * var(--size)) calc(50 * var(--size)),
+      var(--color-2) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(25 * var(--size)) at calc(25 * var(--size)) calc(25 * var(--size)),
+      var(--color-2) 100%,
+      transparent 0
+    ),
+    linear-gradient(var(--color-2) calc(50 * var(--size)), transparent 0);
+  background-size:
+    calc(64 * var(--size)) calc(6 * var(--size)),
+    calc(50 * var(--size)) calc(50 * var(--size)),
+    calc(100 * var(--size)) calc(76 * var(--size)),
+    calc(50 * var(--size)) calc(50 * var(--size)),
+    calc(120 * var(--size)) calc(40 * var(--size));
+  background-position:
+    calc(55 * var(--size)) calc(60 * var(--size)),
+    0 calc(30 * var(--size)),
+    calc(37 * var(--size)) 0,
+    calc(122 * var(--size)) calc(30 * var(--size)),
+    calc(25 * var(--size)) calc(40 * var(--size));
+  background-repeat: no-repeat;
+  position: relative;
+  box-sizing: border-box;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(-180deg);
+  top: calc(62 * var(--size));
+  height: calc(64 * var(--size));
+  width: calc(60 * var(--size));
+  background-color: var(--color-2);
+  background-image:
+    linear-gradient(var(--color-3) calc(20 * var(--size)), transparent 0),
+    linear-gradient(var(--color-3) calc(5 * var(--size)), transparent 0),
+    linear-gradient(var(--color-3) calc(10 * var(--size)), transparent 0),
+    linear-gradient(var(--color-3) calc(10 * var(--size)), transparent 0);
+  background-size: calc(50 * var(--size)) calc(20 * var(--size));
+  background-position:
+    calc(5 * var(--size)) calc(36 * var(--size)),
+    calc(5 * var(--size)) calc(25 * var(--size)),
+    calc(5 * var(--size)) calc(10 * var(--size));
+  background-repeat: no-repeat;
+  border-radius: calc(2 * var(--size)) calc(2 * var(--size)) calc(4 * var(--size))
+    calc(4 * var(--size));
+  z-index: 10;
+  box-shadow: 0 calc(-4 * var(--size)) calc(7 * var(--size)) var(--color-4);
+  box-sizing: border-box;
+  animation: animloader 4s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    height: calc(64 * var(--size));
+  }
+  90%,
+  100% {
+    height: 0;
+  }
+}

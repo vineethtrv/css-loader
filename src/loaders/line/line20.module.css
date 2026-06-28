@@ -1,0 +1,28 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(50 * var(--size));
+  height: calc(60 * var(--size));
+  display: block;
+  margin: calc(20 * var(--size)) auto;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--color-1) 0,
+    var(--color-1) calc(4 * var(--size)),
+    transparent calc(4 * var(--size)),
+    transparent calc(14 * var(--size))
+  );
+  background-size: 100% calc(14 * var(--size));
+  box-sizing: border-box;
+  animation: rain 0.8s linear infinite;
+}
+
+@keyframes rain {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 calc(14 * var(--size));
+  }
+}

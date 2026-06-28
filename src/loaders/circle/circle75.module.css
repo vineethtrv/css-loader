@@ -1,0 +1,53 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #de3500;
+  --size: 1px;
+
+  position: relative;
+  width: calc(100 * var(--size));
+  height: calc(100 * var(--size));
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  border-radius: 50%;
+  top: 50%;
+  left: 0;
+  transform: translate(calc(-5 * var(--size)), -50%);
+  background: linear-gradient(to right, var(--color-1) 50%, var(--color-2) 50%) no-repeat;
+  background-size: 200% auto;
+  background-position: 100% 0;
+  animation: colorBallMoveX 1.5s linear infinite alternate;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: calc(2 * var(--size));
+  height: 100%;
+  background: var(--color-2);
+}
+@keyframes colorBallMoveX {
+  0% {
+    background-position: 0% 0;
+    transform: translate(calc(-15 * var(--size)), -50%);
+  }
+  15%,
+  25% {
+    background-position: 0% 0;
+    transform: translate(0, -50%);
+  }
+  75%,
+  85% {
+    background-position: 100% 0;
+    transform: translate(calc(50 * var(--size)), -50%);
+  }
+  100% {
+    background-position: 100% 0;
+    transform: translate(calc(65 * var(--size)), -50%);
+  }
+}

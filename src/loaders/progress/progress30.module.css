@@ -1,0 +1,29 @@
+.loader {
+    --color-1: #ff3d00;
+    --color-2: #fff;
+    --size: 1px;
+
+    width: calc(160 * var(--size));
+    height: calc(14 * var(--size));
+    display: block;
+    margin: calc(20 * var(--size)) auto;
+    border-radius: calc(7 * var(--size));
+    background: repeating-linear-gradient(45deg,
+            var(--color-1) 0,
+            var(--color-1) calc(8 * var(--size)),
+            var(--color-2) calc(8 * var(--size)),
+            var(--color-2) calc(16 * var(--size)));
+    background-size: calc(22.7 * var(--size)) 100%;
+    box-sizing: border-box;
+    animation: stripes 0.6s linear infinite;
+}
+
+@keyframes stripes {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: calc(22.7 * var(--size)) 0;
+    }
+}

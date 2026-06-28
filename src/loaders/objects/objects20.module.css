@@ -1,0 +1,147 @@
+.loader {
+  --color-1: #263238;
+  --color-2: #fff;
+  --size: 1px;
+
+  width: calc(60 * var(--size));
+  height: calc(40 * var(--size));
+  position: relative;
+  display: inline-block;
+  --base-color: var(--color-1); /*use your base color*/
+}
+.loader::before {
+  content: '';
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: calc(36 * var(--size));
+  height: calc(36 * var(--size));
+  border-radius: 50%;
+  background-color: var(--color-2);
+  background-image:
+    radial-gradient(
+      circle calc(8 * var(--size)) at calc(18 * var(--size)) calc(18 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(4 * var(--size)) at calc(18 * var(--size)) 0,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(4 * var(--size)) at 0 calc(18 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(4 * var(--size)) at calc(36 * var(--size)) calc(18 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(4 * var(--size)) at calc(18 * var(--size)) calc(36 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(4 * var(--size)) at calc(30 * var(--size)) calc(5 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(4 * var(--size)) at calc(30 * var(--size)) calc(5 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(4 * var(--size)) at calc(30 * var(--size)) calc(30 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(4 * var(--size)) at calc(5 * var(--size)) calc(30 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(4 * var(--size)) at calc(5 * var(--size)) calc(5 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    );
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: rotationBack 3s linear infinite;
+}
+.loader::after {
+  content: '';
+  left: calc(35 * var(--size));
+  top: calc(15 * var(--size));
+  position: absolute;
+  width: calc(24 * var(--size));
+  height: calc(24 * var(--size));
+  border-radius: 50%;
+  background-color: var(--color-2);
+  background-image:
+    radial-gradient(
+      circle calc(5 * var(--size)) at calc(12 * var(--size)) calc(12 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(2.5 * var(--size)) at calc(12 * var(--size)) 0,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(2.5 * var(--size)) at 0 calc(12 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(2.5 * var(--size)) at calc(24 * var(--size)) calc(12 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(2.5 * var(--size)) at calc(12 * var(--size)) calc(24 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(2.5 * var(--size)) at calc(20 * var(--size)) calc(3 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(2.5 * var(--size)) at calc(20 * var(--size)) calc(3 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(2.5 * var(--size)) at calc(20 * var(--size)) calc(20 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(2.5 * var(--size)) at calc(3 * var(--size)) calc(20 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(2.5 * var(--size)) at calc(3 * var(--size)) calc(3 * var(--size)),
+      var(--base-color) 100%,
+      transparent 0
+    );
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: rotationBack 4s linear infinite reverse;
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

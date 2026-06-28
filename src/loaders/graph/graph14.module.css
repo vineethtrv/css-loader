@@ -1,0 +1,63 @@
+.loader {
+  --color-1: #ff3d00;
+  --color-2: #f63a99;
+  --color-3: #30dcf6;
+  --color-4: #f2d200;
+  --color-5: #70ca5c;
+  --color-6: rgba(255, 255, 255, 0.5);
+  --color-7: rgba(0, 0, 0, 0.25);
+  --color-8: #e09c5f;
+  --size: 1px;
+
+  height: calc(150 * var(--size));
+  width: calc(100 * var(--size));
+  border-radius: calc(55 * var(--size)) calc(55 * var(--size)) calc(10 * var(--size))
+    calc(10 * var(--size));
+  position: relative;
+  background: var(--color-1);
+
+  background-image: linear-gradient(
+    0deg,
+    var(--color-2) 25%,
+    var(--color-3) 25%,
+    var(--color-3) 25%,
+    var(--color-3) 50%,
+    var(--color-4) 50%,
+    var(--color-4) 50%,
+    var(--color-4) 75%,
+    var(--color-5) 75%
+  );
+  background-position: 0 0;
+  background-size: auto calc(175 * var(--size));
+  background-repeat: repeat-y;
+  animation: colorShift 6s linear infinite;
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  left: calc(10 * var(--size));
+  bottom: calc(15 * var(--size));
+  width: calc(15 * var(--size));
+  height: calc(100 * var(--size));
+  border-radius: calc(50 * var(--size));
+  background: var(--color-6);
+}
+
+.loader:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 0);
+  box-shadow: 0 calc(15 * var(--size)) calc(2 * var(--size)) var(--color-7) inset;
+  width: calc(32 * var(--size));
+  height: calc(45 * var(--size));
+  background: var(--color-8);
+  border-radius: 0 0 calc(12 * var(--size)) calc(12 * var(--size));
+}
+
+@keyframes colorShift {
+  to {
+    background-position: 0 calc(175 * var(--size));
+  }
+}

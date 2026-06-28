@@ -1,0 +1,24 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  display: inline-block;
+  position: relative;
+  background: var(--color-1);
+  box-sizing: border-box;
+  animation: flipX 1s linear infinite;
+}
+
+@keyframes flipX {
+  0% {
+    transform: perspective(calc(200 * var(--size))) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(calc(200 * var(--size))) rotateX(-180deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(calc(200 * var(--size))) rotateX(-180deg) rotateY(-180deg);
+  }
+}

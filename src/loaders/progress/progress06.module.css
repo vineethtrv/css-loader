@@ -1,0 +1,44 @@
+.loader {
+  --color-1: rgba(255, 255, 255, 0.15);
+  --color-2: #fff;
+  --color-3: rgba(0, 0, 0, 0.25);
+  --size: 1px;
+
+  width: 100%;
+  height: calc(4.8 * var(--size));
+  display: inline-block;
+  background: var(--color-1);
+  position: relative;
+  overflow: hidden;
+}
+.loader::after {
+  content: '';
+  width: 0%;
+  height: calc(4.8 * var(--size));
+  background-color: var(--color-2);
+  background-image: linear-gradient(
+    45deg,
+    var(--color-3) 25%,
+    transparent 25%,
+    transparent 50%,
+    var(--color-3) 50%,
+    var(--color-3) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: calc(15 * var(--size)) calc(15 * var(--size));
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  animation: animFw 6s ease-in infinite;
+}
+
+@keyframes animFw {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

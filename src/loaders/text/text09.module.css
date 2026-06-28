@@ -1,0 +1,27 @@
+/* @content: "Loading" */
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  font-size: calc(48 * var(--size));
+  font-weight: 600;
+  display: inline-block;
+  letter-spacing: calc(2 * var(--size));
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-1);
+  box-sizing: border-box;
+  animation: spotlight 2s linear infinite alternate;
+}
+
+@keyframes spotlight {
+  0%,
+  20% {
+    opacity: 1;
+    letter-spacing: calc(2 * var(--size));
+  }
+  80%,
+  100% {
+    opacity: 0;
+    letter-spacing: calc(32 * var(--size));
+  }
+}

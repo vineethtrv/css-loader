@@ -1,0 +1,56 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #0000;
+  --size: 1px;
+
+  position: relative;
+  border: calc(24 * var(--size)) solid var(--color-1);
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: eat 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  position: absolute;
+  left: calc(50 * var(--size));
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-1);
+  width: calc(15 * var(--size));
+  height: calc(15 * var(--size));
+  border-radius: 50%;
+  box-sizing: border-box;
+  opacity: 0;
+  animation: move 2s linear infinite;
+}
+
+.loader::before {
+  animation-delay: 1s;
+}
+
+@keyframes eat {
+  0%,
+  49% {
+    border-right-color: var(--color-1);
+  }
+  50%,
+  100% {
+    border-right-color: var(--color-2);
+  }
+}
+@keyframes move {
+  0% {
+    left: calc(75 * var(--size));
+    opacity: 1;
+  }
+  50% {
+    left: 0;
+    opacity: 1;
+  }
+  52%,
+  100% {
+    left: calc(-5 * var(--size));
+    opacity: 0;
+  }
+}

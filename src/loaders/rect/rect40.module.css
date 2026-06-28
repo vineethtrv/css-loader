@@ -1,0 +1,72 @@
+.loader {
+  --color-1: #ff3d00;
+  --color-2: #fff;
+  --size: 1px;
+
+  width: calc(50 * var(--size));
+  height: calc(165 * var(--size));
+  position: relative;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  width: calc(16 * var(--size));
+  height: calc(16 * var(--size));
+  background: var(--color-1);
+  border-radius: 50%;
+  animation: bounce 2s linear infinite;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: calc(48 * var(--size));
+  width: calc(48 * var(--size));
+  background: var(--color-2);
+  border-radius: calc(4 * var(--size));
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes bounce {
+  0%,
+  50%,
+  100% {
+    transform: translate(-50%, 0);
+    height: calc(20 * var(--size));
+  }
+  20% {
+    transform: translate(-25%, calc(85 * var(--size)));
+    height: calc(28 * var(--size));
+  }
+  25% {
+    transform: translate(-25%, calc(110 * var(--size)));
+    height: calc(12 * var(--size));
+  }
+  70% {
+    transform: translate(-75%, calc(85 * var(--size)));
+    height: calc(28 * var(--size));
+  }
+  75% {
+    transform: translate(-75%, calc(108 * var(--size)));
+    height: calc(12 * var(--size));
+  }
+}
+@keyframes rotate {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  75% {
+    transform: rotate(-90deg);
+  }
+}

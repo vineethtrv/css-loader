@@ -1,0 +1,47 @@
+.loader {
+  --color-1: #0004;
+  --color-2: rgba(0, 0, 0, 0.05);
+  --color-3: #fff;
+  --color-4: rgba(0, 0, 0, 0.2);
+  --size: 1px;
+
+  width: calc(200 * var(--size));
+  height: calc(40 * var(--size));
+  background-color: var(--color-1);
+  position: relative;
+  border-radius: calc(50 * var(--size));
+  box-shadow: inset 0 0 0 calc(2 * var(--size)) var(--color-2);
+}
+.loader:after {
+  border-radius: calc(50 * var(--size));
+  content: '';
+  position: absolute;
+  background-color: var(--color-3);
+  left: calc(2 * var(--size));
+  top: calc(2 * var(--size));
+  bottom: calc(2 * var(--size));
+  right: calc(360 * var(--size));
+  animation: slide 2s linear infinite;
+  box-shadow: 0 calc(1 * var(--size)) calc(2 * var(--size)) var(--color-4);
+}
+
+@keyframes slide {
+  0% {
+    right: calc(150 * var(--size));
+    left: calc(2 * var(--size));
+  }
+  5% {
+    left: calc(2 * var(--size));
+  }
+  50% {
+    right: calc(2 * var(--size));
+    left: calc(150 * var(--size));
+  }
+  55% {
+    right: calc(2 * var(--size));
+  }
+  100% {
+    right: calc(150 * var(--size));
+    left: calc(2 * var(--size));
+  }
+}

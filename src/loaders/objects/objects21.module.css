@@ -1,0 +1,32 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(15 * var(--size));
+  height: calc(20 * var(--size));
+  margin-left: calc(15 * var(--size));
+  background: var(--color-1);
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: bump 0.4s ease-in infinite alternate;
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  border: calc(15 * var(--size)) solid transparent;
+  border-top-color: var(--color-1);
+}
+
+@keyframes bump {
+  0% {
+    transform: translate(-50%, calc(5 * var(--size)));
+  }
+  100% {
+    transform: translate(-50%, calc(-5 * var(--size)));
+  }
+}

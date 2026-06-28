@@ -1,0 +1,44 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(16 * var(--size));
+  height: calc(16 * var(--size));
+  border-radius: 50%;
+  display: block;
+  margin: calc(40 * var(--size)) auto;
+  position: relative;
+  background: var(--color-1);
+  box-sizing: border-box;
+  animation: fig8 2s linear infinite;
+}
+
+@keyframes fig8 {
+  0% {
+    transform: translate(0, 0);
+  }
+  12.5% {
+    transform: translate(calc(20 * var(--size)), calc(-20 * var(--size)));
+  }
+  25% {
+    transform: translate(calc(40 * var(--size)), 0);
+  }
+  37.5% {
+    transform: translate(calc(20 * var(--size)), calc(20 * var(--size)));
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  62.5% {
+    transform: translate(calc(-20 * var(--size)), calc(-20 * var(--size)));
+  }
+  75% {
+    transform: translate(calc(-40 * var(--size)), 0);
+  }
+  87.5% {
+    transform: translate(calc(-20 * var(--size)), calc(20 * var(--size)));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

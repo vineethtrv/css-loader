@@ -1,0 +1,55 @@
+/* @content: "Load ng" */
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  color: var(--color-1);
+  display: inline-block;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: calc(48 * var(--size));
+  letter-spacing: calc(4 * var(--size));
+  box-sizing: border-box;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  right: calc(68 * var(--size));
+  bottom: calc(20 * var(--size));
+  height: calc(24 * var(--size));
+  width: calc(7 * var(--size));
+  outline: calc(1 * var(--size)) solid var(--color-1);
+  color: var(--color-2);
+  box-sizing: border-box;
+  animation: animloader1 1s linear infinite alternate;
+}
+.loader::after {
+  content: '';
+  width: calc(4 * var(--size));
+  height: calc(4 * var(--size));
+  background: var(--color-2);
+  position: absolute;
+  right: calc(70 * var(--size));
+  top: calc(18 * var(--size));
+  box-sizing: border-box;
+  animation: animloader 1s ease-out infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translateY(calc(-8 * var(--size))) rotate(180deg) scale(1.5);
+  }
+}
+
+@keyframes animloader1 {
+  0% {
+    box-shadow: 0 0 inset;
+  }
+  100% {
+    box-shadow: 0 calc(-28 * var(--size)) inset;
+  }
+}

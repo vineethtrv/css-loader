@@ -1,0 +1,40 @@
+.loader {
+  --color-1: #de3500;
+  --color-2: #fff;
+  --color-3: rgba(255, 255, 255, 0.7);
+  --size: 1px;
+
+  position: relative;
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  background: var(--color-1);
+  transform: rotateX(65deg) rotate(45deg);
+  /* transform: perspective(calc(200 * var(--size))) rotateX(65deg) rotate(45deg); */
+  color: var(--color-2);
+  animation: layers1 1s linear infinite alternate;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-3);
+  animation: layerTr 1s linear infinite alternate;
+}
+
+@keyframes layers1 {
+  0% {
+    box-shadow: 0 0 0 0;
+  }
+  90%,
+  100% {
+    box-shadow: calc(20 * var(--size)) calc(20 * var(--size)) 0 calc(-4 * var(--size));
+  }
+}
+@keyframes layerTr {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(calc(-25 * var(--size)), calc(-25 * var(--size))) scale(1);
+  }
+}

@@ -1,0 +1,62 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(4 * var(--size));
+  height: calc(86 * var(--size));
+  background: var(--color-1);
+  margin: auto;
+  position: relative;
+  animation:
+    shake 1s linear infinite alternate,
+    lightup 1s linear infinite;
+  transform-origin: 0 0;
+}
+
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: calc(32 * var(--size));
+  height: calc(16 * var(--size));
+  box-sizing: border-box;
+  border: calc(5 * var(--size)) solid var(--color-2);
+  border-top: none;
+  border-radius: 0 0 calc(20 * var(--size)) calc(20 * var(--size));
+}
+.loader::after {
+  content: '';
+  left: 50%;
+  bottom: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  width: calc(64 * var(--size));
+  height: calc(32 * var(--size));
+  border-radius: calc(50 * var(--size)) calc(50 * var(--size)) 0 0;
+  background: var(--color-1);
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+@keyframes lightup {
+  0%,
+  20%,
+  40% {
+    opacity: 0;
+  }
+  10%,
+  30%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+}

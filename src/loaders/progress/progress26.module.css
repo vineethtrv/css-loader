@@ -1,0 +1,41 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(96 * var(--size));
+  height: calc(24 * var(--size));
+  display: inline-block;
+  background-color: var(--color-1);
+  border: calc(1 * var(--size)) solid var(--color-1);
+  border-radius: calc(4 * var(--size));
+  background:
+    linear-gradient(
+      45deg,
+      transparent 49%,
+      var(--color-1) 50%,
+      var(--color-1) 50%,
+      transparent 51%,
+      transparent
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 49%,
+      var(--color-1) 50%,
+      var(--color-1) 50%,
+      transparent 51%,
+      transparent
+    );
+  font-size: calc(15 * var(--size));
+  background-size: 1em 1em;
+  box-sizing: border-box;
+  animation: barStripe 0.6s linear infinite;
+}
+
+@keyframes barStripe {
+  0% {
+    background-position: 1em 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

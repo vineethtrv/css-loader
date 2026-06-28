@@ -1,0 +1,52 @@
+.loader {
+  --color-1: rgba(255, 255, 255, 0.1);
+  --color-2: #0000;
+  --color-3: #fff;
+  --color-4: #ff3d00;
+  --size: 1px;
+
+  position: relative;
+  margin: auto;
+  box-sizing: border-box;
+  width: calc(120 * var(--size));
+  height: calc(120 * var(--size));
+  border-radius: 50%;
+  border: calc(4 * var(--size)) solid var(--color-1);
+  transform-origin: 50% 50%;
+  transform: perspective(calc(200 * var(--size))) rotateX(66deg);
+  animation: spinner-wiggle 1.2s infinite;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  inset: calc(-4 * var(--size));
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: calc(4 * var(--size)) solid var(--color-2);
+  animation:
+    spinner-spin 1.2s cubic-bezier(0.6, 0.2, 0, 0.8) infinite,
+    spinner-fade 1.2s linear infinite;
+}
+.loader:before {
+  border-top-color: var(--color-3);
+}
+.loader:after {
+  border-top-color: var(--color-4);
+  animation-delay: 0.4s;
+}
+
+@keyframes spinner-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner-fade {
+  25%,
+  75% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 1;
+  }
+}

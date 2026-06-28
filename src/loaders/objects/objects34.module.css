@@ -1,0 +1,81 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(96 * var(--size));
+  height: calc(48 * var(--size));
+  display: inline-block;
+  position: relative;
+  background: var(--color-1);
+  border-radius: calc(48 * var(--size)) calc(48 * var(--size)) 0 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  width: calc(24 * var(--size));
+  height: calc(12 * var(--size));
+  border-radius: calc(24 * var(--size)) calc(24 * var(--size)) 0 0;
+  background: var(--color-2);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  width: calc(4 * var(--size));
+  height: calc(32 * var(--size));
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 0;
+  background: var(--color-2);
+  transform-origin: 50% 100%;
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    transform: rotate(-70deg);
+  }
+  10% {
+    transform: rotate(-40deg);
+  }
+  20%,
+  45%,
+  35% {
+    transform: rotate(-10deg);
+  }
+  40%,
+  30% {
+    transform: rotate(-30deg);
+  }
+  50%,
+  60% {
+    transform: rotate(20deg);
+  }
+  55%,
+  65%,
+  75% {
+    transform: rotate(40deg);
+  }
+  70% {
+    transform: rotate(45deg);
+  }
+  85%,
+  90% {
+    transform: rotate(50deg);
+  }
+  95% {
+    transform: rotate(75deg);
+  }
+  100%,
+  93% {
+    transform: rotate(70deg);
+  }
+}

@@ -1,0 +1,25 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  font-size: calc(48 * var(--size));
+  color: transparent;
+  overflow: hidden;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow:
+    0 0 var(--color-1),
+    5em 0 var(--color-1);
+  animation: marquee 2s infinite ease;
+}
+.loader:before {
+  content: 'Loading...';
+}
+
+@keyframes marquee {
+  to {
+    text-shadow:
+      -5em 0 var(--color-1),
+      0 0 var(--color-1);
+  }
+}

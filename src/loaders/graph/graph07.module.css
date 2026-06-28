@@ -1,0 +1,74 @@
+.loader {
+  --color-1: #3760c9;
+  --color-2: #96ddfc;
+  --color-3: #36bbf7;
+  --color-4: #fff;
+  --size: 1px;
+
+  position: relative;
+  border-style: solid;
+  box-sizing: border-box;
+  border-width: calc(40 * var(--size)) calc(60 * var(--size)) calc(30 * var(--size))
+    calc(60 * var(--size));
+  border-color: var(--color-1) var(--color-2) var(--color-2) var(--color-3);
+  animation: envFloating 1s ease-in infinite alternate;
+}
+
+.loader:after {
+  content: '';
+  position: absolute;
+  right: calc(62 * var(--size));
+  top: calc(-40 * var(--size));
+  height: calc(70 * var(--size));
+  width: calc(50 * var(--size));
+  background-image:
+    linear-gradient(var(--color-4) calc(45 * var(--size)), transparent 0),
+    linear-gradient(var(--color-4) calc(45 * var(--size)), transparent 0),
+    linear-gradient(var(--color-4) calc(45 * var(--size)), transparent 0);
+  background-repeat: no-repeat;
+  background-size: calc(30 * var(--size)) calc(4 * var(--size));
+  background-position:
+    0 calc(11 * var(--size)),
+    calc(8 * var(--size)) calc(35 * var(--size)),
+    0 calc(60 * var(--size));
+  animation: envDropping 0.75s linear infinite;
+}
+
+@keyframes envFloating {
+  0% {
+    transform: translate(calc(-2 * var(--size)), calc(-5 * var(--size)));
+  }
+  100% {
+    transform: translate(0, calc(5 * var(--size)));
+  }
+}
+
+@keyframes envDropping {
+  0% {
+    background-position:
+      calc(100 * var(--size)) calc(11 * var(--size)),
+      calc(115 * var(--size)) calc(35 * var(--size)),
+      calc(105 * var(--size)) calc(60 * var(--size));
+    opacity: 1;
+  }
+  50% {
+    background-position:
+      0 calc(11 * var(--size)),
+      calc(20 * var(--size)) calc(35 * var(--size)),
+      calc(5 * var(--size)) calc(60 * var(--size));
+  }
+  60% {
+    background-position:
+      calc(-30 * var(--size)) calc(11 * var(--size)),
+      0 calc(35 * var(--size)),
+      calc(-10 * var(--size)) calc(60 * var(--size));
+  }
+  75%,
+  100% {
+    background-position:
+      calc(-30 * var(--size)) calc(11 * var(--size)),
+      calc(-30 * var(--size)) calc(35 * var(--size)),
+      calc(-30 * var(--size)) calc(60 * var(--size));
+    opacity: 0;
+  }
+}

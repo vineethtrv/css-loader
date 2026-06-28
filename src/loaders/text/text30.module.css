@@ -1,0 +1,33 @@
+/* @content: "Loading" */
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  font-size: calc(48 * var(--size));
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  letter-spacing: calc(2 * var(--size));
+  color: var(--color-1);
+  text-shadow: 0 0 calc(6 * var(--size)) rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  animation: animloader 1.4s ease-in-out infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.55;
+    letter-spacing: calc(1 * var(--size));
+    text-shadow: 0 0 calc(3 * var(--size)) rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    transform: scale(1.12);
+    opacity: 1;
+    letter-spacing: calc(6 * var(--size));
+    text-shadow:
+      0 0 calc(16 * var(--size)) rgba(255, 255, 255, 1),
+      0 0 calc(32 * var(--size)) var(--color-2);
+  }
+}

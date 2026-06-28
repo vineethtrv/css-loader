@@ -1,0 +1,39 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(56 * var(--size));
+  height: calc(56 * var(--size));
+  position: relative;
+  background: var(--color-1);
+  border-radius: calc(4 * var(--size));
+  perspective: calc(500 * var(--size));
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  left: calc(2 * var(--size));
+  top: calc(2 * var(--size));
+  width: calc(24 * var(--size));
+  height: calc(24 * var(--size));
+  background: var(--color-2);
+  border-radius: 50%;
+  transform-origin: 100% 100%;
+  animation: flip 2s linear infinite;
+}
+@keyframes flip {
+  0%,
+  100% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: rotateX(0deg) rotateY(-180deg);
+  }
+  50% {
+    transform: rotateX(-180deg) rotateY(-180deg);
+  }
+  75% {
+    transform: rotateX(-180deg) rotateY(0deg);
+  }
+}

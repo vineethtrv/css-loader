@@ -1,0 +1,82 @@
+.loader {
+  --color-1: rgba(255, 255, 255, 0.85);
+  --color-2: rgba(0, 0, 0, 0.15);
+  --color-3: rgba(255, 255, 255, 0);
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  display: inline-block;
+  position: relative;
+}
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  width: calc(24 * var(--size));
+  height: calc(24 * var(--size));
+  position: absolute;
+  left: 0;
+  top: calc(-24 * var(--size));
+  animation: animloader1 2s linear infinite alternate;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(24 * var(--size));
+  height: calc(24 * var(--size));
+  background: var(--color-1);
+  box-shadow: 0 0 calc(10 * var(--size)) var(--color-2);
+  box-sizing: border-box;
+  animation: animloader2 2s linear infinite alternate;
+}
+
+@keyframes animloader1 {
+  0%,
+  32% {
+    box-shadow:
+      0 calc(24 * var(--size)) white,
+      calc(24 * var(--size)) calc(24 * var(--size)) var(--color-3),
+      calc(24 * var(--size)) calc(48 * var(--size)) var(--color-3),
+      0 calc(48 * var(--size)) var(--color-3);
+  }
+  33%,
+  65% {
+    box-shadow:
+      0 calc(24 * var(--size)) white,
+      calc(24 * var(--size)) calc(24 * var(--size)) white,
+      calc(24 * var(--size)) calc(48 * var(--size)) var(--color-3),
+      0 calc(48 * var(--size)) var(--color-3);
+  }
+  66%,
+  99% {
+    box-shadow:
+      0 calc(24 * var(--size)) white,
+      calc(24 * var(--size)) calc(24 * var(--size)) white,
+      calc(24 * var(--size)) calc(48 * var(--size)) white,
+      0 calc(48 * var(--size)) var(--color-3);
+  }
+  100% {
+    box-shadow:
+      0 calc(24 * var(--size)) white,
+      calc(24 * var(--size)) calc(24 * var(--size)) white,
+      calc(24 * var(--size)) calc(48 * var(--size)) white,
+      0 calc(48 * var(--size)) white;
+  }
+}
+
+@keyframes animloader2 {
+  0% {
+    transform: translate(0, 0) rotateX(0) rotateY(0);
+  }
+  33% {
+    transform: translate(100%, 0) rotateX(0) rotateY(180deg);
+  }
+  66% {
+    transform: translate(100%, 100%) rotateX(-180deg) rotateY(180deg);
+  }
+  100% {
+    transform: translate(0, 100%) rotateX(-180deg) rotateY(360deg);
+  }
+}

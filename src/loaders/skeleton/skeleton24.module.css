@@ -1,0 +1,64 @@
+.loader {
+  --color-1: rgba(38, 50, 56, 0.4);
+  --color-2: #ddd;
+  --size: 1px;
+
+  width: calc(360 * var(--size));
+  height: calc(200 * var(--size));
+  display: block;
+  background-image:
+    linear-gradient(100deg, transparent, var(--color-1) 50%, transparent 80%),
+    linear-gradient(var(--color-2), var(--color-2)),
+    linear-gradient(var(--color-2) calc(16 * var(--size)), transparent 0),
+    linear-gradient(var(--color-2) calc(10 * var(--size)), transparent 0),
+    linear-gradient(var(--color-2) calc(10 * var(--size)), transparent 0),
+    linear-gradient(var(--color-2) calc(10 * var(--size)), transparent 0),
+    linear-gradient(var(--color-2) calc(10 * var(--size)), transparent 0),
+    linear-gradient(var(--color-2) calc(10 * var(--size)), transparent 0);
+  background-repeat: no-repeat;
+  background-size:
+    calc(80 * var(--size)) calc(200 * var(--size)),
+    calc(110 * var(--size)) calc(180 * var(--size)),
+    calc(200 * var(--size)) calc(16 * var(--size)),
+    calc(160 * var(--size)) calc(10 * var(--size)),
+    calc(210 * var(--size)) calc(10 * var(--size)),
+    calc(200 * var(--size)) calc(10 * var(--size)),
+    calc(180 * var(--size)) calc(10 * var(--size)),
+    calc(140 * var(--size)) calc(10 * var(--size));
+  background-position:
+    -50% 0,
+    calc(10 * var(--size)) calc(10 * var(--size)),
+    calc(140 * var(--size)) calc(10 * var(--size)),
+    calc(140 * var(--size)) calc(36 * var(--size)),
+    calc(140 * var(--size)) calc(70 * var(--size)),
+    calc(140 * var(--size)) calc(94 * var(--size)),
+    calc(140 * var(--size)) calc(118 * var(--size)),
+    calc(140 * var(--size)) calc(142 * var(--size));
+  box-sizing: border-box;
+  animation: animloader 1.3s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    background-position:
+      0% 0,
+      calc(10 * var(--size)) calc(10 * var(--size)),
+      calc(140 * var(--size)) calc(10 * var(--size)),
+      calc(140 * var(--size)) calc(36 * var(--size)),
+      calc(140 * var(--size)) calc(70 * var(--size)),
+      calc(140 * var(--size)) calc(94 * var(--size)),
+      calc(140 * var(--size)) calc(118 * var(--size)),
+      calc(140 * var(--size)) calc(142 * var(--size));
+  }
+  100% {
+    background-position:
+      120% 0,
+      calc(10 * var(--size)) calc(10 * var(--size)),
+      calc(140 * var(--size)) calc(10 * var(--size)),
+      calc(140 * var(--size)) calc(36 * var(--size)),
+      calc(140 * var(--size)) calc(70 * var(--size)),
+      calc(140 * var(--size)) calc(94 * var(--size)),
+      calc(140 * var(--size)) calc(118 * var(--size)),
+      calc(140 * var(--size)) calc(142 * var(--size));
+  }
+}

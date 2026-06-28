@@ -1,0 +1,67 @@
+.loader {
+  --color-1: #ff3d00;
+  --color-2: #fff;
+  --color-3: rgba(0, 0, 0, 0);
+  --size: 1px;
+
+  position: relative;
+  width: calc(120 * var(--size));
+  height: calc(90 * var(--size));
+  margin: 0 auto;
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  bottom: calc(30 * var(--size));
+  left: calc(50 * var(--size));
+  height: calc(30 * var(--size));
+  width: calc(30 * var(--size));
+  border-radius: 50%;
+  background: var(--color-1);
+  animation: loading-bounce 0.5s ease-in-out infinite alternate;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: calc(7 * var(--size));
+  width: calc(45 * var(--size));
+  border-radius: calc(4 * var(--size));
+  box-shadow:
+    0 calc(5 * var(--size)) 0 var(--color-2),
+    calc(-35 * var(--size)) calc(50 * var(--size)) 0 var(--color-2),
+    calc(-70 * var(--size)) calc(95 * var(--size)) 0 var(--color-2);
+  animation: loading-step 1s ease-in-out infinite;
+}
+
+@keyframes loading-bounce {
+  0% {
+    transform: scale(1, 0.7);
+  }
+  40% {
+    transform: scale(0.8, 1.2);
+  }
+  60% {
+    transform: scale(1, 1);
+  }
+  100% {
+    bottom: calc(140 * var(--size));
+  }
+}
+@keyframes loading-step {
+  0% {
+    box-shadow:
+      0 calc(10 * var(--size)) 0 var(--color-3),
+      0 calc(10 * var(--size)) 0 var(--color-2),
+      calc(-35 * var(--size)) calc(50 * var(--size)) 0 var(--color-2),
+      calc(-70 * var(--size)) calc(90 * var(--size)) 0 var(--color-2);
+  }
+  100% {
+    box-shadow:
+      0 calc(10 * var(--size)) 0 var(--color-2),
+      calc(-35 * var(--size)) calc(50 * var(--size)) 0 var(--color-2),
+      calc(-70 * var(--size)) calc(90 * var(--size)) 0 var(--color-2),
+      calc(-70 * var(--size)) calc(90 * var(--size)) 0 var(--color-3);
+  }
+}

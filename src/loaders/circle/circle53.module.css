@@ -1,0 +1,20 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: calc(-72 * var(--size)) 0 var(--color-1) inset;
+  }
+  100% {
+    box-shadow: calc(48 * var(--size)) 0 var(--color-1) inset;
+  }
+}

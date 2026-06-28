@@ -1,0 +1,28 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  border: calc(24 * var(--size)) solid var(--color-1);
+  border-color: var(--color-2) var(--color-2) var(--color-1) var(--color-1);
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+
+.loader:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -125%);
+  left: 50%;
+  width: calc(12 * var(--size));
+  height: calc(12 * var(--size));
+  background: var(--color-1);
+  border-radius: 50%;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

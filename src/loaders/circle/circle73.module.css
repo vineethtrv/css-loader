@@ -1,0 +1,38 @@
+.loader {
+  --color-1: #ff3d00;
+  --color-2: #fff;
+  --size: 1px;
+
+  width: calc(84 * var(--size));
+  height: calc(84 * var(--size));
+  position: relative;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(84 * var(--size));
+  height: calc(84 * var(--size));
+  border-radius: 50%;
+  background: var(--color-1);
+  animation: push 1s infinite linear alternate;
+}
+.loader:after {
+  top: auto;
+  bottom: 0;
+  left: 0;
+  background: var(--color-2);
+  animation-direction: alternate-reverse;
+}
+@keyframes push {
+  0% {
+    width: calc(14 * var(--size));
+    height: calc(14 * var(--size));
+  }
+  100% {
+    width: calc(84 * var(--size));
+    height: calc(84 * var(--size));
+  }
+}

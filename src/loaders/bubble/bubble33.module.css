@@ -1,0 +1,29 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  border-radius: 50%;
+  display: block;
+  margin: calc(30 * var(--size)) auto;
+  position: relative;
+  background: var(--color-1);
+  box-sizing: border-box;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 0 calc(-40 * var(--size)) 0 calc(-16 * var(--size)) var(--color-2);
+  animation: orbit 1.2s linear infinite;
+}
+
+@keyframes orbit {
+  100% {
+    transform: rotate(360deg);
+  }
+}

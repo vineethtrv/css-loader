@@ -1,0 +1,29 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(40 * var(--size));
+  height: calc(4 * var(--size));
+  border-radius: calc(2 * var(--size));
+  display: block;
+  margin: calc(30 * var(--size)) auto;
+  position: relative;
+  background: var(--color-1);
+  box-sizing: border-box;
+  animation: spin 1.2s linear infinite;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-1);
+  border-radius: inherit;
+  transform: rotate(90deg);
+  box-sizing: border-box;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,78 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #0d161b;
+  --size: 1px;
+
+  position: relative;
+  width: calc(108 * var(--size));
+  display: flex;
+  justify-content: space-between;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  display: inline-block;
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  background-color: var(--color-1);
+  background-image: radial-gradient(
+    circle calc(14 * var(--size)),
+    var(--color-2) 100%,
+    transparent 0
+  );
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  animation:
+    eyeMove 10s infinite,
+    blink 10s infinite;
+}
+@keyframes eyeMove {
+  0%,
+  10% {
+    background-position: 0 0;
+  }
+  13%,
+  40% {
+    background-position: calc(-15 * var(--size)) 0;
+  }
+  43%,
+  70% {
+    background-position: calc(15 * var(--size)) 0;
+  }
+  73%,
+  90% {
+    background-position: 0 calc(15 * var(--size));
+  }
+  93%,
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes blink {
+  0%,
+  10%,
+  12%,
+  20%,
+  22%,
+  40%,
+  42%,
+  60%,
+  62%,
+  70%,
+  72%,
+  90%,
+  92%,
+  98%,
+  100% {
+    height: calc(48 * var(--size));
+  }
+  11%,
+  21%,
+  41%,
+  61%,
+  71%,
+  91%,
+  99% {
+    height: calc(18 * var(--size));
+  }
+}

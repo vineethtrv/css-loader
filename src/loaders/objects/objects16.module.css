@@ -1,0 +1,81 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --color-3: rgba(255, 255, 255, 0.4);
+  --size: 1px;
+
+  box-sizing: border-box;
+  display: inline-block;
+  width: calc(50 * var(--size));
+  height: calc(80 * var(--size));
+  border-top: calc(5 * var(--size)) solid var(--color-1);
+  border-bottom: calc(5 * var(--size)) solid var(--color-1);
+  position: relative;
+  background: linear-gradient(var(--color-2) calc(30 * var(--size)), transparent 0) no-repeat;
+  background-size: calc(2 * var(--size)) calc(40 * var(--size));
+  background-position: 50% 0;
+  animation: spinx 5s linear infinite;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  width: calc(40 * var(--size));
+  left: 50%;
+  height: calc(35 * var(--size));
+  position: absolute;
+  top: 0;
+  transform: translatex(-50%);
+  background: var(--color-3);
+  border-radius: 0 0 calc(20 * var(--size)) calc(20 * var(--size));
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  animation: lqt 5s linear infinite;
+}
+.loader:after {
+  top: auto;
+  bottom: 0;
+  border-radius: calc(20 * var(--size)) calc(20 * var(--size)) 0 0;
+  animation: lqb 5s linear infinite;
+}
+@keyframes lqt {
+  0%,
+  100% {
+    background-image: linear-gradient(var(--color-2) calc(40 * var(--size)), transparent 0);
+    background-position: 0% 0;
+  }
+  50% {
+    background-image: linear-gradient(var(--color-2) calc(40 * var(--size)), transparent 0);
+    background-position: 0% calc(40 * var(--size));
+  }
+  50.1% {
+    background-image: linear-gradient(var(--color-2) calc(40 * var(--size)), transparent 0);
+    background-position: 0% calc(-40 * var(--size));
+  }
+}
+@keyframes lqb {
+  0% {
+    background-image: linear-gradient(var(--color-2) calc(40 * var(--size)), transparent 0);
+    background-position: 0 calc(40 * var(--size));
+  }
+  100% {
+    background-image: linear-gradient(var(--color-2) calc(40 * var(--size)), transparent 0);
+    background-position: 0 calc(-40 * var(--size));
+  }
+}
+@keyframes spinx {
+  0%,
+  49% {
+    transform: rotate(0deg);
+    background-position: 50% calc(36 * var(--size));
+  }
+  51%,
+  98% {
+    transform: rotate(180deg);
+    background-position: 50% calc(4 * var(--size));
+  }
+  100% {
+    transform: rotate(360deg);
+    background-position: 50% calc(36 * var(--size));
+  }
+}

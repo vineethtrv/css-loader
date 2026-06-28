@@ -1,0 +1,28 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  background: var(--color-1);
+  border-radius: 50%;
+  position: relative;
+  animation: roll 1s ease-in-out infinite alternate;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  inset: calc(5 * var(--size));
+  border-radius: 50%;
+  border: calc(5 * var(--size)) solid;
+  border-color: var(--color-2) transparent;
+}
+@keyframes roll {
+  0% {
+    transform: translateX(-150%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(150%) rotate(360deg);
+  }
+}

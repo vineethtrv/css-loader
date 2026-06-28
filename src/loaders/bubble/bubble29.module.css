@@ -1,0 +1,46 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  height: calc(150 * var(--size));
+  position: relative;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  width: calc(15 * var(--size));
+  height: calc(15 * var(--size));
+  display: block;
+  position: relative;
+  margin: calc(10 * var(--size)) auto;
+  border-radius: 50%;
+  color: var(--color-1);
+  background: currentColor;
+  box-shadow:
+    0 calc(50 * var(--size)),
+    0 calc(100 * var(--size));
+  animation: left 1s infinite ease-in-out;
+}
+.loader:after {
+  animation: right 1.1s infinite ease-in-out;
+}
+
+@keyframes right {
+  0%,
+  100% {
+    transform: translate(calc(-15 * var(--size)));
+  }
+  50% {
+    transform: translate(calc(15 * var(--size)));
+  }
+}
+
+@keyframes left {
+  0%,
+  100% {
+    transform: translate(calc(15 * var(--size)));
+  }
+  50% {
+    transform: translate(calc(-15 * var(--size)));
+  }
+}

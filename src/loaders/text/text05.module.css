@@ -1,0 +1,84 @@
+/* @content: "Load ng" */
+
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  color: var(--color-1);
+  position: relative;
+  display: inline-block;
+  margin-top: calc(40 * var(--size));
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: calc(48 * var(--size));
+  letter-spacing: calc(4 * var(--size));
+  box-sizing: border-box;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  right: calc(69 * var(--size));
+  bottom: calc(20 * var(--size));
+  height: calc(26 * var(--size));
+  width: calc(4 * var(--size));
+  background: currentColor;
+  box-sizing: border-box;
+  animation: animloader1 1s linear infinite alternate;
+}
+.loader::after {
+  content: '';
+  width: calc(10 * var(--size));
+  height: calc(10 * var(--size));
+  position: absolute;
+  left: calc(125 * var(--size));
+  top: calc(2 * var(--size));
+  border-radius: 50%;
+  background: red;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    transform: translate(0, 0) scaleX(1);
+  }
+  14% {
+    transform: translate(calc(-12 * var(--size)), calc(-16 * var(--size))) scaleX(1.05);
+  }
+  28% {
+    transform: translate(calc(-27 * var(--size)), calc(-28 * var(--size))) scaleX(1.07);
+  }
+  42% {
+    transform: translate(calc(-46 * var(--size)), calc(-35 * var(--size))) scaleX(1.1);
+  }
+  57% {
+    transform: translate(calc(-70 * var(--size)), calc(-37 * var(--size))) scaleX(1.1);
+  }
+  71% {
+    transform: translate(calc(-94 * var(--size)), calc(-32 * var(--size))) scaleX(1.07);
+  }
+  85% {
+    transform: translate(calc(-111 * var(--size)), calc(-22 * var(--size))) scaleX(1.05);
+  }
+  100% {
+    transform: translate(calc(-125 * var(--size)), calc(-9 * var(--size))) scaleX(1);
+  }
+}
+
+@keyframes animloader1 {
+  0% {
+    box-shadow:
+      0 calc(-16 * var(--size)),
+      calc(-124.5 * var(--size)) calc(-8 * var(--size));
+  }
+  25%,
+  75% {
+    box-shadow:
+      0 0,
+      calc(-124.5 * var(--size)) calc(-8 * var(--size));
+  }
+  100% {
+    box-shadow:
+      0 0,
+      calc(-124.5 * var(--size)) calc(-24 * var(--size));
+  }
+}

@@ -1,0 +1,35 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  display: block;
+  position: relative;
+  height: calc(12 * var(--size));
+  width: 80%;
+  border: calc(1 * var(--size)) solid var(--color-1);
+  border-radius: calc(10 * var(--size));
+  overflow: hidden;
+}
+.loader::after {
+  content: '';
+  width: 40%;
+  height: 100%;
+  background: var(--color-2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(0%);
+  }
+}

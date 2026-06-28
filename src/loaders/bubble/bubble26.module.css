@@ -1,0 +1,89 @@
+.loader {
+  --color-1: #fff;
+  --color-2: rgba(255, 255, 255, 0.25);
+  --color-3: rgba(255, 255, 255, 1);
+  --size: 1px;
+
+  width: calc(16 * var(--size));
+  height: calc(16 * var(--size));
+  border-radius: 50%;
+  background-color: var(--color-1);
+  box-shadow:
+    calc(32 * var(--size)) 0 var(--color-1),
+    calc(-32 * var(--size)) 0 var(--color-1);
+  position: relative;
+  animation: flash 0.3s ease-in infinite alternate;
+}
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  left: calc(-64 * var(--size));
+  top: 0;
+  background: var(--color-1);
+  width: calc(16 * var(--size));
+  height: calc(16 * var(--size));
+  border-radius: 50%;
+  transform-origin: calc(35 * var(--size)) calc(-35 * var(--size));
+  transform: rotate(45deg);
+  animation: hitL 0.3s ease-in infinite alternate;
+}
+
+.loader::after {
+  left: calc(64 * var(--size));
+  transform: rotate(-45deg);
+  transform-origin: calc(-35 * var(--size)) calc(-35 * var(--size));
+  animation: hitR 0.3s ease-out infinite alternate;
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    background-color: var(--color-2);
+    box-shadow:
+      calc(32 * var(--size)) 0 var(--color-2),
+      calc(-32 * var(--size)) 0 var(--color-2);
+  }
+  25% {
+    background-color: var(--color-2);
+    box-shadow:
+      calc(32 * var(--size)) 0 var(--color-2),
+      calc(-32 * var(--size)) 0 var(--color-3);
+  }
+  50% {
+    background-color: var(--color-3);
+    box-shadow:
+      calc(32 * var(--size)) 0 var(--color-2),
+      calc(-32 * var(--size)) 0 var(--color-2);
+  }
+  75% {
+    background-color: var(--color-2);
+    box-shadow:
+      calc(32 * var(--size)) 0 var(--color-3),
+      calc(-32 * var(--size)) 0 var(--color-2);
+  }
+}
+
+@keyframes hitL {
+  0% {
+    transform: rotate(45deg);
+    background-color: var(--color-3);
+  }
+  25%,
+  100% {
+    transform: rotate(0deg);
+    background-color: var(--color-2);
+  }
+}
+
+@keyframes hitR {
+  0%,
+  75% {
+    transform: rotate(0deg);
+    background-color: var(--color-2);
+  }
+  100% {
+    transform: rotate(-45deg);
+    background-color: var(--color-3);
+  }
+}

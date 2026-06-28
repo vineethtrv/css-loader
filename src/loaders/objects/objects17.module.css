@@ -1,0 +1,84 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #131a1d;
+  --color-3: #263238;
+  --color-4: #111;
+  --size: 1px;
+
+  position: relative;
+  width: calc(78 * var(--size));
+  height: calc(78 * var(--size));
+  border-radius: 50%;
+  box-sizing: border-box;
+  background: var(--color-1);
+  border: calc(8 * var(--size)) solid var(--color-2);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: var(--color-3);
+  z-index: 5;
+  border-bottom: calc(8 * var(--size)) solid var(--color-2);
+  box-sizing: border-box;
+  animation: eyeShade 3s infinite;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  left: calc(20 * var(--size));
+  bottom: calc(15 * var(--size));
+  width: calc(32 * var(--size));
+  z-index: 2;
+  height: calc(32 * var(--size));
+  background: var(--color-4);
+  border-radius: 50%;
+  animation: eyeMove 3s infinite;
+}
+@keyframes eyeShade {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(calc(5 * var(--size)));
+  }
+  40%,
+  50% {
+    transform: translateY(calc(-5 * var(--size)));
+  }
+  60% {
+    transform: translateY(calc(-8 * var(--size)));
+  }
+  75% {
+    transform: translateY(calc(5 * var(--size)));
+  }
+  100% {
+    transform: translateY(calc(10 * var(--size)));
+  }
+}
+@keyframes eyeMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(0, calc(5 * var(--size)));
+  }
+  40%,
+  50% {
+    transform: translate(0, calc(-5 * var(--size)));
+  }
+  60% {
+    transform: translate(calc(-10 * var(--size)), calc(-5 * var(--size)));
+  }
+  75% {
+    transform: translate(calc(-20 * var(--size)), calc(5 * var(--size)));
+  }
+  100% {
+    transform: translate(0, calc(10 * var(--size)));
+  }
+}

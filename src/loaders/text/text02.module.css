@@ -1,0 +1,42 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #263238;
+  --size: 1px;
+
+  font-size: calc(48 * var(--size));
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: var(--color-1);
+  letter-spacing: calc(2 * var(--size));
+  position: relative;
+  box-sizing: border-box;
+}
+.loader::before,
+.loader::after {
+  content: 'Loading';
+}
+.loader::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-2);
+  text-shadow:
+    0 0 calc(2 * var(--size)) var(--color-1),
+    0 0 calc(1 * var(--size)) var(--color-1),
+    0 0 calc(1 * var(--size)) var(--color-1);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  animation: animloader 6s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}

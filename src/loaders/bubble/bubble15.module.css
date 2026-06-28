@@ -1,0 +1,29 @@
+.loader {
+  --color-1: #ff3d00;
+  --color-2: #fff;
+  --size: 1px;
+
+  width: calc(16 * var(--size));
+  height: calc(16 * var(--size));
+  border-radius: 50%;
+  background: var(--color-1);
+  position: relative;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: var(--color-2);
+  transform: rotate(0deg) translate(calc(30 * var(--size)));
+  animation: rotate 1s ease infinite;
+}
+.loader:after {
+  animation-delay: 0.5s;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg) translate(calc(30 * var(--size)));
+  }
+}

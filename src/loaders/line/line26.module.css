@@ -1,0 +1,64 @@
+.loader {
+  --color-1: rgba(255, 255, 255, 0.25);
+  --color-2: #fff;
+  --size: 1px;
+
+  width: calc(6 * var(--size));
+  height: calc(6 * var(--size));
+  border-radius: 50%;
+  display: block;
+  margin: calc(30 * var(--size)) auto;
+  position: relative;
+  background: transparent;
+  box-shadow:
+    calc(-28 * var(--size)) 0 var(--color-1),
+    calc(-14 * var(--size)) 0 var(--color-1),
+    0 0 var(--color-1),
+    calc(14 * var(--size)) 0 var(--color-1),
+    calc(28 * var(--size)) 0 var(--color-1);
+  box-sizing: border-box;
+  animation: dotChase 1.5s linear infinite;
+}
+
+@keyframes dotChase {
+  0% {
+    box-shadow:
+      calc(-28 * var(--size)) 0 var(--color-2),
+      calc(-14 * var(--size)) 0 var(--color-1),
+      0 0 var(--color-1),
+      calc(14 * var(--size)) 0 var(--color-1),
+      calc(28 * var(--size)) 0 var(--color-1);
+  }
+  25% {
+    box-shadow:
+      calc(-28 * var(--size)) 0 var(--color-1),
+      calc(-14 * var(--size)) 0 var(--color-2),
+      0 0 var(--color-1),
+      calc(14 * var(--size)) 0 var(--color-1),
+      calc(28 * var(--size)) 0 var(--color-1);
+  }
+  50% {
+    box-shadow:
+      calc(-28 * var(--size)) 0 var(--color-1),
+      calc(-14 * var(--size)) 0 var(--color-1),
+      0 0 var(--color-2),
+      calc(14 * var(--size)) 0 var(--color-1),
+      calc(28 * var(--size)) 0 var(--color-1);
+  }
+  75% {
+    box-shadow:
+      calc(-28 * var(--size)) 0 var(--color-1),
+      calc(-14 * var(--size)) 0 var(--color-1),
+      0 0 var(--color-1),
+      calc(14 * var(--size)) 0 var(--color-2),
+      calc(28 * var(--size)) 0 var(--color-1);
+  }
+  100% {
+    box-shadow:
+      calc(-28 * var(--size)) 0 var(--color-1),
+      calc(-14 * var(--size)) 0 var(--color-1),
+      0 0 var(--color-1),
+      calc(14 * var(--size)) 0 var(--color-1),
+      calc(28 * var(--size)) 0 var(--color-2);
+  }
+}

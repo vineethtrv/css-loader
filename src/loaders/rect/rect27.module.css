@@ -1,0 +1,30 @@
+.loader {
+  --color-1: #de3500;
+  --color-2: #ffff;
+  --size: 1px;
+
+  background: var(--color-1);
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  position: relative;
+  text-align: center;
+  animation: 3s rotate linear infinite;
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--color-2);
+  animation: 1.5s rotate reverse linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

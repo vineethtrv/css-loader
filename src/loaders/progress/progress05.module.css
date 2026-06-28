@@ -1,0 +1,32 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: 100%;
+  height: calc(4.8 * var(--size));
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.loader::after {
+  content: '';
+  width: calc(96 * var(--size));
+  height: calc(4.8 * var(--size));
+  background: var(--color-1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  animation: hitZak 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes hitZak {
+  0% {
+    left: 0;
+    transform: translateX(-1%);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(-99%);
+  }
+}

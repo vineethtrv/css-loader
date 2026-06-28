@@ -1,0 +1,26 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(32 * var(--size));
+  height: calc(72 * var(--size));
+  display: inline-block;
+  left: calc(5 * var(--size));
+  position: relative;
+  border: calc(2 * var(--size)) solid var(--color-1);
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite alternate;
+  color: var(--color-2);
+  border-radius: 0 0 calc(4 * var(--size)) calc(4 * var(--size));
+  transform: perspective(calc(140 * var(--size))) rotateX(-45deg);
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: 0 0 inset;
+  }
+  100% {
+    box-shadow: 0 calc(-70 * var(--size)) inset;
+  }
+}

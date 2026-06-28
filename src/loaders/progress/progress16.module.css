@@ -1,0 +1,73 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --color-3: rgba(255, 61, 0, 0.9);
+  --color-4: rgba(255, 61, 0, 0.8);
+  --color-5: rgba(255, 61, 0, 0.6);
+  --color-6: rgba(255, 61, 0, 0.4);
+  --color-7: rgba(255, 61, 0, 0.2);
+  --size: 1px;
+
+  display: block;
+  position: relative;
+  height: calc(32 * var(--size));
+  width: calc(150 * var(--size));
+  box-sizing: border-box;
+  overflow: hidden;
+  border: calc(2 * var(--size)) solid var(--color-1);
+  border-radius: calc(20 * var(--size));
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: calc(2 * var(--size));
+  width: calc(24 * var(--size));
+  height: calc(24 * var(--size));
+  border-radius: 50%;
+  background: var(--color-2);
+  animation: ballbns 3s ease-in-out infinite;
+}
+
+@keyframes ballbns {
+  0% {
+    left: 0;
+    transform: translateX(0%);
+    box-shadow:
+      calc(-5 * var(--size)) 0 0 calc(-1 * var(--size)) var(--color-3),
+      calc(-10 * var(--size)) 0 0 calc(-2 * var(--size)) var(--color-4),
+      calc(-15 * var(--size)) 0 0 calc(-4 * var(--size)) var(--color-5),
+      calc(-20 * var(--size)) 0 0 calc(-6 * var(--size)) var(--color-6),
+      calc(-25 * var(--size)) 0 0 calc(-8 * var(--size)) var(--color-7);
+  }
+  49% {
+    left: 100%;
+    transform: translateX(-100%);
+    box-shadow:
+      calc(-5 * var(--size)) 0 0 calc(-1 * var(--size)) var(--color-3),
+      calc(-10 * var(--size)) 0 0 calc(-2 * var(--size)) var(--color-4),
+      calc(-15 * var(--size)) 0 0 calc(-4 * var(--size)) var(--color-5),
+      calc(-20 * var(--size)) 0 0 calc(-6 * var(--size)) var(--color-6),
+      calc(-25 * var(--size)) 0 0 calc(-8 * var(--size)) var(--color-7);
+  }
+  51% {
+    left: 100%;
+    transform: translateX(-100%);
+    box-shadow:
+      calc(5 * var(--size)) 0 0 calc(-1 * var(--size)) var(--color-3),
+      calc(10 * var(--size)) 0 0 calc(-2 * var(--size)) var(--color-4),
+      calc(15 * var(--size)) 0 0 calc(-4 * var(--size)) var(--color-5),
+      calc(20 * var(--size)) 0 0 calc(-6 * var(--size)) var(--color-6),
+      calc(25 * var(--size)) 0 0 calc(-8 * var(--size)) var(--color-7);
+  }
+  100% {
+    left: 0;
+    transform: translateX(0%);
+    box-shadow:
+      calc(5 * var(--size)) 0 0 calc(-1 * var(--size)) var(--color-3),
+      calc(10 * var(--size)) 0 0 calc(-2 * var(--size)) var(--color-4),
+      calc(15 * var(--size)) 0 0 calc(-4 * var(--size)) var(--color-5),
+      calc(20 * var(--size)) 0 0 calc(-6 * var(--size)) var(--color-6),
+      calc(25 * var(--size)) 0 0 calc(-8 * var(--size)) var(--color-7);
+  }
+}

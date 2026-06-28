@@ -1,0 +1,42 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(60 * var(--size));
+  height: calc(4 * var(--size));
+  border-radius: calc(2 * var(--size));
+  display: block;
+  margin: calc(30 * var(--size)) auto;
+  position: relative;
+  background: var(--color-1);
+  box-sizing: border-box;
+  animation: passUp 1.2s ease-in-out infinite alternate;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-2);
+  border-radius: inherit;
+  box-sizing: border-box;
+  animation: passDown 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes passUp {
+  0% {
+    transform: translateY(calc(-12 * var(--size)));
+  }
+  100% {
+    transform: translateY(calc(12 * var(--size)));
+  }
+}
+
+@keyframes passDown {
+  0% {
+    transform: translateY(calc(24 * var(--size)));
+  }
+  100% {
+    transform: translateY(calc(-24 * var(--size)));
+  }
+}

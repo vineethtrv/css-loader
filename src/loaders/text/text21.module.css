@@ -1,0 +1,23 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  font-size: calc(48 * var(--size));
+  font-weight: bold;
+  letter-spacing: calc(2 * var(--size));
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-1);
+  animation: smokeOut 1s ease-in-out infinite alternate;
+  text-shadow: 0 0 calc(1 * var(--size)) white;
+}
+.loader:before {
+  content: 'Loading';
+}
+
+@keyframes smokeOut {
+  100% {
+    opacity: 0.08;
+    filter: blur(calc(5 * var(--size)));
+    letter-spacing: calc(4 * var(--size));
+  }
+}

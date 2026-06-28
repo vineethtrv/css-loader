@@ -1,0 +1,44 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  display: block;
+  margin: calc(20 * var(--size)) auto;
+  position: relative;
+  box-sizing: border-box;
+}
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(48 * var(--size));
+  height: calc(4 * var(--size));
+  margin: calc(-2 * var(--size)) 0 0 calc(-24 * var(--size));
+  border-radius: calc(2 * var(--size));
+  box-sizing: border-box;
+}
+.loader::before {
+  background: var(--color-1);
+  animation: cw 1.4s linear infinite;
+}
+.loader::after {
+  background: var(--color-2);
+  animation: ccw 1.4s linear infinite;
+}
+
+@keyframes cw {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ccw {
+  to {
+    transform: rotate(-360deg);
+  }
+}

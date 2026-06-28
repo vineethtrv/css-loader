@@ -1,0 +1,48 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(calc(100 * var(--size)) - calc(24 * var(--size)));
+  height: calc(50 * var(--size));
+  position: relative;
+  animation: flippx 2s infinite linear;
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: calc(20 * var(--size));
+  height: calc(20 * var(--size));
+  border-radius: 50%;
+  background: var(--color-1);
+  transform-origin: calc(-24 * var(--size)) 50%;
+  animation: spin 1s infinite linear;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-1);
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  border-radius: 50%;
+}
+
+@keyframes flippx {
+  0%,
+  49% {
+    transform: scaleX(1);
+  }
+  50%,
+  100% {
+    transform: scaleX(-1);
+  }
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

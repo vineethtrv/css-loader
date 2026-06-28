@@ -1,0 +1,60 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  display: block;
+  position: relative;
+  height: calc(20 * var(--size));
+  width: calc(140 * var(--size));
+  background-image:
+    linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0);
+  background-repeat: no-repeat;
+  background-size: calc(20 * var(--size)) auto;
+  background-position:
+    0 0,
+    calc(40 * var(--size)) 0,
+    calc(80 * var(--size)) 0,
+    calc(120 * var(--size)) 0;
+  animation: pgfill 1s linear infinite;
+}
+@keyframes pgfill {
+  0% {
+    background-image:
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0);
+  }
+  25% {
+    background-image:
+      linear-gradient(var(--color-2) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0);
+  }
+  50% {
+    background-image:
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-2) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0);
+  }
+  75% {
+    background-image:
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-2) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0);
+  }
+  100% {
+    background-image:
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-1) calc(20 * var(--size)), transparent 0),
+      linear-gradient(var(--color-2) calc(20 * var(--size)), transparent 0);
+  }
+}

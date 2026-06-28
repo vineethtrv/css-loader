@@ -1,0 +1,44 @@
+.loader {
+    --color-1: #fff;
+    --color-2: #ff3d00;
+    --size: 1px;
+
+    width: calc(28 * var(--size));
+    height: calc(70 * var(--size));
+    display: block;
+    margin: calc(15 * var(--size)) auto;
+    position: relative;
+    border: calc(3 * var(--size)) solid var(--color-1);
+    border-radius: calc(4 * var(--size));
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0%;
+    background: var(--color-2);
+    box-sizing: border-box;
+    animation: fill 1.8s ease-in-out infinite;
+}
+
+@keyframes fill {
+    0% {
+        height: 0%;
+        opacity: 1;
+    }
+
+    70% {
+        height: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        height: 100%;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,70 @@
+.loader {
+  --color-1: #fff;
+  --color-2: rgba(255, 255, 255, 0.5);
+  --size: 1px;
+
+  width: 0;
+  height: calc(4.8 * var(--size));
+  display: inline-block;
+  position: relative;
+  background: var(--color-1);
+  box-shadow: 0 0 calc(10 * var(--size)) var(--color-2);
+  box-sizing: border-box;
+  animation: animFw 8s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  width: calc(10 * var(--size));
+  height: calc(1 * var(--size));
+  background: var(--color-1);
+  position: absolute;
+  top: calc(9 * var(--size));
+  right: calc(-2 * var(--size));
+  opacity: 0;
+  transform: rotate(-45deg) translateX(0);
+  box-sizing: border-box;
+  animation: coli1 0.3s linear infinite;
+}
+.loader::before {
+  top: calc(-4 * var(--size));
+  transform: rotate(45deg);
+  animation: coli2 0.3s linear infinite;
+}
+
+@keyframes animFw {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes coli1 {
+  0% {
+    transform: rotate(-45deg) translateX(0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotate(-45deg) translateX(calc(-45 * var(--size)));
+    opacity: 0;
+  }
+}
+
+@keyframes coli2 {
+  0% {
+    transform: rotate(45deg) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(45deg) translateX(calc(-45 * var(--size)));
+    opacity: 0.7;
+  }
+}
+
+/* @Hide */
+[data-ref]:has(span.loader) {
+  justify-content: normal;
+}
+/* @HideEnds */

@@ -1,0 +1,32 @@
+.loader {
+  --color-1: rgba(255, 255, 255, 0.15);
+  --color-2: #fff;
+  --size: 1px;
+
+  width: 100%;
+  height: calc(4.8 * var(--size));
+  display: inline-block;
+  position: relative;
+  background: var(--color-1);
+  overflow: hidden;
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  width: 0;
+  height: calc(4.8 * var(--size));
+  background: var(--color-2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: animFw 10s linear infinite;
+}
+
+@keyframes animFw {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

@@ -1,0 +1,39 @@
+.loader {
+  --color-1: #ff3d00;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  position: relative;
+  perspective: calc(500 * var(--size));
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(24 * var(--size));
+  height: calc(48 * var(--size));
+  background: var(--color-1);
+  border-radius: 0 calc(24 * var(--size)) calc(24 * var(--size)) 0;
+  transform-origin: 0 0;
+  animation: flip 2s linear infinite alternate;
+}
+.loader:after {
+  left: 0;
+  border-radius: calc(24 * var(--size)) 0 0 calc(24 * var(--size));
+  transform-origin: 100% 0;
+  animation-delay: 1s;
+}
+
+@keyframes flip {
+  0%,
+  10% {
+    transform: rotateY(0deg);
+  }
+  90%,
+  100% {
+    transform: rotateY(-180deg);
+  }
+}

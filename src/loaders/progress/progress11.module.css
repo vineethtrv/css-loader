@@ -1,0 +1,29 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  display: block;
+  position: relative;
+  height: calc(12 * var(--size));
+  width: 80%;
+  border: calc(1 * var(--size)) solid var(--color-1);
+  border-radius: calc(10 * var(--size));
+  overflow: hidden;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: var(--color-2);
+  animation: 6s prog ease-in infinite;
+}
+
+@keyframes prog {
+  to {
+    width: 100%;
+  }
+}

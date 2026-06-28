@@ -1,0 +1,38 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(54 * var(--size));
+  height: calc(54 * var(--size));
+  position: relative;
+  background: var(--color-1);
+  border-radius: calc(4 * var(--size));
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  left: calc(3 * var(--size));
+  top: calc(3 * var(--size));
+  width: calc(24 * var(--size));
+  height: calc(24 * var(--size));
+  background: var(--color-2);
+  border-radius: 50%;
+  transform-origin: 100% 100%;
+  animation: move 1s linear infinite;
+}
+@keyframes move {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(100%, 0);
+  }
+  50% {
+    transform: translate(100%, 100%);
+  }
+  75% {
+    transform: translate(0, 100%);
+  }
+}

@@ -1,0 +1,45 @@
+.loader {
+  --color-1: #fff;
+  --color-2: rgba(255, 255, 255, 0);
+  --size: 1px;
+
+  color: var(--color-1);
+  display: inline-block;
+  position: relative;
+  font-size: calc(48 * var(--size));
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+.loader::before {
+  content: 'Loading';
+}
+
+.loader::after {
+  content: '';
+  width: calc(5 * var(--size));
+  height: calc(5 * var(--size));
+  background: currentColor;
+  position: absolute;
+  bottom: calc(20 * var(--size));
+  right: calc(-5 * var(--size));
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow:
+      calc(10 * var(--size)) 0 var(--color-2),
+      calc(20 * var(--size)) 0 var(--color-2);
+  }
+  50% {
+    box-shadow:
+      calc(10 * var(--size)) 0 white,
+      calc(20 * var(--size)) 0 var(--color-2);
+  }
+  100% {
+    box-shadow:
+      calc(10 * var(--size)) 0 white,
+      calc(20 * var(--size)) 0 white;
+  }
+}

@@ -1,0 +1,84 @@
+.loader {
+  --color-1: #222;
+  --color-2: #333;
+  --color-3: #0003;
+  --color-4: #0002;
+  --color-5: #fff;
+  --color-6: #fff6;
+  --color-7: #ffc400;
+  --color-8: #ffae00;
+  --color-9: #222222;
+  --color-10: #eee2;
+  --size: 1px;
+
+  width: calc(100 * var(--size));
+  height: calc(100 * var(--size));
+  display: block;
+  margin: auto;
+  position: relative;
+  background: var(--color-1);
+  border-radius: 50%;
+  box-sizing: border-box;
+  transform-origin: calc(170 * var(--size)) calc(50 * var(--size));
+  border: calc(4 * var(--size)) solid var(--color-2);
+  box-shadow:
+    calc(3 * var(--size)) calc(4 * var(--size)) var(--color-3) inset,
+    0 0 calc(6 * var(--size)) var(--color-4) inset;
+  animation: panmov 0.4s ease-in-out infinite alternate;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) skew(-15deg, 15deg) rotate(-15deg);
+  width: calc(55 * var(--size));
+  height: calc(53 * var(--size));
+  background: var(--color-5);
+  background-image:
+    radial-gradient(circle calc(3 * var(--size)), var(--color-6) 90%, transparent 10%),
+    radial-gradient(circle calc(12 * var(--size)), var(--color-7) 90%, transparent 10%),
+    radial-gradient(circle calc(12 * var(--size)), var(--color-8) 100%, transparent 0);
+  background-repeat: no-repeat;
+  background-position:
+    calc(-4 * var(--size)) calc(-6 * var(--size)),
+    calc(-2 * var(--size)) calc(-2 * var(--size)),
+    calc(-1 * var(--size)) calc(-1 * var(--size));
+  box-shadow:
+    calc(-2 * var(--size)) calc(-3 * var(--size)) var(--color-4) inset,
+    0 0 calc(4 * var(--size)) var(--color-3) inset;
+  border-radius: 47% 36% 50% 50% / 49% 45% 42% 44%;
+  animation: ylmov 0.6s ease-in-out infinite alternate;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: calc(48 * var(--size));
+  height: calc(15 * var(--size));
+  width: calc(70 * var(--size));
+  background: var(--color-9);
+  border-radius: 0 calc(8 * var(--size)) calc(8 * var(--size)) 0;
+  box-shadow: calc(3 * var(--size)) 0 calc(3 * var(--size)) var(--color-10) inset;
+  transform: rotate(5deg) translateX(calc(3 * var(--size)));
+}
+
+@keyframes panmov {
+  0%,
+  10% {
+    transform: rotate(5deg);
+  }
+  90%,
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+@keyframes ylmov {
+  to {
+    border-radius: 50% 36% 50% 50% / 49% 50% 45% 45%;
+    background-position:
+      calc(-2 * var(--size)) calc(-4 * var(--size)),
+      calc(2 * var(--size)) calc(2 * var(--size)),
+      calc(1 * var(--size)) calc(1 * var(--size));
+  }
+}

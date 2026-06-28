@@ -1,0 +1,25 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  height: calc(30 * var(--size));
+  width: calc(10 * var(--size));
+  border-radius: calc(4 * var(--size));
+  color: var(--color-1);
+  background: currentColor;
+  position: relative;
+  animation: ht 1s ease-in infinite alternate;
+  box-shadow:
+    calc(15 * var(--size)) 0 0 calc(-1 * var(--size)),
+    calc(-15 * var(--size)) 0 0 calc(-1 * var(--size)),
+    calc(30 * var(--size)) 0 0 calc(-2 * var(--size)),
+    calc(-30 * var(--size)) 0 0 calc(-2 * var(--size)),
+    calc(45 * var(--size)) 0 0 calc(-3 * var(--size)),
+    calc(-45 * var(--size)) 0 0 calc(-3 * var(--size));
+}
+
+@keyframes ht {
+  100% {
+    height: 0;
+  }
+}

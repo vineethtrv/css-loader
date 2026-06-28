@@ -1,0 +1,100 @@
+.loader {
+  --color-1: #ff3d00;
+  --color-2: #fff;
+  --color-3: #ffdf00;
+  --color-4: rgba(249, 62, 0, 0.6);
+  --color-5: rgba(0, 0, 0, 0);
+  --color-6: rgba(255, 61, 0, 0.5);
+  --color-7: rgba(255, 61, 0, 0.75);
+  --size: 1px;
+
+  width: calc(32 * var(--size));
+  height: calc(90 * var(--size));
+  display: block;
+  margin: calc(20 * var(--size)) auto;
+  position: relative;
+  border-radius: 50% 50% 0 0;
+  border-bottom: calc(10 * var(--size)) solid var(--color-1);
+  background-color: var(--color-2);
+  background-image:
+    radial-gradient(
+      ellipse at center,
+      var(--color-2) 34%,
+      var(--color-1) 35%,
+      var(--color-1) 54%,
+      var(--color-2) 55%
+    ),
+    linear-gradient(var(--color-1) calc(10 * var(--size)), transparent 0);
+  background-size: calc(28 * var(--size)) calc(28 * var(--size));
+  background-position:
+    center calc(20 * var(--size)),
+    center calc(2 * var(--size));
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: animloaderBack 1s linear infinite alternate;
+}
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(64 * var(--size));
+  height: calc(44 * var(--size));
+  border-radius: 50%;
+  box-shadow: 0 calc(15 * var(--size)) var(--color-1) inset;
+  top: calc(67 * var(--size));
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: calc(34 * var(--size));
+  height: calc(34 * var(--size));
+  top: 112%;
+  background: radial-gradient(
+    ellipse at center,
+    var(--color-3) 8%,
+    var(--color-4) 24%,
+    var(--color-5) 100%
+  );
+  border-radius: 50% 50% 0;
+  background-repeat: no-repeat;
+  background-position: calc(-44 * var(--size)) calc(-44 * var(--size));
+  background-size: calc(100 * var(--size)) calc(100 * var(--size));
+  box-shadow: calc(4 * var(--size)) calc(4 * var(--size)) calc(12 * var(--size)) 0 var(--color-6);
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloaderBack {
+  0%,
+  30%,
+  70% {
+    transform: translateY(0);
+  }
+  20%,
+  40%,
+  100% {
+    transform: translateY(calc(-5 * var(--size)));
+  }
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: calc(4 * var(--size)) calc(4 * var(--size)) calc(12 * var(--size))
+      calc(2 * var(--size)) var(--color-7);
+    width: calc(34 * var(--size));
+    height: calc(34 * var(--size));
+    background-position: calc(-44 * var(--size)) calc(-44 * var(--size));
+    background-size: calc(100 * var(--size)) calc(100 * var(--size));
+  }
+  100% {
+    box-shadow: calc(2 * var(--size)) calc(2 * var(--size)) calc(8 * var(--size)) 0 var(--color-6);
+    width: calc(30 * var(--size));
+    height: calc(28 * var(--size));
+    background-position: calc(-36 * var(--size)) calc(-36 * var(--size));
+    background-size: calc(80 * var(--size)) calc(80 * var(--size));
+  }
+}

@@ -1,0 +1,45 @@
+.loader {
+  --color-1: #000;
+  --size: 1px;
+
+  width: calc(130 * var(--size));
+  height: calc(48 * var(--size));
+  display: inline-block;
+  background:
+    linear-gradient(
+      45deg,
+      var(--color-1) 25%,
+      transparent 25%,
+      transparent 75%,
+      var(--color-1) 75%,
+      var(--color-1) 100%
+    ),
+    linear-gradient(
+      45deg,
+      var(--color-1) 25%,
+      white 25%,
+      white 75%,
+      var(--color-1) 75%,
+      var(--color-1) 100%
+    );
+  font-size: calc(10 * var(--size));
+  background-size: calc(32 * var(--size)) calc(32 * var(--size));
+  box-sizing: border-box;
+  animation: raceBoard 0.6s linear infinite;
+  background-position:
+    0 0,
+    calc(16 * var(--size)) calc(16 * var(--size));
+}
+
+@keyframes raceBoard {
+  0% {
+    background-position:
+      0 0,
+      calc(16 * var(--size)) calc(16 * var(--size));
+  }
+  100% {
+    background-position:
+      calc(32 * var(--size)) 0,
+      calc(48 * var(--size)) calc(16 * var(--size));
+  }
+}

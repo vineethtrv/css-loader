@@ -1,0 +1,24 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #0000;
+  --color-3: #ff3d00;
+  --size: 1px;
+
+  width: calc(120 * var(--size));
+  height: calc(24 * var(--size));
+  -webkit-mask:
+    radial-gradient(circle closest-side, var(--color-1) 94%, var(--color-2)) 0 0/25% 100%,
+    linear-gradient(var(--color-1) 0 0) center/calc(100% - calc(12 * var(--size)))
+      calc(100% - calc(12 * var(--size))) no-repeat;
+  mask:
+    radial-gradient(circle closest-side, var(--color-1) 94%, var(--color-2)) 0 0/25% 100%,
+    linear-gradient(var(--color-1) 0 0) center/calc(100% - calc(12 * var(--size)))
+      calc(100% - calc(12 * var(--size))) no-repeat;
+  background: linear-gradient(var(--color-3) 0 0) left/0% 100% no-repeat var(--color-1);
+  animation: bblprg 2s infinite linear;
+}
+@keyframes bblprg {
+  100% {
+    background-size: 100% 100%;
+  }
+}

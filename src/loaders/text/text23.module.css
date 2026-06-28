@@ -1,0 +1,43 @@
+/* @content: "Loading" */
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --color-3: #00b8ff;
+  --size: 1px;
+
+  font-size: calc(48 * var(--size));
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  letter-spacing: calc(2 * var(--size));
+  color: var(--color-1);
+  box-sizing: border-box;
+  animation: animloader 0.8s steps(3) infinite;
+}
+
+@keyframes animloader {
+  0% {
+    text-shadow:
+      calc(2 * var(--size)) 0 var(--color-2),
+      calc(-2 * var(--size)) 0 var(--color-3);
+    transform: translate(0, 0);
+  }
+  33% {
+    text-shadow:
+      calc(-3 * var(--size)) 0 var(--color-2),
+      calc(3 * var(--size)) 0 var(--color-3);
+    transform: translate(calc(1 * var(--size)), calc(-1 * var(--size)));
+  }
+  66% {
+    text-shadow:
+      calc(3 * var(--size)) calc(1 * var(--size)) var(--color-2),
+      calc(-3 * var(--size)) calc(-1 * var(--size)) var(--color-3);
+    transform: translate(calc(-1 * var(--size)), calc(1 * var(--size)));
+  }
+  100% {
+    text-shadow:
+      calc(2 * var(--size)) 0 var(--color-2),
+      calc(-2 * var(--size)) 0 var(--color-3);
+    transform: translate(0, 0);
+  }
+}

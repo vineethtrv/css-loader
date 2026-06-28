@@ -1,0 +1,48 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  display: inline-block;
+  position: relative;
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  width: calc(24 * var(--size));
+  height: calc(24 * var(--size));
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--color-1);
+  color: var(--color-1);
+  animation: animloader 2s linear infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow:
+      0 0,
+      0 0,
+      0 0;
+  }
+  33% {
+    box-shadow:
+      calc(24 * var(--size)) 0,
+      calc(24 * var(--size)) 0,
+      calc(24 * var(--size)) 0;
+  }
+  66% {
+    box-shadow:
+      calc(24 * var(--size)) calc(24 * var(--size)),
+      calc(24 * var(--size)) calc(24 * var(--size)),
+      calc(24 * var(--size)) 0;
+  }
+  100% {
+    box-shadow:
+      0 calc(24 * var(--size)),
+      calc(24 * var(--size)) calc(24 * var(--size)),
+      calc(24 * var(--size)) 0;
+  }
+}

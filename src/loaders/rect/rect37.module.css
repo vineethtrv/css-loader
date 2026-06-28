@@ -1,0 +1,61 @@
+.loader {
+  --color-1: #000;
+  --color-2: #fff;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  margin: auto;
+  position: relative;
+}
+.loader:before {
+  content: '';
+  width: calc(48 * var(--size));
+  height: calc(5 * var(--size));
+  background: var(--color-1);
+  opacity: 0.25;
+  position: absolute;
+  top: calc(60 * var(--size));
+  left: 0;
+  border-radius: 50%;
+  animation: shadow 0.5s linear infinite;
+}
+.loader:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: var(--color-2);
+  animation: bxSpin 0.5s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: calc(4 * var(--size));
+}
+@keyframes bxSpin {
+  17% {
+    border-bottom-right-radius: calc(3 * var(--size));
+  }
+  25% {
+    transform: translateY(calc(9 * var(--size))) rotate(22.5deg);
+  }
+  50% {
+    transform: translateY(calc(18 * var(--size))) scale(1, 0.9) rotate(45deg);
+    border-bottom-right-radius: calc(40 * var(--size));
+  }
+  75% {
+    transform: translateY(calc(9 * var(--size))) rotate(67.5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+
+@keyframes shadow {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1);
+  }
+}

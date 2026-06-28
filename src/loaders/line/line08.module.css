@@ -1,0 +1,42 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(4.8 * var(--size));
+  height: calc(4.8 * var(--size));
+  display: block;
+  margin: calc(20 * var(--size)) auto;
+  position: relative;
+  border-radius: calc(4 * var(--size));
+  color: var(--color-1);
+  background: currentColor;
+  box-sizing: border-box;
+  animation: animloader 0.3s 0.3s linear infinite alternate;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  width: calc(4.8 * var(--size));
+  height: calc(4.8 * var(--size));
+  border-radius: calc(4 * var(--size));
+  background: currentColor;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(15 * var(--size));
+  animation: animloader 0.3s 0.45s linear infinite alternate;
+}
+.loader::after {
+  top: calc(-15 * var(--size));
+  animation-delay: 0s;
+}
+
+@keyframes animloader {
+  0% {
+    width: calc(4.8 * var(--size));
+  }
+  100% {
+    width: calc(48 * var(--size));
+  }
+}

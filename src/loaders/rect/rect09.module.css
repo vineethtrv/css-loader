@@ -1,0 +1,22 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  display: inline-block;
+  position: relative;
+  color: var(--color-1);
+  border: calc(1 * var(--size)) solid;
+  box-sizing: border-box;
+  animation: fill 2s linear infinite alternate;
+}
+
+@keyframes fill {
+  0% {
+    box-shadow: 0 0 inset;
+  }
+  100% {
+    box-shadow: 0 calc(-48 * var(--size)) inset;
+  }
+}

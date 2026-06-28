@@ -1,0 +1,117 @@
+.loader {
+  --color-1: #ddd;
+  --color-2: #de3500;
+  --size: 1px;
+
+  position: relative;
+  width: calc(75 * var(--size));
+  height: calc(100 * var(--size));
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0);
+  background-size: calc(8 * var(--size)) 100%;
+  background-position:
+    0 calc(90 * var(--size)),
+    calc(15 * var(--size)) calc(78 * var(--size)),
+    calc(30 * var(--size)) calc(66 * var(--size)),
+    calc(45 * var(--size)) calc(58 * var(--size)),
+    calc(60 * var(--size)) calc(50 * var(--size));
+  animation: pillerPushUp 4s linear infinite;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  bottom: calc(10 * var(--size));
+  left: 0;
+  width: calc(10 * var(--size));
+  height: calc(10 * var(--size));
+  background: var(--color-2);
+  border-radius: 50%;
+  animation: ballStepUp 4s linear infinite;
+}
+
+@keyframes pillerPushUp {
+  0%,
+  40%,
+  100% {
+    background-position:
+      0 calc(90 * var(--size)),
+      calc(15 * var(--size)) calc(78 * var(--size)),
+      calc(30 * var(--size)) calc(66 * var(--size)),
+      calc(45 * var(--size)) calc(58 * var(--size)),
+      calc(60 * var(--size)) calc(50 * var(--size));
+  }
+  50%,
+  90% {
+    background-position:
+      0 calc(50 * var(--size)),
+      calc(15 * var(--size)) calc(58 * var(--size)),
+      calc(30 * var(--size)) calc(66 * var(--size)),
+      calc(45 * var(--size)) calc(78 * var(--size)),
+      calc(60 * var(--size)) calc(90 * var(--size));
+  }
+}
+
+@keyframes ballStepUp {
+  0% {
+    transform: translate(0, 0);
+  }
+  5% {
+    transform: translate(calc(8 * var(--size)), calc(-14 * var(--size)));
+  }
+  10% {
+    transform: translate(calc(15 * var(--size)), calc(-10 * var(--size)));
+  }
+  17% {
+    transform: translate(calc(23 * var(--size)), calc(-24 * var(--size)));
+  }
+  20% {
+    transform: translate(calc(30 * var(--size)), calc(-20 * var(--size)));
+  }
+  27% {
+    transform: translate(calc(38 * var(--size)), calc(-34 * var(--size)));
+  }
+  30% {
+    transform: translate(calc(45 * var(--size)), calc(-30 * var(--size)));
+  }
+  37% {
+    transform: translate(calc(53 * var(--size)), calc(-44 * var(--size)));
+  }
+  40% {
+    transform: translate(calc(60 * var(--size)), calc(-40 * var(--size)));
+  }
+  50% {
+    transform: translate(calc(60 * var(--size)), 0);
+  }
+  57% {
+    transform: translate(calc(53 * var(--size)), calc(-14 * var(--size)));
+  }
+  60% {
+    transform: translate(calc(45 * var(--size)), calc(-10 * var(--size)));
+  }
+  67% {
+    transform: translate(calc(37 * var(--size)), calc(-24 * var(--size)));
+  }
+  70% {
+    transform: translate(calc(30 * var(--size)), calc(-20 * var(--size)));
+  }
+  77% {
+    transform: translate(calc(22 * var(--size)), calc(-34 * var(--size)));
+  }
+  80% {
+    transform: translate(calc(15 * var(--size)), calc(-30 * var(--size)));
+  }
+  87% {
+    transform: translate(calc(7 * var(--size)), calc(-44 * var(--size)));
+  }
+  90% {
+    transform: translate(0, calc(-40 * var(--size)));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

@@ -1,0 +1,48 @@
+/* @content: "Loading" */
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  display: inline-block;
+  text-align: center;
+  line-height: calc(86 * var(--size));
+  text-align: center;
+  position: relative;
+  padding: 0 calc(48 * var(--size));
+  font-size: calc(48 * var(--size));
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-1);
+}
+.loader:before,
+.loader:after {
+  content: '';
+  display: block;
+  width: calc(15 * var(--size));
+  height: calc(15 * var(--size));
+  background: currentColor;
+  position: absolute;
+  animation: load 0.7s infinite alternate ease-in-out;
+  top: 0;
+}
+.loader:after {
+  top: auto;
+  bottom: 0;
+}
+@keyframes load {
+  0% {
+    left: 0;
+    height: calc(43 * var(--size));
+    width: calc(15 * var(--size));
+    transform: translateX(0);
+  }
+  50% {
+    height: calc(10 * var(--size));
+    width: calc(40 * var(--size));
+  }
+  100% {
+    left: 100%;
+    height: calc(43 * var(--size));
+    width: calc(15 * var(--size));
+    transform: translateX(-100%);
+  }
+}

@@ -1,0 +1,35 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  font-size: calc(48 * var(--size));
+  color: var(--color-1);
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  position: relative;
+}
+.loader:after {
+  content: 'Loading';
+  position: relative;
+  z-index: 5;
+}
+.loader:before {
+  content: '';
+  height: calc(6 * var(--size));
+  border: calc(1 * var(--size)) solid;
+  border-radius: calc(10 * var(--size));
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(var(--color-2) 100%, transparent 0) no-repeat;
+  background-size: 0% auto;
+  animation: 10s lineGrow linear infinite;
+}
+
+@keyframes lineGrow {
+  to {
+    background-size: 100% auto;
+  }
+}

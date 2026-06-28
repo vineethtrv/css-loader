@@ -1,0 +1,35 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  display: block;
+  position: relative;
+  height: calc(32 * var(--size));
+  width: calc(100 * var(--size));
+  background: linear-gradient(var(--color-1) calc(4 * var(--size)), transparent 0) no-repeat;
+  background-position: 0 calc(14 * var(--size));
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: calc(4 * var(--size));
+  width: calc(24 * var(--size));
+  height: calc(24 * var(--size));
+  background: var(--color-2);
+  animation: ballbns 1s linear infinite alternate;
+}
+
+@keyframes ballbns {
+  0% {
+    left: 0;
+    transform: translateX(0%) rotate(45deg);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(-100%) rotate(45deg);
+  }
+}

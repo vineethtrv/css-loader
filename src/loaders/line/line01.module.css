@@ -1,0 +1,53 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(8 * var(--size));
+  height: calc(40 * var(--size));
+  border-radius: calc(4 * var(--size));
+  display: inline-block;
+  margin-left: calc(20 * var(--size));
+  margin-top: calc(10 * var(--size));
+  position: relative;
+  background: currentColor;
+  color: var(--color-1);
+  box-sizing: border-box;
+  animation: animloader 0.3s 0.3s linear infinite alternate;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  width: calc(8 * var(--size));
+  height: calc(40 * var(--size));
+  border-radius: calc(4 * var(--size));
+  background: currentColor;
+  position: absolute;
+  bottom: 0;
+  left: calc(20 * var(--size));
+  animation: animloader1 0.3s 0.45s linear infinite alternate;
+}
+.loader::before {
+  left: calc(-20 * var(--size));
+  animation-delay: 0s;
+}
+
+@keyframes animloader {
+  0% {
+    height: calc(40 * var(--size));
+    transform: translateY(0);
+  }
+  100% {
+    height: calc(10 * var(--size));
+    transform: translateY(calc(30 * var(--size)));
+  }
+}
+
+@keyframes animloader1 {
+  0% {
+    height: calc(48 * var(--size));
+  }
+  100% {
+    height: calc(4.8 * var(--size));
+  }
+}

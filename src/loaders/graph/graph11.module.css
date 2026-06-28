@@ -1,0 +1,50 @@
+.loader {
+  --color-1: #0000;
+  --color-2: #000;
+  --color-3: #fff;
+  --color-4: #0005;
+  --size: 1px;
+
+  width: calc(120 * var(--size));
+  height: calc(80 * var(--size));
+  position: relative;
+  transform: rotate(-90deg);
+  background: linear-gradient(174deg, var(--color-1) 49%, var(--color-2) 50%, var(--color-1) 51%);
+}
+.loader:after,
+.loader:before {
+  content: '';
+  border-radius: 100%;
+  width: calc(35 * var(--size));
+  height: calc(35 * var(--size));
+  display: block;
+  position: absolute;
+  border: calc(4 * var(--size)) dashed var(--color-3);
+  bottom: calc(49 * var(--size));
+  transform: rotate(0deg);
+  box-sizing: border-box;
+  animation: tape 4s linear infinite;
+}
+.loader:before {
+  right: calc(-14 * var(--size));
+  box-shadow:
+    0 0 0 calc(4 * var(--size)) var(--color-3),
+    0 0 0 calc(34 * var(--size)) var(--color-2),
+    0 0 calc(5 * var(--size)) calc(34 * var(--size)) var(--color-4);
+}
+.loader:after {
+  left: calc(-13 * var(--size));
+  box-shadow:
+    0 0 0 calc(4 * var(--size)) var(--color-3),
+    0 0 0 calc(65 * var(--size)) var(--color-2),
+    0 0 calc(5 * var(--size)) calc(65 * var(--size)) var(--color-4);
+}
+
+@keyframes tape {
+  0% {
+    transform: rotate(0deg) scale(0.4);
+  }
+  100% {
+    transform: rotate(-360deg) scale(0.4);
+  }
+}

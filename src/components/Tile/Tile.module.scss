@@ -1,0 +1,28 @@
+.tile {
+    min-width: 200px;
+    width: 33.33%;
+    height: 360px;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--tile-color);
+    cursor: pointer;
+    transition: .2s linear;
+    overflow: hidden;
+    
+    &:nth-child(2n+1) {
+        background: var(--tile-stripe-bg);
+    }
+    &:hover {
+        background: var(--tile-hover-bg);
+    }
+
+    @media screen and (max-width: 900px) {
+        width: 50%;
+    }
+    @media screen and (max-width: 600px) {
+        width: 100%;
+    }
+}

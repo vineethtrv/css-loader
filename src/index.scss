@@ -1,0 +1,135 @@
+:root {
+  font-size: 16px;
+  color-scheme: dark light;
+
+  /* === Dark theme (default) === */
+
+  /* Brand */
+  --primary-color: #ff3d00;
+  --secondary-color: #fff;
+
+  /* Surfaces */
+  --body-color: #fff;
+  --body-bg: #263038;
+  --header-bg: #0d161b;
+  --footer-bg: #0d161b;
+  --footer-color: #ccc;
+
+  /* Modal / popover */
+  --surface-bg: #1a1a1a;
+  --surface-fg: #fff;
+  --surface-muted-bg: rgba(0, 0, 0, 0.15);
+  --popover-bg: #fff;
+  --popover-fg: #222;
+  --popover-border: #ccc;
+
+  /* Code panels (stay dark in both themes for readability) */
+  --code-header-bg: #222;
+  --code-header-fg: #fff;
+  --code-block-bg: #000;
+  --code-block-fg: #fff;
+
+  /* Tile */
+  --tile-color: #ccc;
+  --tile-stripe-bg: rgba(0, 0, 0, 0.1);
+  --tile-hover-bg: rgba(0, 0, 0, 0.3);
+
+  /* Menu item interactions */
+  --menu-item-hover-bg: rgba(255, 255, 255, 0.1);
+  --menu-item-active-bg: rgba(255, 255, 255, 0.12);
+  --menu-footer-bg: rgba(0, 0, 0, 0.13);
+
+  /* Borders */
+  --border-color: rgba(255, 255, 255, 0.15);
+  --border-color-strong: rgba(255, 255, 255, 0.3);
+
+  /* Close / icon buttons */
+  --icon-button-bg: #000;
+  --icon-button-fg: #fff;
+
+  /* Error feedback */
+  --error-bg: #2a0d0d;
+  --error-fg: #ffb4a8;
+  --error-border: #5a1f1f;
+  --error-button-bg: #ffb4a8;
+  --error-button-fg: #2a0d0d;
+}
+
+// @media (prefers-color-scheme: light) {
+//   :root {
+//     /* Brand stays consistent for recognisability */
+//     --primary-color: #ff3d00;
+//     --secondary-color: #1a1a1a;
+
+//     /* Surfaces */
+//     --body-color: #1a1a1a;
+//     --body-bg: #f4f5f7;
+//     --header-bg: #ffffff;
+//     --footer-bg: #ffffff;
+//     --footer-color: #555;
+
+//     /* Modal / popover */
+//     --surface-bg: #ffffff;
+//     --surface-fg: #1a1a1a;
+//     --surface-muted-bg: rgba(0, 0, 0, 0.04);
+//     --popover-bg: #ffffff;
+//     --popover-fg: #1a1a1a;
+//     --popover-border: #d0d0d0;
+
+//     /* Code panels intentionally remain dark — see :root */
+
+//     /* Tile */
+//     --tile-color: #555;
+//     --tile-stripe-bg: rgba(0, 0, 0, 0.04);
+//     --tile-hover-bg: rgba(0, 0, 0, 0.08);
+
+//     /* Menu item interactions */
+//     --menu-item-hover-bg: rgba(0, 0, 0, 0.06);
+//     --menu-item-active-bg: rgba(0, 0, 0, 0.08);
+//     --menu-footer-bg: rgba(0, 0, 0, 0.04);
+
+//     /* Borders */
+//     --border-color: rgba(0, 0, 0, 0.12);
+//     --border-color-strong: rgba(0, 0, 0, 0.25);
+
+//     /* Close / icon buttons */
+//     --icon-button-bg: #1a1a1a;
+//     --icon-button-fg: #ffffff;
+
+//     /* Error feedback */
+//     --error-bg: #fdecea;
+//     --error-fg: #8b1f1f;
+//     --error-border: #f5c6c6;
+//     --error-button-bg: #8b1f1f;
+//     --error-button-fg: #fff;
+//   }
+// }
+
+* , *::before , *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  background-color: var(--body-bg);
+  color: var(--body-color);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.abs{
+  position: absolute;
+}

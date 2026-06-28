@@ -1,0 +1,43 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(64 * var(--size));
+  height: calc(12 * var(--size));
+  background:
+    radial-gradient(circle calc(6 * var(--size)), var(--color-1) 100%, transparent 0),
+    radial-gradient(circle calc(6 * var(--size)), var(--color-1) 100%, transparent 0);
+  background-size: calc(12 * var(--size)) calc(12 * var(--size));
+  background-position:
+    left center,
+    right center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  width: calc(12 * var(--size));
+  height: calc(12 * var(--size));
+  border-radius: 50%;
+  background: var(--color-2);
+  inset: 0;
+  margin: auto;
+  animation:
+    mvX 0.6s,
+    mvY 0.3s;
+  animation-timing-function: cubic-bezier(0.5, -300, 0.5, 300);
+  animation-iteration-count: infinite;
+}
+
+@keyframes mvX {
+  100% {
+    left: calc(0.85 * var(--size));
+  }
+}
+@keyframes mvY {
+  100% {
+    top: calc(0.5 * var(--size));
+  }
+}

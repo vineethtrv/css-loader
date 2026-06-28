@@ -1,0 +1,27 @@
+.loader {
+  --color-1: rgba(255, 255, 255, 0);
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: calc(10 * var(--size)) solid;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+@keyframes animloader {
+  0% {
+    border-color: white var(--color-1) var(--color-1) var(--color-1);
+  }
+  33% {
+    border-color: white white var(--color-1) var(--color-1);
+  }
+  66% {
+    border-color: white white white var(--color-1);
+  }
+  100% {
+    border-color: white white white white;
+  }
+}

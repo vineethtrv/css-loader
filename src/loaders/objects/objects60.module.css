@@ -1,0 +1,102 @@
+.loader {
+  --color-1: #0277bd;
+  --color-2: #29b6f6;
+  --color-3: #4fc3f7;
+  --color-4: #fff;
+  --color-5: #000;
+  --size: 1px;
+
+  position: relative;
+  width: calc(130 * var(--size));
+  height: calc(100 * var(--size));
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(var(--color-1), var(--color-1)),
+    linear-gradient(var(--color-2), var(--color-3)), linear-gradient(var(--color-2), var(--color-3));
+  background-size:
+    calc(80 * var(--size)) calc(70 * var(--size)),
+    calc(30 * var(--size)) calc(50 * var(--size)),
+    calc(30 * var(--size)) calc(30 * var(--size));
+  background-position:
+    0 0,
+    calc(80 * var(--size)) calc(20 * var(--size)),
+    calc(100 * var(--size)) calc(40 * var(--size));
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  bottom: calc(10 * var(--size));
+  left: calc(12 * var(--size));
+  width: calc(10 * var(--size));
+  height: calc(10 * var(--size));
+  background: var(--color-4);
+  border-radius: 50%;
+  box-sizing: content-box;
+  border: calc(10 * var(--size)) solid var(--color-5);
+  box-shadow:
+    calc(78 * var(--size)) 0 0 calc(-10 * var(--size)) var(--color-4),
+    calc(78 * var(--size)) 0 var(--color-5);
+  animation: wheelSk 0.75s ease-in infinite alternate;
+}
+
+.loader:before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 0;
+  height: calc(70 * var(--size));
+  width: calc(70 * var(--size));
+  background-image:
+    linear-gradient(var(--color-4) calc(45 * var(--size)), transparent 0),
+    linear-gradient(var(--color-4) calc(45 * var(--size)), transparent 0),
+    linear-gradient(var(--color-4) calc(45 * var(--size)), transparent 0);
+  background-repeat: no-repeat;
+  background-size: calc(30 * var(--size)) calc(4 * var(--size));
+  background-position:
+    0 calc(11 * var(--size)),
+    calc(8 * var(--size)) calc(35 * var(--size)),
+    0 calc(60 * var(--size));
+  animation: lineDropping 0.75s linear infinite;
+}
+
+@keyframes wheelSk {
+  0%,
+  50%,
+  100% {
+    transform: translatey(0);
+  }
+  30%,
+  90% {
+    transform: translatey(calc(-3 * var(--size)));
+  }
+}
+
+@keyframes lineDropping {
+  0% {
+    background-position:
+      calc(100 * var(--size)) calc(11 * var(--size)),
+      calc(115 * var(--size)) calc(35 * var(--size)),
+      calc(105 * var(--size)) calc(60 * var(--size));
+    opacity: 1;
+  }
+  50% {
+    background-position:
+      0 calc(11 * var(--size)),
+      calc(20 * var(--size)) calc(35 * var(--size)),
+      calc(5 * var(--size)) calc(60 * var(--size));
+  }
+  60% {
+    background-position:
+      calc(-30 * var(--size)) calc(11 * var(--size)),
+      0 calc(35 * var(--size)),
+      calc(-10 * var(--size)) calc(60 * var(--size));
+  }
+  75%,
+  100% {
+    background-position:
+      calc(-30 * var(--size)) calc(11 * var(--size)),
+      calc(-30 * var(--size)) calc(35 * var(--size)),
+      calc(-30 * var(--size)) calc(60 * var(--size));
+    opacity: 0;
+  }
+}

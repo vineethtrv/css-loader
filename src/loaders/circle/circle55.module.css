@@ -1,0 +1,33 @@
+.loader {
+  --color-1: #0000;
+  --color-2: #fff;
+  --size: 1px;
+
+  position: relative;
+  border: calc(24 * var(--size)) solid var(--color-1);
+  border-radius: 50%;
+  animation: piefill 2s linear infinite;
+}
+
+@keyframes piefill {
+  0%,
+  19% {
+    border-color: var(--color-1) var(--color-1) var(--color-1) var(--color-1);
+  }
+  20%,
+  39% {
+    border-color: var(--color-2) var(--color-1) var(--color-1) var(--color-1);
+  }
+  40%,
+  59% {
+    border-color: var(--color-2) var(--color-2) var(--color-1) var(--color-1);
+  }
+  60%,
+  79% {
+    border-color: var(--color-2) var(--color-2) var(--color-2) var(--color-1);
+  }
+  80%,
+  100% {
+    border-color: var(--color-2) var(--color-2) var(--color-2) var(--color-2);
+  }
+}

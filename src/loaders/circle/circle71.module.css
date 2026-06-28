@@ -1,0 +1,41 @@
+.loader {
+  --color-1: #ff3d00;
+  --color-2: #fff;
+  --size: 1px;
+
+  width: calc(64 * var(--size));
+  height: calc(48 * var(--size));
+  position: relative;
+  animation: split 1s ease-in infinite alternate;
+}
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  height: calc(48 * var(--size));
+  width: calc(48 * var(--size));
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  transform: translateX(calc(-10 * var(--size)));
+  background: var(--color-1);
+  opacity: 0.75;
+  backdrop-filter: blur(calc(20 * var(--size)));
+}
+
+.loader::after {
+  left: auto;
+  right: 0;
+  background: var(--color-2);
+  transform: translateX(calc(10 * var(--size)));
+}
+
+@keyframes split {
+  0%,
+  25% {
+    width: calc(64 * var(--size));
+  }
+  100% {
+    width: calc(148 * var(--size));
+  }
+}

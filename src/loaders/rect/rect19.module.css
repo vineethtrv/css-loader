@@ -1,0 +1,39 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 1px;
+
+  width: calc(64 * var(--size));
+  height: calc(64 * var(--size));
+  position: relative;
+  background-image:
+    linear-gradient(var(--color-1) calc(16 * var(--size)), transparent 0),
+    linear-gradient(var(--color-2) calc(16 * var(--size)), transparent 0),
+    linear-gradient(var(--color-2) calc(16 * var(--size)), transparent 0),
+    linear-gradient(var(--color-1) calc(16 * var(--size)), transparent 0);
+  background-repeat: no-repeat;
+  background-size: calc(16 * var(--size)) calc(16 * var(--size));
+  background-position:
+    left top,
+    left bottom,
+    right top,
+    right bottom;
+  animation: rotate 1s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    width: calc(64 * var(--size));
+    height: calc(64 * var(--size));
+    transform: rotate(0deg);
+  }
+  50% {
+    width: calc(30 * var(--size));
+    height: calc(30 * var(--size));
+    transform: rotate(180deg);
+  }
+  100% {
+    width: calc(64 * var(--size));
+    height: calc(64 * var(--size));
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,140 @@
+.loader {
+  --color-1: #fff;
+  --color-2: #ddd;
+  --color-3: #bbb;
+  --color-4: #aaa;
+  --color-5: #eee;
+  --color-6: #0000;
+  --color-7: #bbdefb;
+  --color-8: #0004;
+  --color-9: #64b5f6;
+  --color-10: #607d8b;
+  --color-11: #999;
+  --size: 1px;
+
+  width: calc(120 * var(--size));
+  height: calc(150 * var(--size));
+  background-color: var(--color-1);
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(var(--color-2) 50%, var(--color-3) 51%),
+    linear-gradient(var(--color-2), var(--color-2)),
+    linear-gradient(var(--color-2), var(--color-2)),
+    radial-gradient(
+      ellipse at center,
+      var(--color-4) 25%,
+      var(--color-5) 26%,
+      var(--color-5) 50%,
+      var(--color-6) 55%
+    ),
+    radial-gradient(
+      ellipse at center,
+      var(--color-4) 25%,
+      var(--color-5) 26%,
+      var(--color-5) 50%,
+      var(--color-6) 55%
+    ),
+    radial-gradient(
+      ellipse at center,
+      var(--color-4) 25%,
+      var(--color-5) 26%,
+      var(--color-5) 50%,
+      var(--color-6) 55%
+    );
+  background-position:
+    0 calc(20 * var(--size)),
+    calc(45 * var(--size)) 0,
+    calc(8 * var(--size)) calc(6 * var(--size)),
+    calc(55 * var(--size)) calc(3 * var(--size)),
+    calc(75 * var(--size)) calc(3 * var(--size)),
+    calc(95 * var(--size)) calc(3 * var(--size));
+  background-size:
+    100% calc(4 * var(--size)),
+    calc(1 * var(--size)) calc(23 * var(--size)),
+    calc(30 * var(--size)) calc(8 * var(--size)),
+    calc(15 * var(--size)) calc(15 * var(--size)),
+    calc(15 * var(--size)) calc(15 * var(--size)),
+    calc(15 * var(--size)) calc(15 * var(--size));
+  position: relative;
+  border-radius: 6%;
+  animation: shake 3s ease-in-out infinite;
+  transform-origin: calc(60 * var(--size)) calc(180 * var(--size));
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  left: calc(5 * var(--size));
+  top: 100%;
+  width: calc(7 * var(--size));
+  height: calc(5 * var(--size));
+  background: var(--color-4);
+  border-radius: 0 0 calc(4 * var(--size)) calc(4 * var(--size));
+  box-shadow: calc(102 * var(--size)) 0 var(--color-4);
+}
+
+.loader:after {
+  content: '';
+  position: absolute;
+  width: calc(95 * var(--size));
+  height: calc(95 * var(--size));
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: calc(20 * var(--size));
+  background-color: var(--color-7);
+  background-image:
+    linear-gradient(
+      to right,
+      var(--color-8) 0%,
+      var(--color-8) 49%,
+      var(--color-6) 50%,
+      var(--color-6) 100%
+    ),
+    linear-gradient(135deg, var(--color-9) 50%, var(--color-10) 51%);
+  background-size:
+    calc(30 * var(--size)) 100%,
+    calc(90 * var(--size)) calc(80 * var(--size));
+  border-radius: 50%;
+  background-repeat: repeat, no-repeat;
+  background-position: 0 0;
+  box-sizing: border-box;
+  border: calc(10 * var(--size)) solid var(--color-2);
+  box-shadow:
+    0 0 0 calc(4 * var(--size)) var(--color-11) inset,
+    0 0 calc(6 * var(--size)) calc(6 * var(--size)) var(--color-8) inset;
+  animation: spin 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  75% {
+    transform: rotate(750deg);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+@keyframes shake {
+  65%,
+  80%,
+  88%,
+  96% {
+    transform: rotate(0.5deg);
+  }
+  50%,
+  75%,
+  84%,
+  92% {
+    transform: rotate(-0.5deg);
+  }
+  0%,
+  50%,
+  100% {
+    transform: rotate(0);
+  }
+}

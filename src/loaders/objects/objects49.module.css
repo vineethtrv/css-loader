@@ -1,0 +1,106 @@
+.loader {
+  --color-1: #fff;
+  --color-2: rgba(255, 255, 255, 0);
+  --size: 1px;
+
+  width: calc(180 * var(--size));
+  height: calc(140 * var(--size));
+  display: block;
+  margin: 0 auto calc(20 * var(--size));
+  background-image:
+    radial-gradient(
+      circle calc(25 * var(--size)) at calc(25 * var(--size)) calc(25 * var(--size)),
+      var(--color-1) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(50 * var(--size)) at calc(50 * var(--size)) calc(50 * var(--size)),
+      var(--color-1) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(25 * var(--size)) at calc(25 * var(--size)) calc(25 * var(--size)),
+      var(--color-1) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(15 * var(--size)) at calc(15 * var(--size)) calc(15 * var(--size)),
+      var(--color-1) 100%,
+      transparent 0
+    ),
+    linear-gradient(var(--color-1) calc(50 * var(--size)), transparent 0);
+  background-size:
+    calc(50 * var(--size)) calc(50 * var(--size)),
+    calc(100 * var(--size)) calc(75 * var(--size)),
+    calc(50 * var(--size)) calc(50 * var(--size)),
+    calc(30 * var(--size)) calc(32 * var(--size)),
+    calc(136 * var(--size)) calc(20 * var(--size));
+  background-repeat: no-repeat;
+  background-position:
+    0 calc(30 * var(--size)),
+    calc(30 * var(--size)) 0,
+    calc(113 * var(--size)) calc(29 * var(--size)),
+    calc(147 * var(--size)) calc(50 * var(--size)),
+    calc(23 * var(--size)) calc(60 * var(--size));
+  position: relative;
+  box-sizing: border-box;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: calc(2 * var(--size));
+  top: calc(65 * var(--size));
+  width: calc(2 * var(--size));
+  height: calc(6 * var(--size));
+  color: var(--color-1);
+  box-sizing: border-box;
+  animation: animloader 0.6s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow:
+      calc(25 * var(--size)) 0 white,
+      calc(50 * var(--size)) 0 white,
+      calc(75 * var(--size)) 0 white,
+      calc(100 * var(--size)) 0 white,
+      calc(125 * var(--size)) 0 white,
+      calc(150 * var(--size)) 0 white,
+      calc(25 * var(--size)) 0 white,
+      calc(50 * var(--size)) 0 white,
+      calc(75 * var(--size)) 0 white,
+      calc(100 * var(--size)) 0 white,
+      calc(125 * var(--size)) 0 white,
+      calc(150 * var(--size)) 0 white;
+  }
+  50% {
+    box-shadow:
+      calc(25 * var(--size)) calc(20 * var(--size)) white,
+      calc(50 * var(--size)) calc(60 * var(--size)) var(--color-2),
+      calc(75 * var(--size)) calc(30 * var(--size)) var(--color-2),
+      calc(100 * var(--size)) calc(70 * var(--size)) var(--color-2),
+      calc(125 * var(--size)) calc(40 * var(--size)) white,
+      calc(150 * var(--size)) calc(60 * var(--size)) var(--color-2),
+      calc(25 * var(--size)) calc(20 * var(--size)) white,
+      calc(50 * var(--size)) calc(30 * var(--size)) white,
+      calc(75 * var(--size)) calc(10 * var(--size)) white,
+      calc(100 * var(--size)) calc(30 * var(--size)) white,
+      calc(125 * var(--size)) calc(30 * var(--size)) var(--color-2),
+      calc(150 * var(--size)) calc(30 * var(--size)) var(--color-2);
+  }
+  100% {
+    box-shadow:
+      calc(25 * var(--size)) calc(60 * var(--size)) var(--color-2),
+      calc(50 * var(--size)) calc(60 * var(--size)) var(--color-2),
+      calc(75 * var(--size)) calc(50 * var(--size)) var(--color-2),
+      calc(100 * var(--size)) calc(70 * var(--size)) var(--color-2),
+      calc(125 * var(--size)) calc(70 * var(--size)) var(--color-2),
+      calc(150 * var(--size)) calc(60 * var(--size)) var(--color-2),
+      calc(25 * var(--size)) calc(80 * var(--size)) var(--color-2),
+      calc(50 * var(--size)) calc(80 * var(--size)) var(--color-2),
+      calc(75 * var(--size)) calc(70 * var(--size)) var(--color-2),
+      calc(100 * var(--size)) calc(60 * var(--size)) var(--color-2),
+      calc(125 * var(--size)) calc(30 * var(--size)) var(--color-2),
+      calc(150 * var(--size)) calc(30 * var(--size)) var(--color-2);
+  }
+}

@@ -1,0 +1,36 @@
+.loader {
+  --color-1: #fff;
+  --size: 1px;
+
+  width: calc(16 * var(--size));
+  height: calc(16 * var(--size));
+  border-radius: 50%;
+  display: block;
+  margin: calc(60 * var(--size)) auto calc(15 * var(--size));
+  position: relative;
+  background: var(--color-1);
+  transform-origin: calc(8 * var(--size)) calc(-44 * var(--size));
+  box-sizing: border-box;
+  animation: swing 1.4s ease-in-out infinite alternate;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: calc(8 * var(--size));
+  width: calc(1 * var(--size));
+  height: calc(52 * var(--size));
+  background: var(--color-1);
+  opacity: 0.4;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
